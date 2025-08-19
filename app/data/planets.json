@@ -1,0 +1,10 @@
+{
+    "earth": {
+        "id": "earth",
+        "name": "Earth"
+    },
+    "mars": {
+        "id": "mars",
+        "name": "Mars"
+    }
+}
