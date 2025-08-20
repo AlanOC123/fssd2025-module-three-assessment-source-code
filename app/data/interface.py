@@ -13,8 +13,9 @@ def _load_planets():
     except json.JSONDecodeError as e:
         raise RuntimeError(f"Invalid JSON in {DATA_PATH}") from e
 
-def get_planet_by_id(planet_id: str):
-    return _load_planets().get(planet_id)
+def get_planet_by_id(*planet_id: str):
+    all_planets = _load_planets()
+    return [all_planets.get(p) for p in planet_id]
 
 def get_planet_by_name(planet_name: str):
     return next((p for p in _load_planets().values() if p.get("name") == planet_name), None)

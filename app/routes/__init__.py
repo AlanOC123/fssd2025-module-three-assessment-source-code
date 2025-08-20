@@ -1,9 +1,13 @@
-from .blueprints.test import bp
-from .views.index import index
-from .views.goodbye import goodbye
+from .blueprints import (learn, compare, quiz)
+from .views import (index, about, sitemap)
+
+# { "rule": None, "func": None, "endpoint": None, "methods": None, "blueprint": bp },
 
 routes_list = [
-    { "rule": None, "func": None, "endpoint": None, "methods": None, "blueprint": bp },
-    { "rule": '/', "func": index, "endpoint": "index", "methods": ["GET"], "blueprint": None },
-    { "rule": '/goodbye', "func": goodbye, "endpoint": "goodbye", "methods": ["GET"], "blueprint": None },
+    index.index_route,
+    about.about_route,
+    sitemap.sitemap_route,
+    learn.learn_bp_route,
+    compare.compare_bp_route,
+    quiz.quiz_bp_route,
 ]

@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ SITE_NAME }}-{{ SITE_TAGLINE }}{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/pages/index.css') }}">
+{% endblock %}
 
-{% block header %}<h1>{{ SITE_NAME }}</h1>{% endblock %}
+{% block content %}
+    <div id="background-img">
+        <picture>
+            <!-- Desktop -->
+            <source
+                media="(min-width: 768px)"
+                srcset="{{ url_for('static', filename='assets/backgrounds/bg-lg.jpg') }} 1440w"
+                sizes="100vw"
+            >
+
+            <!-- Mobile -->
+            <img
+                src="{{ url_for('static', filename='assets/backgrounds/bg-sm.jpg') }}"
+                srcset="{{ url_for('static', filename='assets/backgrounds/bg-sm.jpg') }} 768w"
+                alt="Background hero image of stars and planets"
+                loading="eager"
+                decoding="async"
+                width="1440"
+                height="768"
+                sizes="100vw"
+            >
+        </picture>
+    </div>
+    <div id="content" class="grid-container">
+        <!-- <div class="title-container">
+            {% block header %}
+                <h1>{{ SITE_NAME }}</h1>
+                <h2>{{ SITE_TAGLINE }}</h2>
+            {% endblock %}
+        </div> -->
+    </div>
+{% endblock %}

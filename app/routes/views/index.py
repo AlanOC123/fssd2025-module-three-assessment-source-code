@@ -1,6 +1,7 @@
 from flask import Response, render_template
+from app.routes.schema import get_view_schema
 
-# test view function
 def index() -> Response | str:
-    print(1)
     return render_template('index.html')
+
+index_route = get_view_schema(rule='/', func=index, endpoint='index', methods=["GET"])

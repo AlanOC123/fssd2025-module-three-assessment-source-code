@@ -1,3 +1,16 @@
+:root {
+    /* Multipliers */
+    --mul-xs: 0.4;
+    --mul-sm: 0.8;
+    --mul-md: 1.2;
+    --mul-lg: 1.6;
+    --mul-xl: 2;
+    --mul-2xl: 2.4;
+    --mul-3xl: 2.8;
+}
+
+html,
 body {
-    background-color: red;
+    width: 100dvw;
+    height: 100dvh;
 }

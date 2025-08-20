@@ -1,21 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/root.css') }}">
+  <!-- meta, tokens, reset, etc. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Planet .{% block page_name %}{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/root.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/typography.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/spacing.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/favicon.ico') }}" type="image/x-icon">
+    {% block styles %}{% endblock %}
 </head>
 <body>
+    <a class="skip-link" href="#content" style="display: none;">Skip to content</a>
+    <header>
+        <div id="title-container">
+            <h1 id="title-text">{{ SITE_NAME }}</h1>
+            <h2 id="title-tagline">{{ SITE_TAGLINE }}</h2>
+        </div>
+        <nav id="main-nav">
+            <ul id="nav-list">
+                <li class="nav-item">
+                    <a href="{{ url_for('index') }}" class="nav-link" id="to-home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('learn.all_planets') }}" class="nav-link" id="to-explore">Explore Planets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('compare.select') }}" class="nav-link" id="to-compare">Compare Planets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('quiz.construct') }}" class="nav-link" id="to-test">Test Yourself</a>
+                </li>
+                {% block add_main_nav_links %}{% endblock %}
+            </ul>
+        </nav>
+    </header>
 
-    <header>{% block header %}{% endblock %}</header>
+    <main id="content">
+        {% block content %}{% endblock %}
+    </main>
 
-    <nav></nav>
-
-    <main>{% block content %}{% endblock %}</main>
-
-    <footer>{% block footer %}{% endblock %}</footer>
-
+    <footer>
+        <nav id="footer-nav">
+            <ul id="nav-list">
+                <li class="nav-item">
+                    <a href="{{ url_for('about') }}" class="nav-link" id="to-about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('sitemap') }}" class="nav-link" id="to-sitemap">SiteMap</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link" id="to-t-and-c">Terms & Conditions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link" id="to-contact">Contact Us</a>
+                </li>
+                {% block add_footer_nav_links %}{% endblock %}
+            </ul>
+        </nav>
+    </footer>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
