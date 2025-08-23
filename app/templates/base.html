@@ -4,42 +4,51 @@
   <!-- meta, tokens, reset, etc. -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}Planet .{% block page_name %}{% endblock %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/root.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/typography.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/themes.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/spacing.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/favicon.ico') }}" type="image/x-icon">
+    <title>{% block title %}Planet . - {% block page_name %}{% endblock %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/root.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/typography.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/spacing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/filters.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/transitions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/borders.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/transforms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/planet-card.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='app/assets/icons/favicon.ico') }}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d9deb4df99.js" crossorigin="anonymous"></script>
     {% block styles %}{% endblock %}
 </head>
 <body>
     <a class="skip-link" href="#content" style="display: none;">Skip to content</a>
     <header>
-        <div id="title-container">
-            <h1 id="title-text">{{ SITE_NAME }}</h1>
-            <h2 id="title-tagline">{{ SITE_TAGLINE }}</h2>
+            <div id="website-logo" class="header-section">
+                <img src="{{ url_for('static', filename='app/assets/icons/website-logo.png') }}" alt="Website Logo">
+                <a href="{{ url_for('index') }}" id="to-home"></a>
+            </div>
+            <nav id="main-nav" class="header-section">
+                <ul id="main-nav-list">
+                    <li class="nav-list-item">
+                        <a href="{{ url_for('explore.index') }}" class="nav-list-link {% if pg_name == 'explore' %} active {% endif %}">Explore</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="{{ url_for('compare.index') }}" class="nav-list-link {% if pg_name == 'compare' %} active {% endif %}">Compare</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="{{ url_for('quiz.index') }}" class="nav-list-link {% if pg_name == 'test' %} active {% endif %}">Quiz</a>
+                    </li>
+                </ul>
+            </nav>
+            {% from "app/components/buttons.html" import options_button %}
+            {{ options_button(id="open-nav", style="header-section hidden") }}
         </div>
-        <nav id="main-nav">
-            <ul id="nav-list">
-                <li class="nav-item">
-                    <a href="{{ url_for('index') }}" class="nav-link" id="to-home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url_for('learn.all_planets') }}" class="nav-link" id="to-explore">Explore Planets</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url_for('compare.select') }}" class="nav-link" id="to-compare">Compare Planets</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url_for('quiz.construct') }}" class="nav-link" id="to-test">Test Yourself</a>
-                </li>
-                {% block add_main_nav_links %}{% endblock %}
-            </ul>
-        </nav>
     </header>
 
-    <main id="content">
+    <main>
         {% block content %}{% endblock %}
     </main>
 

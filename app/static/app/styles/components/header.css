@@ -1,0 +1,42 @@
+header {
+    top: 0;
+    position: fixed;
+    display: flex;
+    padding-inline: var(--pad-lg);
+    height: 64px;
+    width: 100dvw;
+    z-index: 999;
+    background-color: var(--clr-base-main-semi-opaque);
+    backdrop-filter: var(--blur-base);
+}
+
+.header-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#website-logo {
+    position: relative;
+}
+
+#to-home {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+#website-logo,
+#open-nav {
+    flex: 0;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+#main-nav {
+    flex: 1;
+}
+
+#open-nav {
+    display: none;
+}

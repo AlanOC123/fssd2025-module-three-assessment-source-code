@@ -1,0 +1,16 @@
+:root {
+    /* Duration */
+    --trans-dur-sm: 200ms;
+    --trans-dur-base: 400ms;
+    --trans-dur-lg: 600ms;
+    --trans-dur-xl: 1200ms;
+    --trans-dur-2xl: 2400ms;
+    --trans-dur-3xl: 3600ms;
+
+    /* Timing Functions */
+    --trans-time-base: ease;
+
+    /* Properties */
+    --trans-props-text-clr: color var(--trans-dur-base) var(--trans-time-base);
+    --trans-props-bg-clr: background-color var(--trans-dur-base) var(--trans-time-base);
+}

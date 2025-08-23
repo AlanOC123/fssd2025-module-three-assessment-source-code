@@ -1,10 +1,14 @@
 {
     "earth": {
         "id": "earth",
-        "name": "Earth"
+        "name": "Earth",
+        "tagline": "Home",
+        "img": "assets/planets/earth.png"
     },
     "mars": {
         "id": "mars",
-        "name": "Mars"
+        "name": "Mars",
+        "tagline": "Red Planet",
+        "img": "assets/planets/mars.png"
     }
 }

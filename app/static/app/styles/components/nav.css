@@ -1,0 +1,20 @@
+#main-nav-list {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--gap-base);
+}
+
+#main-nav-list .nav-list-link.active {
+    color: var(--clr-accent);
+}
+
+#main-nav-list .nav-list-link {
+    color: var(--clr-text-alt);
+    transition: color var(--trans-dur-base) var(--trans-time-base);
+}
+
+#main-nav-list .nav-list-link:not(.active):hover {
+    color: var(--clr-text-main);
+}

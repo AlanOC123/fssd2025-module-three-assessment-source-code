@@ -1,0 +1,39 @@
+.btn {
+    padding: var(--btn-sm);
+    font-size: var(--fs-base);
+    color: var(--clr-text-main);
+    border: none;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: color var(--trans-dur-base) var(--trans-time-base);
+}
+
+.pri-btn {
+    background-color: var(--clr-accent);
+    border-radius: var(--brd-rnd-base);
+}
+
+.btn.sec-btn {
+    background: none;
+    border: var(--brd-alt);
+    font-size: var(--fs-xs);
+    border-radius: var(--brd-rnd-sm);
+}
+
+.options-btn {
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--clr-text-main);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .pri-btn {
+        border-radius: var(--brd-rnd-sm);
+    }
+
+    .sec-btn {
+        border-radius: var(--brd-rnd-xs);
+    }
+}

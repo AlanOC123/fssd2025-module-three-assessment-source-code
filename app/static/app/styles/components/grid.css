@@ -1,0 +1,48 @@
+.page-grid,
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap-base);
+}
+
+.page-grid {
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    overflow: scroll;
+    padding-inline: var(--gap-xs);
+}
+
+.component-grid {
+    position: relative;
+    display: grid;
+    grid-column: 1 / span 12;
+}
+
+@media (max-width: 1500px) {
+    .component-grid {
+        grid-column: 1 / span 12;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page-grid,
+    .component-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .component-grid {
+        grid-column: 1 / span 8;
+    }
+}
+
+@media (max-width: 320px) {
+    .page-grid,
+    .component-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .component-grid {
+        grid-column: 1 / span 4;
+    }
+}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/views/index/style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="home-content">
+    <section id="explore" class="section-container">
+        <div class="section-bg-img">
+            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/explore.jpg') }}" alt="Hero image">
+        </div>
+
+        <div class="section-content">
+            <h1 class="section-tagline"><span class="tagline-main">Explore</span> <span class="tagline-alt">The Sol System</span></h1>
+            <div class="section-btn">
+                {% from "app/components/buttons.html" import primary_button_with_link %}
+                {{ primary_button_with_link("Explore", href="explore.index") }}
+            </div>
+        </div>
+    </section>
+
+    <section id="compare" class="section-container">
+        <div class="section-bg-img">
+            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/compare.jpg') }}" alt="Hero image">
+        </div>
+
+        <div class="section-content">
+            <h1 class="section-tagline"><span class="tagline-main">Compare</span> <span class="tagline-alt">To Understand Deeper</span></h1>
+            <div class="section-btn">
+                {% from "app/components/buttons.html" import primary_button_with_link %}
+                {{ primary_button_with_link("Compare", href="compare.index") }}
+            </div>
+        </div>
+    </section>
+
+    <section id="test" class="section-container">
+        <div class="section-bg-img">
+            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/quiz.jpg') }}" alt="Hero image">
+        </div>
+
+        <div class="section-content">
+            <h1 class="section-tagline"><span class="tagline-main">Test</span> <span class="tagline-alt">The Knowledge Gained</span></h1>
+            <div class="section-btn">
+                {% from "app/components/buttons.html" import primary_button_with_link %}
+                {{ primary_button_with_link("Test", href="quiz.index") }}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

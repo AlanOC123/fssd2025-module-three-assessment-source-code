@@ -1,0 +1,58 @@
+{% macro primary_button(label, style="pri-btn", type="button", id="", attrs=None) %}
+<button
+    class="btn {{ style }}"
+    type="{{ type }}"
+    id="{{ id }}"
+    {% if attrs %}
+        {% for key, val in attrs.items() %}
+            {{ key }}="{{ val }}"
+        {% endfor %}
+    {% endif %}
+>
+    {{ label }}
+</button>
+{% endmacro %}
+
+{% macro secondary_button(label, style="sec-btn", type="button", id="", attrs=None) %}
+<button
+class="btn {{ style }}"
+type="{{ type }}"
+id=" {{ id }}"
+{% if attrs %}
+    {% for key, val in attrs.items() %}
+        {{ key }}="{{ val }}"
+    {% endfor %}
+{% endif %}
+>
+    {{ label }}
+</button>
+{% endmacro %}
+
+{% macro options_button(style="options-btn", id="", attrs=None) %}
+ <button
+ class="options-btn {{ style }}"
+ id="{{ id }}"
+ {% if attrs %}
+    {% for key, val in attrs.items() %}
+        {{ key }}="{{ val }}"
+    {% endfor %}
+ {% endif %}
+ >
+    <i class="fa-solid fa-bars"></i>
+</button>
+{% endmacro %}
+
+{% macro primary_button_with_link(label, style="pri-btn", type="button", id="", href="", attrs=None) %}
+<button
+    class="btn {{ style }}"
+    type="{{ type }}"
+    id="{{ id }}"
+    {% if attrs %}
+        {% for key, val in attrs.items() %}
+            {{ key }}="{{ val }}"
+        {% endfor %}
+    {% endif %}
+>
+    <a href="{{ url_for(href) }}">{{ label }}</a>
+</button>
+{% endmacro %}
