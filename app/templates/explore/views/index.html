@@ -3,25 +3,33 @@
 {% block page_name %}Explore{% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='explore/views/index/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='explore/views/index/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='explore/views/components/styles.css') }}">
 {% endblock %}
 
 {% block content %}
-<div class="page-grid">
-    <section id="hero">
-        <div id="bg-img">
-            <img src="" alt="" srcset="">
+<div id="explore-home" class="page-grid">
+    <div id="bg-img">
+        <img src="{{ url_for('static', filename='explore/assets/hero.jpg') }}" alt="">
+    </div>
+    <div class="flex-container">
+        <div id="hero" class="sub-wrapper">
+            {% set sentence = "EXPLORE THE SOL" %}
+            <h1 class="hero-text">{{ sentence|replace(' ', '\n') }} SYSTEM</h1>
         </div>
-    </section>
-    <section id="quick-search">
-        <form action="">
 
-        </form>
-    </section>
-    <section id="recents">
-        <ul>
-
-        </ul>
-    </section>
+        {% if recently_viewed %}
+        <div id="recents" class="sub-wrapper">
+            <h3>Recent Visits</h3>
+            <ul class="recent-visit-list">
+                {% from "explore/components/recent-visit-card.html" import recent_visit_card, visit_all_card %}
+                {% for planet in recently_viewed %}
+                    <li class="recent-visit-item">{{ recent_visit_card(id=planet.id, label=planet.name, img_src=planet.img) }}</li>
+                {% endfor %}
+                <li class="recent-visit-item">{{ visit_all_card() }}</li>
+            </ul>
+        </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

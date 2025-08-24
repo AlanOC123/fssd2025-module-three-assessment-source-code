@@ -12,10 +12,10 @@
         </div>
 
         <div class="section-content">
-            <h1 class="section-tagline"><span class="tagline-main">Explore</span> <span class="tagline-alt">The Sol System</span></h1>
+            <h2 class="section-tagline"><span class="tagline-main">Explore</span> <span class="tagline-alt">The Sol System</span></h2>
             <div class="section-btn">
-                {% from "app/components/buttons.html" import primary_button_with_link %}
-                {{ primary_button_with_link("Explore", href="explore.index") }}
+                {% from "app/components/buttons.html" import primary_btn_with_link %}
+                {{ primary_btn_with_link("Explore", href=url_for('explore.index')) }}
             </div>
         </div>
     </section>
@@ -26,10 +26,10 @@
         </div>
 
         <div class="section-content">
-            <h1 class="section-tagline"><span class="tagline-main">Compare</span> <span class="tagline-alt">To Understand Deeper</span></h1>
+            <h2 class="section-tagline"><span class="tagline-main">Compare</span> <span class="tagline-alt">To Understand Deeper</span></h2>
             <div class="section-btn">
-                {% from "app/components/buttons.html" import primary_button_with_link %}
-                {{ primary_button_with_link("Compare", href="compare.index") }}
+                {% from "app/components/buttons.html" import primary_btn_with_link %}
+                {{ primary_btn_with_link("Compare", href=url_for('compare.index')) }}
             </div>
         </div>
     </section>
@@ -40,10 +40,10 @@
         </div>
 
         <div class="section-content">
-            <h1 class="section-tagline"><span class="tagline-main">Test</span> <span class="tagline-alt">The Knowledge Gained</span></h1>
+            <h2 class="section-tagline"><span class="tagline-main">Test</span> <span class="tagline-alt">The Knowledge Gained</span></h2>
             <div class="section-btn">
-                {% from "app/components/buttons.html" import primary_button_with_link %}
-                {{ primary_button_with_link("Test", href="quiz.index") }}
+                {% from "app/components/buttons.html" import primary_btn_with_link %}
+                {{ primary_btn_with_link("Test", href=url_for('quiz.index')) }}
             </div>
         </div>
     </section>

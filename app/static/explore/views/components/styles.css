@@ -1,0 +1,66 @@
+.quick-search-btn {
+    font-size: var(--fs-sm);
+    border: var(--brd-accent);
+    padding: var(--pad-xs);
+    border-radius: var(--brd-rnd-full);
+    transition: background-color var(--trans-dur-base) var(--trans-time-base);
+    white-space: nowrap;
+}
+
+.quick-search-btn:hover {
+    background-color: var(--clr-text-alt);
+}
+
+.recent-visit-card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-base);
+}
+
+.recent-visit-card .img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recent-visit-card .img-container img {
+    height: 10dvh;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.to-planet-container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-base);
+}
+
+.recent-visit-card .content-container {
+    flex: 2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.to-planet-icon-container {
+    border: var(--brd-alt);
+    aspect-ratio: 1/1;
+    padding: var(--pad-xs);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--brd-rnd-full);
+}
+
+.to-planet-icon-container svg {
+    transition: transform var(--trans-dur-base) var(--trans-time-base);
+}
+
+.recent-visit-card:hover .to-planet-icon-container svg {
+    transform: translateX(100%);
+}

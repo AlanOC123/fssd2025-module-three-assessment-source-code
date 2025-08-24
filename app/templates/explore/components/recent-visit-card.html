@@ -1,0 +1,44 @@
+{% macro recent_visit_card(label, id, img_src) %}
+    <article
+    class="recent-visit-card"
+    {% if attrs %}
+        {% for key, val in attrs.items() %}
+            {{ key }} = "{{ val }}"
+        {% endfor %}
+    {% endif %}
+    >
+        <div class="img-container">
+            <img src="{{ url_for('static', filename=img_src) }}" alt="">
+        </div>
+
+        <div class="content-container">
+            <div class="to-planet-container">
+                <a href="{{ url_for('explore.view_planet', planet_id=id) }}">
+                    See {{ label }}
+                </a>
+                <div class="to-planet-icon-container">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endmacro %}
+
+{% macro visit_all_card() %}
+    <article class="recent-visit-card">
+        <div class="img-container">
+            <img src="{{ url_for('static', filename='app/assets/planets/sprites/sun.png') }}" alt="">
+        </div>
+
+        <div class="content-container">
+            <div class="to-planet-container">
+                <a href="{{ url_for('explore.planet_list', filter_key='all') }}" class="to-planet-link">
+                    See All
+                </a>
+                <div class="to-planet-icon-container">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </article>
+{% endmacro %}

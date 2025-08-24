@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='explore/views/view_planet/style.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div id="view-planet-content" class="page-grid">
+        <div id="bg-img">
+            <img src="{{ url_for('static', filename=planet.bgImg) }}" alt="">
+        </div>
+
+        <section id="planet-img-container">
+            <img src="{{ url_for('static', filename=planet.img) }}" alt="">
+            <h1>{{ planet.name }}</h1>
+            <div class="quick-details">
+                <p id="planet-diameter">
+                    <span><i class="fa-solid fa-circle-notch"></i></span>
+                    <span id="planet-value">8000</span> km
+                </p>
+                <p id="planet-orbit-time">
+                    <span><i class="fa-solid fa-calendar-days"></i></i></span>
+                    <span id="planet-value">365</span> days
+                </p>
+            </div>
+        </section>
+        <section id="planet-data-container">
+            <ul id="sections-nav">
+                <li class="sections-nav-item">
+                    <p>Overview</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Atmosphere</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Orbit & Position</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Rotation & Tilt</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Geology</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Magnetosphere</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Observation</p>
+                </li>
+                <li class="sections-nav-item">
+                    <p>Exploration & History</p>
+                </li>
+            </ul>
+
+            <div id="data-window">
+                <div class="data-wrapper">
+
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

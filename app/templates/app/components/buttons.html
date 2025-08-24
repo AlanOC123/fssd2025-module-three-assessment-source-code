@@ -42,17 +42,28 @@ id=" {{ id }}"
 </button>
 {% endmacro %}
 
-{% macro primary_button_with_link(label, style="pri-btn", type="button", id="", href="", attrs=None) %}
-<button
+{% macro primary_btn_with_link(label, href, style="pri-btn", id="", attrs=None) %}
+  <a
     class="btn {{ style }}"
-    type="{{ type }}"
     id="{{ id }}"
+    href="{{ href }}"
     {% if attrs %}
-        {% for key, val in attrs.items() %}
-            {{ key }}="{{ val }}"
+        {% for k, v in attrs.items() %}
+            {{ k }} = "{{ v }}"
         {% endfor %}
     {% endif %}
->
-    <a href="{{ url_for(href) }}">{{ label }}</a>
-</button>
+  >{{ label }}</a>
+{% endmacro %}
+
+{% macro secondary_btn_with_link(label, href, style="sec-btn", id="", attrs=None) %}
+  <a
+    class="btn {{ style }}"
+    id="{{ id }}"
+    href="{{ href }}"
+    {% if attrs %}
+        {% for key, val in attrs.items() %}
+            {{ key }} = "{{ val }}"
+        {% endfor %}
+    {% endif %}
+  >{{ label }}</a>
 {% endmacro %}

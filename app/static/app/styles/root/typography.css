@@ -77,18 +77,22 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif;
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wide); /* gives that sci-fi spacing */
-  line-height: var(--lh-tight);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--ls-wide); /* gives that sci-fi spacing */
+    line-height: var(--lh-tight);
 }
 
 h1 {
-  font-size: var(--fs-lg);
+    font-size: var(--fs-2xl);
 }
 
 h2 {
-  font-size: var(--fs-md)
+    font-size: var(--fs-lg)
+}
+
+h3 {
+    font-size: var(--md);
 }
 
 p,

@@ -20,5 +20,5 @@ def get_planet_by_id(*planet_id: str):
 def get_planet_by_name(planet_name: str):
     return next((p for p in _load_planets().values() if p.get("name") == planet_name), None)
 
-def get_planets():
+def get_planets(filter_key=None):
     return list(_load_planets().values())

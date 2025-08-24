@@ -6,6 +6,8 @@
     box-shadow: var(--shadow-sm);
     cursor: pointer;
     transition: color var(--trans-dur-base) var(--trans-time-base);
+    text-align: center;
+    background: none;
 }
 
 .pri-btn {
@@ -13,10 +15,10 @@
     border-radius: var(--brd-rnd-base);
 }
 
-.btn.sec-btn {
-    background: none;
+.sec-btn {
+    color: var(--clr-text-alt);
     border: var(--brd-alt);
-    font-size: var(--fs-xs);
+    font-size: var(--fs-sm);
     border-radius: var(--brd-rnd-sm);
 }
 
