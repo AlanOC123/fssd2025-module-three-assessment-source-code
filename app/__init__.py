@@ -13,4 +13,9 @@ def create_app():
             SITE_TAGLINE=app.config["SITE_TAGLINE"],
         )
 
+    from .routes import routes_list
+    from .routes.register_routes import register_routes_to_app
+
+    register_routes_to_app(app, routes_list)
+
     return app
