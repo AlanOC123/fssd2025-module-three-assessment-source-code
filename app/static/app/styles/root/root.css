@@ -7,6 +7,10 @@
     --mul-xl: 2;
     --mul-2xl: 2.4;
     --mul-3xl: 2.8;
+
+    /* Header */
+    --header-height: 64px;
+    --height-with-header: calc(100% - var(--header-height))
 }
 
 html,

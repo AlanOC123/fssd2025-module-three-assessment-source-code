@@ -1,0 +1,19 @@
+{% macro planet_card(sprite, name, tagline, id) %}
+<article class="planet-card">
+    <div class="planet-img">
+        <img src="{{ url_for('static', filename=sprite) }}" alt="A high res image of {{ name }}">
+    </div>
+
+    <div class="planet-content">
+        <a href="{{ url_for('explore.planet_selected', planet_id=id) }}"></a>
+        <h3 class="planet-name">{{ name }}</h3>
+        <h4 class="planet-tagline">{{ tagline }}</h4>
+    </div>
+
+    <div class="card-icon">
+        <a href="{{ url_for('explore.planet_selected', planet_id=id) }}" class="icon-container">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</article>
+{% endmacro %}

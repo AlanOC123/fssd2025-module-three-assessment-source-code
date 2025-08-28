@@ -1,14 +1,15 @@
 :root {
     /* Text Colors */
     --clr-text-main: #fffaff;
-    --clr-text-alt: #9d8189;
+    --clr-text-alt: #c9d6ff;
 
     /* Base Colors */
-    --clr-base-main: #1b1b1e;
-    --clr-base-alt: #373f51;
+    --clr-base-main: #0b0c10;
+    --clr-base-alt: #1f2833;
 
     /* Accent Color */
-    --clr-accent: #62b6cb;
+    --clr-accent: #45a29e;
+    --clr-accent-alt: #c5c6c7;
 
     /* Alpha Settings */
     --alpha-mostly-opaque: 0.8;

@@ -1,329 +1,335 @@
 {
     "earth": {
-        "id": "earth",
-        "name": "Earth",
-        "tagline": "Home",
-        "img": "app/assets/planets/sprites/earth.png",
-        "bgImg": "app/assets/planets/backgrounds/earth.jpg",
-        "planetData": [
-        {
+        "mainData": {
+            "id": "earth",
+            "name": "Earth",
+            "tagline": "Home",
             "diameter": { "value": 12742, "unit": "km" },
-            "dayLength": { "value": 24.0, "unit": "hour" }
-        },
-        {
-            "key": "Overview",
-            "data": [
-            {
-                "key": "Description",
-                "value": "The third planet from the Sun and the only known world to harbor life. Earth is a differentiated, water‑rich terrestrial planet with a nitrogen–oxygen atmosphere, active plate tectonics, and a protective magnetosphere that together maintain a surface stable enough for oceans, weather, and complex biospheres.",
-                "unit": "None",
-                "dataType": "long"
+            "dayLength": { "value": 24.0, "unit": "hour" },
+            "media": {
+                "sprite": "app/assets/planets/sprites/earth.png",
+                "cover": "app/assets/planets/backgrounds/earth.jpg"
             }
-            ]
         },
-        {
-            "key": "Orbit & Position",
-            "data": [
-            { "key": "Semi Major Axis", "value": 1.0, "unit": "AU", "dataType": "float" },
-            { "key": "Eccentricity", "value": 0.0167, "unit": "None", "dataType": "float" },
-            { "key": "Inclination", "value": 0.0, "unit": "°", "dataType": "float" },
-            { "key": "Distance (From Sun)", "value": 149597870, "unit": "km", "dataType": "int" },
-            { "key": "Order (From Sun)", "value": 3, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Rotation & Tilt",
-            "data": [
-            { "key": "Sidereal Day", "value": 23.934, "unit": "hours", "dataType": "float" },
-            { "key": "Solar Day", "value": 24.0, "unit": "hours", "dataType": "float" },
-            { "key": "Axial Tilt", "value": 23.44, "unit": "°", "dataType": "float" },
-            { "key": "Obliquity notes", "value": "Axial tilt of ~23.44° drives seasons; precession cycle ~26,000 years.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Physical Characteristics",
-            "data": [
-            { "key": "Equatorial radius", "value": 6378.137, "unit": "km", "dataType": "float" },
-            { "key": "Polar (Equator)", "value": 6356.752, "unit": "km", "dataType": "float" },
-            { "key": "Mass", "value": 5.972e24, "unit": "kg", "dataType": "float" },
-            { "key": "Density", "value": 5.514, "unit": "g/cm³", "dataType": "float" },
-            { "key": "Surface Gravity", "value": 9.807, "unit": "m/s²", "dataType": "float" },
-            { "key": "Obliquity notes", "value": 30.6, "unit": "%", "dataType": "float", "note": "Bond albedo" }
-            ]
-        },
-        {
-            "key": "Atmosphere",
-            "data": [
-            { "key": "Surface Pressure", "value": 1.013, "unit": "bar", "dataType": "float" },
-            { "key": "Composition", "value": [
-                { "gas": "N2", "percent": 78.08 },
-                { "gas": "O2", "percent": 20.95 },
-                { "gas": "Ar", "percent": 0.93 },
-                { "gas": "CO2", "percent": 0.041 }
-                ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
-            { "key": "Temperature", "value": [ { "min": -89 }, { "mean": 15 }, { "max": 58 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
-            { "key": "Clouds", "value": "Water cloud cover typically 50–70%; variable by season and region.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Geology",
-            "data": [
-            { "key": "Dominant Materials", "value": ["silicate crust/mantle", "iron–nickel core", "liquid water"], "unit": "None", "dataType": ["string"] },
-            { "key": "Rings", "value": false, "unit": "None", "dataType": "bool" },
-            { "key": "Moons", "value": 1, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Magnetosphere",
-            "data": [
-            { "key": "Contains One", "value": true, "unit": "None", "dataType": "bool" },
-            { "key": "Field Strength", "value": 31, "unit": "μT", "dataType": "int" },
-            { "key": "Aurora Notes", "value": "Auroral ovals near the poles caused by solar wind interactions with Earth's geomagnetic field.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Observation",
-            "data": [
-            { "key": "Apparent Magnitude", "value": "N/A from Earth; from deep space up to ≈ −4.0.", "unit": "None", "dataType": "short" },
-            { "key": "Angular Size Range", "value": "N/A", "unit": "arcsec", "dataType": "short" },
-            { "key": "Viewing Season", "value": "N/A", "unit": "None", "dataType": "short" },
-            { "key": "Naked Eye Visibility", "value": false, "unit": "None", "dataType": "bool" }
-            ]
-        },
-        {
-            "key": "Exploration",
-            "data": [
-            { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
-            { "key": "Missions", "value": [
-                { "Name": "Sputnik 1 (first artificial satellite)", "Year": 1957, "Agency": "USSR" },
-                { "Name": "Landsat 1", "Year": 1972, "Agency": "NASA/USGS" },
-                { "Name": "Terra (EOS AM-1)", "Year": 1999, "Agency": "NASA" }
-                ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
-            { "key": "Aurora Notes", "value": "Best seen at high latitudes; emissions from atomic oxygen (green/red) and molecular nitrogen (violet).", "unit": "None", "dataType": "short" }
-            ]
-        }
+        "altData": [
+            {
+                "key": "Overview",
+                "data": [
+                {
+                    "key": "Description",
+                    "value": "The third planet from the Sun and the only known world to harbor life. Earth is a differentiated, water‑rich terrestrial planet with a nitrogen–oxygen atmosphere, active plate tectonics, and a protective magnetosphere that together maintain a surface stable enough for oceans, weather, and complex biospheres.",
+                    "unit": "None",
+                    "dataType": "long"
+                }
+                ]
+            },
+            {
+                "key": "Orbit & Position",
+                "data": [
+                { "key": "Semi Major Axis", "value": 1.0, "unit": "AU", "dataType": "float" },
+                { "key": "Eccentricity", "value": 0.0167, "unit": "None", "dataType": "float" },
+                { "key": "Inclination", "value": 0.0, "unit": "°", "dataType": "float" },
+                { "key": "Distance (From Sun)", "value": 150, "unit": "Mm", "dataType": "int" },
+                { "key": "Order (From Sun)", "value": 3, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Rotation & Tilt",
+                "data": [
+                { "key": "Sidereal Day", "value": 23.934, "unit": "hours", "dataType": "float" },
+                { "key": "Solar Day", "value": 24.0, "unit": "hours", "dataType": "float" },
+                { "key": "Axial Tilt", "value": 23.44, "unit": "°", "dataType": "float" },
+                { "key": "Obliquity notes", "value": "Axial tilt of ~23.44° drives seasons; precession cycle ~26,000 years.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Physical Characteristics",
+                "data": [
+                { "key": "Equatorial radius", "value": 6378.137, "unit": "km", "dataType": "float" },
+                { "key": "Polar (Equator)", "value": 6356.752, "unit": "km", "dataType": "float" },
+                { "key": "Mass", "value": 5.972e24, "unit": "kg", "dataType": "float" },
+                { "key": "Density", "value": 5.514, "unit": "g/cm³", "dataType": "float" },
+                { "key": "Surface Gravity", "value": 9.807, "unit": "m/s²", "dataType": "float" },
+                { "key": "Obliquity notes", "value": 30.6, "unit": "%", "dataType": "float", "note": "Bond albedo" }
+                ]
+            },
+            {
+                "key": "Atmosphere",
+                "data": [
+                { "key": "Surface Pressure", "value": 1.013, "unit": "bar", "dataType": "float" },
+                { "key": "Composition", "value": [
+                    { "gas": "N2", "percent": 78.08 },
+                    { "gas": "O2", "percent": 20.95 },
+                    { "gas": "Ar", "percent": 0.93 },
+                    { "gas": "CO2", "percent": 0.041 }
+                    ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
+                { "key": "Temperature", "value": [ { "min": -89 }, { "mean": 15 }, { "max": 58 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
+                { "key": "Clouds", "value": "Water cloud cover typically 50–70%; variable by season and region.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Geology",
+                "data": [
+                { "key": "Dominant Materials", "value": ["silicate crust/mantle", "iron–nickel core", "liquid water"], "unit": "None", "dataType": ["string"] },
+                { "key": "Rings", "value": false, "unit": "None", "dataType": "bool" },
+                { "key": "Moons", "value": 1, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Magnetosphere",
+                "data": [
+                { "key": "Contains One", "value": true, "unit": "None", "dataType": "bool" },
+                { "key": "Field Strength", "value": 31, "unit": "μT", "dataType": "int" },
+                { "key": "Aurora Notes", "value": "Auroral ovals near the poles caused by solar wind interactions with Earth's geomagnetic field.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Observation",
+                "data": [
+                { "key": "Apparent Magnitude", "value": "N/A from Earth; from deep space up to ≈ −4.0.", "unit": "None", "dataType": "short" },
+                { "key": "Angular Size Range", "value": "N/A", "unit": "arcsec", "dataType": "short" },
+                { "key": "Viewing Season", "value": "N/A", "unit": "None", "dataType": "short" },
+                { "key": "Naked Eye Visibility", "value": false, "unit": "None", "dataType": "bool" }
+                ]
+            },
+            {
+                "key": "Exploration",
+                "data": [
+                { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
+                { "key": "Missions", "value": [
+                    { "Name": "Sputnik 1 (first artificial satellite)", "Year": 1957, "Agency": "USSR" },
+                    { "Name": "Landsat 1", "Year": 1972, "Agency": "NASA/USGS" },
+                    { "Name": "Terra (EOS AM-1)", "Year": 1999, "Agency": "NASA" }
+                    ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
+                { "key": "Aurora Notes", "value": "Best seen at high latitudes; emissions from atomic oxygen (green/red) and molecular nitrogen (violet).", "unit": "None", "dataType": "short" }
+                ]
+            }
         ]
     },
     "mars": {
-        "id": "mars",
-        "name": "Mars",
-        "tagline": "The Red Planet",
-        "img": "app/assets/planets/sprites/mars.png",
-        "bgImg": "app/assets/planets/backgrounds/mars.jpg",
-        "planetData": [
-        {
+        "mainData": {
+            "id": "mars",
+            "name": "Mars",
+            "tagline": "The Red Planet",
             "diameter": { "value": 6779, "unit": "km" },
-            "dayLength": { "value": 24.6, "unit": "hour" }
-        },
-        {
-            "key": "Overview",
-            "data": [
-            {
-                "key": "Description",
-                "value": "Fourth planet from the Sun. A cold, dry terrestrial world with a thin CO₂‑dominated atmosphere, basaltic crust, iron‑oxide dust that gives its red color, polar ice caps of water and seasonal CO₂ frost, and relic river valleys indicating a warmer, wetter past.",
-                "unit": "None",
-                "dataType": "long"
+            "dayLength": { "value": 24.6, "unit": "hour" },
+            "media": {
+                "sprite": "app/assets/planets/sprites/mars.png",
+                "cover": "app/assets/planets/backgrounds/mars.jpg"
             }
-            ]
         },
-        {
-            "key": "Orbit & Position",
-            "data": [
-            { "key": "Semi Major Axis", "value": 1.524, "unit": "AU", "dataType": "float" },
-            { "key": "Eccentricity", "value": 0.0934, "unit": "None", "dataType": "float" },
-            { "key": "Inclination", "value": 1.85, "unit": "°", "dataType": "float" },
-            { "key": "Distance (From Sun)", "value": 227943824, "unit": "km", "dataType": "int" },
-            { "key": "Order (From Sun)", "value": 4, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Rotation & Tilt",
-            "data": [
-            { "key": "Sidereal Day", "value": 24.623, "unit": "hours", "dataType": "float" },
-            { "key": "Solar Day", "value": 24.66, "unit": "hours", "dataType": "float" },
-            { "key": "Axial Tilt", "value": 25.19, "unit": "°", "dataType": "float" },
-            { "key": "Obliquity notes", "value": "Seasons similar to Earth's but longer due to a 687‑day year; axial precession and obliquity vary over geologic timescales.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Physical Characteristics",
-            "data": [
-            { "key": "Equatorial radius", "value": 3396.19, "unit": "km", "dataType": "float" },
-            { "key": "Polar (Equator)", "value": 3376.20, "unit": "km", "dataType": "float" },
-            { "key": "Mass", "value": 6.417e23, "unit": "kg", "dataType": "float" },
-            { "key": "Density", "value": 3.93, "unit": "g/cm³", "dataType": "float" },
-            { "key": "Surface Gravity", "value": 3.71, "unit": "m/s²", "dataType": "float" },
-            { "key": "Obliquity notes", "value": 25.0, "unit": "%", "dataType": "float", "note": "Bond albedo" }
-            ]
-        },
-        {
-            "key": "Atmosphere",
-            "data": [
-            { "key": "Surface Pressure", "value": 0.006, "unit": "bar", "dataType": "float" },
-            { "key": "Composition", "value": [
-                { "gas": "CO2", "percent": 95.3 },
-                { "gas": "N2", "percent": 2.7 },
-                { "gas": "Ar", "percent": 1.6 },
-                { "gas": "O2", "percent": 0.13 },
-                { "gas": "CO", "percent": 0.074 },
-                { "gas": "H2O (varies)", "percent": 0.03 }
-                ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
-            { "key": "Temperature", "value": [ { "min": -125 }, { "mean": -63 }, { "max": 20 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
-            { "key": "Clouds", "value": "Water‑ice and CO₂ ice clouds; frequent regional to global dust storms.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Geology",
-            "data": [
-            { "key": "Dominant Materials", "value": ["basaltic crust", "iron oxides (hematite)", "water ice (poles)", "CO₂ ice (seasonal)", "silicate dust"], "unit": "None", "dataType": ["string"] },
-            { "key": "Rings", "value": false, "unit": "None", "dataType": "bool" },
-            { "key": "Moons", "value": 2, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Magnetosphere",
-            "data": [
-            { "key": "Contains One", "value": false, "unit": "None", "dataType": "bool" },
-            { "key": "Field Strength", "value": 0, "unit": "μT", "dataType": "int", "note": "No global dipole; localized crustal fields exist." },
-            { "key": "Aurora Notes", "value": "Diffuse aurora detected, often over crustal magnetic anomalies; observed by MAVEN and other missions.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Observation",
-            "data": [
-            { "key": "Apparent Magnitude", "value": "Down to ≈ −2.9 at favorable oppositions.", "unit": "None", "dataType": "short" },
-            { "key": "Angular Size Range", "value": "3.5–25.1", "unit": "arcsec", "dataType": "short" },
-            { "key": "Viewing Season", "value": "Best near opposition (~ every 26 months).", "unit": "None", "dataType": "short" },
-            { "key": "Naked Eye Visibility", "value": true, "unit": "None", "dataType": "bool" }
-            ]
-        },
-        {
-            "key": "Exploration",
-            "data": [
-            { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
-            { "key": "Missions", "value": [
-                { "Name": "Mariner 4 (flyby)", "Year": 1965, "Agency": "NASA" },
-                { "Name": "Viking 1 (lander/orbiter)", "Year": 1976, "Agency": "NASA" },
-                { "Name": "Mars Global Surveyor", "Year": 1997, "Agency": "NASA" },
-                { "Name": "Mars Reconnaissance Orbiter", "Year": 2006, "Agency": "NASA" },
-                { "Name": "Curiosity (MSL) rover", "Year": 2012, "Agency": "NASA" },
-                { "Name": "Perseverance rover", "Year": 2021, "Agency": "NASA" },
-                { "Name": "Tianwen‑1 (orbiter/lander/rover)", "Year": 2020, "Agency": "CNSA" }
-                ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
-            { "key": "Aurora Notes", "value": "Ultraviolet aurora recorded by MAVEN; events correlate with solar activity and crustal fields.", "unit": "None", "dataType": "short" }
-            ]
-        }
+        "planetData": [
+            {
+                "key": "Overview",
+                "data": [
+                {
+                    "key": "Description",
+                    "value": "Fourth planet from the Sun. A cold, dry terrestrial world with a thin CO₂‑dominated atmosphere, basaltic crust, iron‑oxide dust that gives its red color, polar ice caps of water and seasonal CO₂ frost, and relic river valleys indicating a warmer, wetter past.",
+                    "unit": "None",
+                    "dataType": "long"
+                }
+                ]
+            },
+            {
+                "key": "Orbit & Position",
+                "data": [
+                { "key": "Semi Major Axis", "value": 1.524, "unit": "AU", "dataType": "float" },
+                { "key": "Eccentricity", "value": 0.0934, "unit": "None", "dataType": "float" },
+                { "key": "Inclination", "value": 1.85, "unit": "°", "dataType": "float" },
+                { "key": "Distance (From Sun)", "value": 227943824, "unit": "km", "dataType": "int" },
+                { "key": "Order (From Sun)", "value": 4, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Rotation & Tilt",
+                "data": [
+                { "key": "Sidereal Day", "value": 24.623, "unit": "hours", "dataType": "float" },
+                { "key": "Solar Day", "value": 24.66, "unit": "hours", "dataType": "float" },
+                { "key": "Axial Tilt", "value": 25.19, "unit": "°", "dataType": "float" },
+                { "key": "Obliquity notes", "value": "Seasons similar to Earth's but longer due to a 687‑day year; axial precession and obliquity vary over geologic timescales.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Physical Characteristics",
+                "data": [
+                { "key": "Equatorial radius", "value": 3396.19, "unit": "km", "dataType": "float" },
+                { "key": "Polar (Equator)", "value": 3376.20, "unit": "km", "dataType": "float" },
+                { "key": "Mass", "value": 6.417e23, "unit": "kg", "dataType": "float" },
+                { "key": "Density", "value": 3.93, "unit": "g/cm³", "dataType": "float" },
+                { "key": "Surface Gravity", "value": 3.71, "unit": "m/s²", "dataType": "float" },
+                { "key": "Obliquity notes", "value": 25.0, "unit": "%", "dataType": "float", "note": "Bond albedo" }
+                ]
+            },
+            {
+                "key": "Atmosphere",
+                "data": [
+                { "key": "Surface Pressure", "value": 0.006, "unit": "bar", "dataType": "float" },
+                { "key": "Composition", "value": [
+                    { "gas": "CO2", "percent": 95.3 },
+                    { "gas": "N2", "percent": 2.7 },
+                    { "gas": "Ar", "percent": 1.6 },
+                    { "gas": "O2", "percent": 0.13 },
+                    { "gas": "CO", "percent": 0.074 },
+                    { "gas": "H2O (varies)", "percent": 0.03 }
+                    ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
+                { "key": "Temperature", "value": [ { "min": -125 }, { "mean": -63 }, { "max": 20 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
+                { "key": "Clouds", "value": "Water‑ice and CO₂ ice clouds; frequent regional to global dust storms.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Geology",
+                "data": [
+                { "key": "Dominant Materials", "value": ["basaltic crust", "iron oxides (hematite)", "water ice (poles)", "CO₂ ice (seasonal)", "silicate dust"], "unit": "None", "dataType": ["string"] },
+                { "key": "Rings", "value": false, "unit": "None", "dataType": "bool" },
+                { "key": "Moons", "value": 2, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Magnetosphere",
+                "data": [
+                { "key": "Contains One", "value": false, "unit": "None", "dataType": "bool" },
+                { "key": "Field Strength", "value": 0, "unit": "μT", "dataType": "int", "note": "No global dipole; localized crustal fields exist." },
+                { "key": "Aurora Notes", "value": "Diffuse aurora detected, often over crustal magnetic anomalies; observed by MAVEN and other missions.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Observation",
+                "data": [
+                { "key": "Apparent Magnitude", "value": "Down to ≈ −2.9 at favorable oppositions.", "unit": "None", "dataType": "short" },
+                { "key": "Angular Size Range", "value": "3.5–25.1", "unit": "arcsec", "dataType": "short" },
+                { "key": "Viewing Season", "value": "Best near opposition (~ every 26 months).", "unit": "None", "dataType": "short" },
+                { "key": "Naked Eye Visibility", "value": true, "unit": "None", "dataType": "bool" }
+                ]
+            },
+            {
+                "key": "Exploration",
+                "data": [
+                { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
+                { "key": "Missions", "value": [
+                    { "Name": "Mariner 4 (flyby)", "Year": 1965, "Agency": "NASA" },
+                    { "Name": "Viking 1 (lander/orbiter)", "Year": 1976, "Agency": "NASA" },
+                    { "Name": "Mars Global Surveyor", "Year": 1997, "Agency": "NASA" },
+                    { "Name": "Mars Reconnaissance Orbiter", "Year": 2006, "Agency": "NASA" },
+                    { "Name": "Curiosity (MSL) rover", "Year": 2012, "Agency": "NASA" },
+                    { "Name": "Perseverance rover", "Year": 2021, "Agency": "NASA" },
+                    { "Name": "Tianwen‑1 (orbiter/lander/rover)", "Year": 2020, "Agency": "CNSA" }
+                    ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
+                { "key": "Aurora Notes", "value": "Ultraviolet aurora recorded by MAVEN; events correlate with solar activity and crustal fields.", "unit": "None", "dataType": "short" }
+                ]
+            }
         ]
     },
     "jupiter": {
-        "id": "jupiter",
-        "name": "Jupiter",
-        "tagline": "King of the Planets",
-        "img": "app/assets/planets/sprites/jupiter.png",
-        "bgImg": "app/assets/planets/backgrounds/jupiter.jpg",
-        "planetData": [
-        {
+        "mainData": {
+            "id": "jupiter",
+            "name": "Jupiter",
+            "tagline": "King of the Planets",
             "diameter": { "value": 139820, "unit": "km" },
-            "dayLength": { "value": 9.93, "unit": "hour" }
-        },
-        {
-            "key": "Overview",
-            "data": [
-            {
-                "key": "Description",
-                "value": "The fifth planet from the Sun and the largest in the Solar System. Jupiter is a hydrogen–helium gas giant with powerful zonal winds, banded cloud decks, and long‑lived storms such as the Great Red Spot. A faint ring system and an extensive family of moons orbit within a vast magnetosphere.",
-                "unit": "None",
-                "dataType": "long"
+            "dayLength": { "value": 9.93, "unit": "hour" },
+            "media": {
+                "sprite": "app/assets/planets/sprites/jupiter.png",
+                "cover": "app/assets/planets/backgrounds/jupiter.jpg"
             }
-            ]
         },
-        {
-            "key": "Orbit & Position",
-            "data": [
-            { "key": "Semi Major Axis", "value": 5.204, "unit": "AU", "dataType": "float" },
-            { "key": "Eccentricity", "value": 0.0489, "unit": "None", "dataType": "float" },
-            { "key": "Inclination", "value": 1.304, "unit": "°", "dataType": "float" },
-            { "key": "Distance (From Sun)", "value": 778500000, "unit": "km", "dataType": "int" },
-            { "key": "Order (From Sun)", "value": 5, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Rotation & Tilt",
-            "data": [
-            { "key": "Sidereal Day", "value": 9.925, "unit": "hours", "dataType": "float" },
-            { "key": "Solar Day", "value": 9.93, "unit": "hours", "dataType": "float" },
-            { "key": "Axial Tilt", "value": 3.13, "unit": "°", "dataType": "float" },
-            { "key": "Obliquity notes", "value": "Small axial tilt (~3.1°) → minimal seasons; differential rotation between equatorial and higher latitudes.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Physical Characteristics",
-            "data": [
-            { "key": "Equatorial radius", "value": 71492, "unit": "km", "dataType": "int" },
-            { "key": "Polar (Equator)", "value": 66854, "unit": "km", "dataType": "int" },
-            { "key": "Mass", "value": 1.898e27, "unit": "kg", "dataType": "float" },
-            { "key": "Density", "value": 1.326, "unit": "g/cm³", "dataType": "float" },
-            { "key": "Surface Gravity", "value": 24.79, "unit": "m/s²", "dataType": "float" },
-            { "key": "Obliquity notes", "value": 50.3, "unit": "%", "dataType": "float", "note": "Bond albedo" }
-            ]
-        },
-        {
-            "key": "Atmosphere",
-            "data": [
-            { "key": "Surface Pressure", "value": "N/A (no solid surface; reference level defined at 1 bar)", "unit": "None", "dataType": "short" },
-            { "key": "Composition", "value": [
-                { "gas": "H2", "percent": 89.8 },
-                { "gas": "He", "percent": 10.2 },
-                { "gas": "CH4", "percent": 0.3 },
-                { "gas": "NH3", "percent": 0.026 },
-                { "gas": "H2O (trace, variable)", "percent": 0.01 }
-                ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
-            { "key": "Temperature", "value": [ { "min": -150 }, { "mean": -110 }, { "max": -75 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
-            { "key": "Clouds", "value": "Ammonia ice upper clouds; ammonium hydrosulfide and water clouds below; prominent banding and long‑lived storms (Great Red Spot).", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Geology",
-            "data": [
-            { "key": "Dominant Materials", "value": ["molecular hydrogen", "helium", "trace methane", "ammonia", "water"], "unit": "None", "dataType": ["string"] },
-            { "key": "Rings", "value": true, "unit": "None", "dataType": "bool" },
-            { "key": "Moons", "value": 95, "unit": "None", "dataType": "int" }
-            ]
-        },
-        {
-            "key": "Magnetosphere",
-            "data": [
-            { "key": "Contains One", "value": true, "unit": "None", "dataType": "bool" },
-            { "key": "Field Strength", "value": 428, "unit": "μT", "dataType": "int" },
-            { "key": "Aurora Notes", "value": "Intense aurora at poles; Io's plasma torus and strong magnetosphere–moon interactions drive powerful emissions.", "unit": "None", "dataType": "short" }
-            ]
-        },
-        {
-            "key": "Observation",
-            "data": [
-            { "key": "Apparent Magnitude", "value": "Down to ≈ −2.9 at bright oppositions.", "unit": "None", "dataType": "short" },
-            { "key": "Angular Size Range", "value": "29.8–50.1", "unit": "arcsec", "dataType": "short" },
-            { "key": "Viewing Season", "value": "Best near yearly opposition; visible for much of the year.", "unit": "None", "dataType": "short" },
-            { "key": "Naked Eye Visibility", "value": true, "unit": "None", "dataType": "bool" }
-            ]
-        },
-        {
-            "key": "Exploration",
-            "data": [
-            { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
-            { "key": "Missions", "value": [
-                { "Name": "Pioneer 10 (flyby)", "Year": 1973, "Agency": "NASA" },
-                { "Name": "Pioneer 11 (flyby)", "Year": 1974, "Agency": "NASA" },
-                { "Name": "Voyager 1 (flyby)", "Year": 1979, "Agency": "NASA" },
-                { "Name": "Voyager 2 (flyby)", "Year": 1979, "Agency": "NASA" },
-                { "Name": "Galileo (orbiter)", "Year": 1995, "Agency": "NASA" },
-                { "Name": "Juno (orbiter)", "Year": 2016, "Agency": "NASA" },
-                { "Name": "New Horizons (flyby)", "Year": 2007, "Agency": "NASA" },
-                { "Name": "JUICE (en route)", "Year": 2023, "Agency": "ESA" }
-                ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
-            { "key": "Aurora Notes", "value": "Bright UV and IR aurora; Io footprint often visible in auroral emissions.", "unit": "None", "dataType": "short" }
-            ]
-        }
+        "planetData": [
+            {
+                "key": "Overview",
+                "data": [
+                {
+                    "key": "Description",
+                    "value": "The fifth planet from the Sun and the largest in the Solar System. Jupiter is a hydrogen–helium gas giant with powerful zonal winds, banded cloud decks, and long‑lived storms such as the Great Red Spot. A faint ring system and an extensive family of moons orbit within a vast magnetosphere.",
+                    "unit": "None",
+                    "dataType": "long"
+                }
+                ]
+            },
+            {
+                "key": "Orbit & Position",
+                "data": [
+                { "key": "Semi Major Axis", "value": 5.204, "unit": "AU", "dataType": "float" },
+                { "key": "Eccentricity", "value": 0.0489, "unit": "None", "dataType": "float" },
+                { "key": "Inclination", "value": 1.304, "unit": "°", "dataType": "float" },
+                { "key": "Distance (From Sun)", "value": 778500000, "unit": "km", "dataType": "int" },
+                { "key": "Order (From Sun)", "value": 5, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Rotation & Tilt",
+                "data": [
+                { "key": "Sidereal Day", "value": 9.925, "unit": "hours", "dataType": "float" },
+                { "key": "Solar Day", "value": 9.93, "unit": "hours", "dataType": "float" },
+                { "key": "Axial Tilt", "value": 3.13, "unit": "°", "dataType": "float" },
+                { "key": "Obliquity notes", "value": "Small axial tilt (~3.1°) → minimal seasons; differential rotation between equatorial and higher latitudes.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Physical Characteristics",
+                "data": [
+                { "key": "Equatorial radius", "value": 71492, "unit": "km", "dataType": "int" },
+                { "key": "Polar (Equator)", "value": 66854, "unit": "km", "dataType": "int" },
+                { "key": "Mass", "value": 1.898e27, "unit": "kg", "dataType": "float" },
+                { "key": "Density", "value": 1.326, "unit": "g/cm³", "dataType": "float" },
+                { "key": "Surface Gravity", "value": 24.79, "unit": "m/s²", "dataType": "float" },
+                { "key": "Obliquity notes", "value": 50.3, "unit": "%", "dataType": "float", "note": "Bond albedo" }
+                ]
+            },
+            {
+                "key": "Atmosphere",
+                "data": [
+                { "key": "Surface Pressure", "value": "N/A (no solid surface; reference level defined at 1 bar)", "unit": "None", "dataType": "short" },
+                { "key": "Composition", "value": [
+                    { "gas": "H2", "percent": 89.8 },
+                    { "gas": "He", "percent": 10.2 },
+                    { "gas": "CH4", "percent": 0.3 },
+                    { "gas": "NH3", "percent": 0.026 },
+                    { "gas": "H2O (trace, variable)", "percent": 0.01 }
+                    ], "unit": "None", "dataType": [ { "gas": "string" }, { "percent": "float" } ] },
+                { "key": "Temperature", "value": [ { "min": -150 }, { "mean": -110 }, { "max": -75 } ], "unit": "°C", "dataType": [ { "min": "int" }, { "mean": "int" }, { "max": "int" } ] },
+                { "key": "Clouds", "value": "Ammonia ice upper clouds; ammonium hydrosulfide and water clouds below; prominent banding and long‑lived storms (Great Red Spot).", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Geology",
+                "data": [
+                { "key": "Dominant Materials", "value": ["molecular hydrogen", "helium", "trace methane", "ammonia", "water"], "unit": "None", "dataType": ["string"] },
+                { "key": "Rings", "value": true, "unit": "None", "dataType": "bool" },
+                { "key": "Moons", "value": 95, "unit": "None", "dataType": "int" }
+                ]
+            },
+            {
+                "key": "Magnetosphere",
+                "data": [
+                { "key": "Contains One", "value": true, "unit": "None", "dataType": "bool" },
+                { "key": "Field Strength", "value": 428, "unit": "μT", "dataType": "int" },
+                { "key": "Aurora Notes", "value": "Intense aurora at poles; Io's plasma torus and strong magnetosphere–moon interactions drive powerful emissions.", "unit": "None", "dataType": "short" }
+                ]
+            },
+            {
+                "key": "Observation",
+                "data": [
+                { "key": "Apparent Magnitude", "value": "Down to ≈ −2.9 at bright oppositions.", "unit": "None", "dataType": "short" },
+                { "key": "Angular Size Range", "value": "29.8–50.1", "unit": "arcsec", "dataType": "short" },
+                { "key": "Viewing Season", "value": "Best near yearly opposition; visible for much of the year.", "unit": "None", "dataType": "short" },
+                { "key": "Naked Eye Visibility", "value": true, "unit": "None", "dataType": "bool" }
+                ]
+            },
+            {
+                "key": "Exploration",
+                "data": [
+                { "key": "Discovery", "value": [ { "By": "Prehistory" }, { "Year": null } ], "unit": "None", "dataType": [ { "By": "short" }, { "Year": "int|null" } ] },
+                { "key": "Missions", "value": [
+                    { "Name": "Pioneer 10 (flyby)", "Year": 1973, "Agency": "NASA" },
+                    { "Name": "Pioneer 11 (flyby)", "Year": 1974, "Agency": "NASA" },
+                    { "Name": "Voyager 1 (flyby)", "Year": 1979, "Agency": "NASA" },
+                    { "Name": "Voyager 2 (flyby)", "Year": 1979, "Agency": "NASA" },
+                    { "Name": "Galileo (orbiter)", "Year": 1995, "Agency": "NASA" },
+                    { "Name": "Juno (orbiter)", "Year": 2016, "Agency": "NASA" },
+                    { "Name": "New Horizons (flyby)", "Year": 2007, "Agency": "NASA" },
+                    { "Name": "JUICE (en route)", "Year": 2023, "Agency": "ESA" }
+                    ], "unit": "None", "dataType": [ { "Name": "short" }, { "Year": "int" }, { "Agency": "short" } ] },
+                { "key": "Aurora Notes", "value": "Bright UV and IR aurora; Io footprint often visible in auroral emissions.", "unit": "None", "dataType": "short" }
+                ]
+            }
         ]
     }
 }

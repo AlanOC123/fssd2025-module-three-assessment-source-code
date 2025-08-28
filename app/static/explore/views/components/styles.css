@@ -1,66 +1,87 @@
-.quick-search-btn {
-    font-size: var(--fs-sm);
-    border: var(--brd-accent);
-    padding: var(--pad-xs);
-    border-radius: var(--brd-rnd-full);
-    transition: background-color var(--trans-dur-base) var(--trans-time-base);
+#planet-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+#planet-list .planet-list-item {
+    padding: var(--pad-base);
+    flex: 1;
+    max-height: 50%;
+}
+
+.planet-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: var(--gap-sm);
+    padding: var(--pad-sm);
+    border-radius: var(--brd-rnd-lg);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 8px 4px var(--clr-base-main-mostly-transparent);
+    background-color: var(--clr-base-main-semi-transparent);
+    backdrop-filter: var(--blur-base);
+}
+
+.planet-card:hover {
+    border: var(--brd-main);
+}
+
+.planet-card .planet-img {
+    flex: 1;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet-card .planet-img img {
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+    background-color: var(--clr-base-main);
+    border-radius: var(--brd-rnd-base);
+}
+
+
+.planet-card .planet-content {
+    position: relative;
+    flex: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-xs);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.planet-card .planet-content a {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+}
+
+.planet-card .planet-content .planet-tagline {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.quick-search-btn:hover {
-    background-color: var(--clr-text-alt);
-}
-
-.recent-visit-card {
-    position: relative;
-    flex: 1;
+.planet-card .card-icon {
+    flex: 0 0 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--gap-base);
-}
-
-.recent-visit-card .img-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.recent-visit-card .img-container img {
-    height: 10dvh;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-}
-
-.to-planet-container {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-base);
-}
-
-.recent-visit-card .content-container {
-    flex: 2;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-.to-planet-icon-container {
-    border: var(--brd-alt);
-    aspect-ratio: 1/1;
-    padding: var(--pad-xs);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--clr-accent);
+    line-height: 0;
     border-radius: var(--brd-rnd-full);
-}
-
-.to-planet-icon-container svg {
-    transition: transform var(--trans-dur-base) var(--trans-time-base);
-}
-
-.recent-visit-card:hover .to-planet-icon-container svg {
-    transform: translateX(100%);
+    aspect-ratio: 1;
 }

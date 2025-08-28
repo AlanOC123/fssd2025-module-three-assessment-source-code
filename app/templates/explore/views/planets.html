@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block page_name %}Explore.{{ planet_data.curr_planet.mainData.name }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='explore/views/planets/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='explore/views/components/styles.css') }}">
+{% endblock %}
+
+{% block scripts %}
+<script>
+    window.__PLANET_DATA__ = {{ planet_data.curr_planet | tojson }};
+</script>
+<script src="{{ url_for('static', filename='explore/views/planets/script.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+    <div id="view-planet-content" class="page-grid">
+        <div id="select-planet" class="page-component">
+            <div id="header-container" class="page-subcomponent">
+                <h2>Select Planet</h2>
+            </div>
+
+            <div id="planet-list-container" class="page-subcomponent">
+                <ul id="planet-list">
+                    {% from "explore/components/planet-card.html" import planet_card %}
+                    {% for planet in planet_data.all_planets %}
+                    <li class="planet-list-item">
+                        {{
+                            planet_card(
+                                sprite=planet.mainData.media.sprite,
+                                name=planet.mainData.name,
+                                tagline=planet.mainData.tagline,
+                                id=planet.mainData.id,
+                            )
+                        }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div id="planet-data" class="page-component">
+        </div>
+    </div>
+{% endblock %}

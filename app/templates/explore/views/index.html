@@ -21,12 +21,36 @@
         {% if recently_viewed %}
         <div id="recents" class="sub-wrapper">
             <h3>Recent Visits</h3>
-            <ul class="recent-visit-list">
-                {% from "explore/components/recent-visit-card.html" import recent_visit_card, visit_all_card %}
+            <ul id="planet-list">
+                {% from "explore/components/planet-card.html" import planet_card %}
                 {% for planet in recently_viewed %}
-                    <li class="recent-visit-item">{{ recent_visit_card(id=planet.id, label=planet.name, img_src=planet.img) }}</li>
+                    <li class="planet-list-item">
+                        {{
+                            planet_card(id=planet.id, name=planet.name, sprite=planet.media.sprite, tagline=planet.tagline)
+                        }}
+                    </li>
                 {% endfor %}
-                <li class="recent-visit-item">{{ visit_all_card() }}</li>
+                <li class="planet-list-item">
+                    <article class="planet-card">
+                        <div class="planet-img">
+                            <img
+                            src="{{ url_for('static', filename='app/assets/planets/sprites/sun.png') }}" alt="A high res image of the sun"
+                            >
+                        </div>
+
+                        <div class="planet-content">
+                            <a href="{{ url_for('explore.planets_default') }}"></a>
+                            <h3 class="planet-name">See All</h3>
+                            <h4 class="planet-tagline"></h4>
+                        </div>
+
+                        <div class="card-icon">
+                            <a href="{{ url_for('explore.planets_default') }}" class="icon-container">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </li>
             </ul>
         </div>
         {% endif %}

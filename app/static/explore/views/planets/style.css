@@ -1,0 +1,103 @@
+#view-planet-content {
+    gap: 0;
+}
+
+#select-planet {
+    grid-column: 1 / 5;
+    background-color: var(--clr-base-alt);
+    border-top-left-radius: var(--brd-rnd-base);
+    border-bottom-left-radius: var(--brd-rnd-base);
+    border-right: var(--brd-main);
+}
+
+#planet-data {
+    grid-column: 5 / -1;
+    background-color: blue;
+    border-top-right-radius: var(--brd-rnd-base);
+    border-bottom-right-radius: var(--brd-rnd-base);
+}
+
+.page-component {
+    margin-top: var(--header-height);
+    height: calc(var(--height-with-header) - var(--pad-sm));
+    display: flex;
+    flex-direction: column;
+}
+
+.page-subcomponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-container {
+    flex: 0 0 15%;
+}
+
+#header-container h2 {
+    flex: 1;
+    margin-left: var(--sp-md);
+    justify-content: start;
+    align-items: center;
+    color: var(--clr-text-main);
+}
+
+#planet-list-container {
+    flex: 1;
+    overflow: hidden;
+    max-height: 85dvh;
+}
+
+#planet-search-container {
+    flex: 0 0 10%;
+    height: 100%;
+    display: flex;
+}
+
+.search-bar-container {
+    flex: 1;
+    display: flex;
+    height: 50%;
+    padding-inline: var(--pad-base);
+}
+
+.search-bar-container:focus-within .search-icon {
+    color: var(--clr-accent);
+}
+
+.search-icon,
+.search-input-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-base-main-semi-transparent);
+}
+
+.search-icon {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 20%;
+    border-top-left-radius: var(--brd-rnd-full);
+    border-bottom-left-radius: var(--brd-rnd-full);
+}
+
+.search-input-container {
+    border-top-right-radius: var(--brd-rnd-full);
+    border-bottom-right-radius: var(--brd-rnd-full);
+}
+
+.search-input-container :first-child {
+    flex: 1;
+    background: none;
+    border: none;
+    margin-left: var(--sp-md);
+}
+
+.search-input-container :first-child:focus {
+    outline: none;
+    color: var(--clr-text-main);
+}

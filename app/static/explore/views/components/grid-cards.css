@@ -1,0 +1,107 @@
+.grid-card {
+    border-radius: var(--brd-rnd-base);
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    gap: var(--gap-base);
+    position: relative;
+    background-color: var(--clr-base-main-mostly-transparent);
+    backdrop-filter: var(--blur-base);
+    padding: var(--pad-md);
+}
+
+.grid-card::after {
+    content: "";
+    position: absolute;
+    inset: var(--pad-xs);
+    background-color: var(--clr-base-alt-semi-transparent);
+    border-radius: inherit;
+}
+
+.grid-card p,
+.grid-card div {
+    z-index: 1;
+}
+
+.span-all {
+    grid-column: span 4;
+    grid-row: span 3;
+    max-width: 100%;
+    padding: var(--pad-lg);
+}
+
+.span-1 {
+    grid-column: span 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.span-1 p:nth-child(2) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-md);
+}
+
+.span-4 {
+    grid-column: span 4;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.span-4 > p {
+    flex: 0;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    gap: var(--gap-lg);
+    border: var(--brd-accent);
+    overflow: scroll;
+    border-radius: var(--brd-rnd-base);
+    padding-inline: var(--pad-base);
+}
+
+.card-header {
+    color: var(--clr-text-alt);
+}
+
+.card-content {
+    border-radius: inherit;
+    width: 100%;
+    box-shadow: 0px 2px 4px 4px var(--clr-base-main-semi-opaque);
+    display: flex;
+    gap: var(--gap-xs);
+    padding: var(--pad-base);
+}
+
+.card-unit-wrapper {
+    color: var(--clr-text-alt);
+}
+
+.grid-card-data-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 1;
+}
+
+.grid-card-data-wrapper p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-with-unit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-xs);
+}

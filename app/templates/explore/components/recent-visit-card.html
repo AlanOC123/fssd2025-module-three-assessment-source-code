@@ -13,7 +13,7 @@
 
         <div class="content-container">
             <div class="to-planet-container">
-                <a href="{{ url_for('explore.view_planet', planet_id=id) }}">
+                <a href="{{ url_for('explore.planet_selected', planet_id=id) }}">
                     See {{ label }}
                 </a>
                 <div class="to-planet-icon-container">
@@ -32,7 +32,7 @@
 
         <div class="content-container">
             <div class="to-planet-container">
-                <a href="{{ url_for('explore.planet_list', filter_key='all') }}" class="to-planet-link">
+                <a href="{{ url_for('explore.planets_default') }}" class="to-planet-link">
                     See All
                 </a>
                 <div class="to-planet-icon-container">

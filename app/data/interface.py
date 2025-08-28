@@ -13,12 +13,33 @@ def _load_planets():
     except json.JSONDecodeError as e:
         raise RuntimeError(f"Invalid JSON in {DATA_PATH}") from e
 
-def get_planet_by_id(*planet_id: str):
-    all_planets = _load_planets()
-    return [all_planets.get(p) for p in planet_id]
+def get_planet_main_data(planet):
+    return planet.get("mainData")
 
-def get_planet_by_name(planet_name: str):
-    return next((p for p in _load_planets().values() if p.get("name") == planet_name), None)
-
-def get_planets(filter_key=None):
+def get_planets(sort_by=None, search_term=None) -> list:
     return list(_load_planets().values())
+
+def get_planet_by_id(planet_id: str):
+    all_planets = _load_planets()
+    return all_planets.get(planet_id)
+
+def get_planet_data(planet_id) -> list | None:
+    if not planet_id:
+        return None
+
+    planet = get_planet_by_id(planet_id)
+
+    if not planet:
+        return None
+
+    planet_data = planet["planetData"]
+    return list(planet_data)
+
+def get_planet_names():
+    return [ p.get("name") for p in get_planets() ]
+
+def get_planet_taglines():
+    return [ p.get("tagline") for p in get_planets() ]
+
+def get_planet_images():
+    return

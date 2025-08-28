@@ -4,7 +4,7 @@
   <!-- meta, tokens, reset, etc. -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}Planet . - {% block page_name %}{% endblock %}{% endblock %}</title>
+    <title>{% block title %}Planet.{% block page_name %}{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/root.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/typography.css') }}">
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/button.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/planet-card.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='app/assets/icons/favicon.ico') }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/d9deb4df99.js" crossorigin="anonymous"></script>
     {% block styles %}{% endblock %}
