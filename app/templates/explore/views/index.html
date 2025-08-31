@@ -12,48 +12,31 @@
     <div id="bg-img">
         <img src="{{ url_for('static', filename='explore/assets/hero.jpg') }}" alt="">
     </div>
-    <div class="flex-container">
-        <div id="hero" class="sub-wrapper">
-            {% set sentence = "EXPLORE THE SOL" %}
-            <h1 class="hero-text">{{ sentence|replace(' ', '\n') }} SYSTEM</h1>
+        <div id="hero">
+            <h1 class="hero-text">Explore</h1>
+            <h2 class="hero-text">The Solar System</h2>
         </div>
 
         {% if recently_viewed %}
         <div id="recents" class="sub-wrapper">
             <h3>Recent Visits</h3>
-            <ul id="planet-list">
+            <ul class="planet-list" id="recent-visit-list">
                 {% from "explore/components/planet-card.html" import planet_card %}
                 {% for planet in recently_viewed %}
                     <li class="planet-list-item">
                         {{
-                            planet_card(id=planet.id, name=planet.name, sprite=planet.media.sprite, tagline=planet.tagline)
+                            planet_card(
+                                href=url_for('explore.planet_selected', planet_id=planet.id),
+                                name=planet.name,
+                                sprite=url_for('static', filename=planet.media.sprite),
+                                tagline=planet.tagline
+                            )
                         }}
                     </li>
                 {% endfor %}
-                <li class="planet-list-item">
-                    <article class="planet-card">
-                        <div class="planet-img">
-                            <img
-                            src="{{ url_for('static', filename='app/assets/planets/sprites/sun.png') }}" alt="A high res image of the sun"
-                            >
-                        </div>
-
-                        <div class="planet-content">
-                            <a href="{{ url_for('explore.planets_default') }}"></a>
-                            <h3 class="planet-name">See All</h3>
-                            <h4 class="planet-tagline"></h4>
-                        </div>
-
-                        <div class="card-icon">
-                            <a href="{{ url_for('explore.planets_default') }}" class="icon-container">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </article>
-                </li>
+                <li class="planet-list-item">{{ planet_card() }}</li>
             </ul>
         </div>
         {% endif %}
-    </div>
 </div>
 {% endblock %}

@@ -16,5 +16,6 @@
     --brd-main: solid 2px var(--clr-base-main);
     --brd-alt: solid 2px var(--clr-base-alt);
     --brd-accent: solid 2px var(--clr-accent);
+    --brd-accent-alt: solid 2px var(--clr-accent-alt);
     --brd-bottom-thin: solid 1px var(--clr-base-main)
 }

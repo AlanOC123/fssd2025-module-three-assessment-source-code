@@ -1,19 +1,32 @@
-{% macro planet_card(sprite, name, tagline, id) %}
+{% macro planet_card(sprite=url_for('static', filename='app/assets/planets/sprites/sun.png'), name="See All", tagline="", href=url_for('explore.planets_default'), id="") %}
 <article class="planet-card">
     <div class="planet-img">
-        <img src="{{ url_for('static', filename=sprite) }}" alt="A high res image of {{ name }}">
+        <img
+        src="{{ sprite }}" alt="A high res image of {{ name }}"
+        {% if id %}style="view-transition-name: img-{{ id }}"{% endif %}
+        >
     </div>
 
     <div class="planet-content">
-        <a href="{{ url_for('explore.planet_selected', planet_id=id) }}"></a>
-        <h3 class="planet-name">{{ name }}</h3>
-        <h4 class="planet-tagline">{{ tagline }}</h4>
-    </div>
+        <div class="planet-data">
+            <h3
+            class="planet-name"
+            {% if id %}style="view-transition-name: name-{{ id }}"{% endif %}
+            >{{ name }}</h3>
+            <h4
+            class="planet-tagline"
+            {% if id %}style="view-transition-name: tagline-{{ id }}"{% endif %}
+            >
+            {{ tagline }}
+        </h4>
+        </div>
+        <a href="{{ href }}"></a>
 
-    <div class="card-icon">
-        <a href="{{ url_for('explore.planet_selected', planet_id=id) }}" class="icon-container">
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <div class="card-icon">
+            <a href="{{ href }}" class="icon-container">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
 </article>
 {% endmacro %}

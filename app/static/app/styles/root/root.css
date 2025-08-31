@@ -10,17 +10,58 @@
 
     /* Header */
     --header-height: 64px;
-    --height-with-header: calc(100% - var(--header-height))
+    --height-with-header: calc(100% - var(--header-height));
+
+    --bp-sm: 425px;
+    --bp-md: 1024px;
+    --bp-lg: 1600px;
+}
+
+html, body { overflow-x: clip; }
+
+/* Clamp every snapshot layer */
+::view-transition,
+::view-transition-group(root),
+::view-transition-image-pair(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  overflow: hidden;
+  inset: 0;
+  max-width: 100dvw;
+  max-height: 100dvh;
 }
 
 html,
 body {
-    width: 100dvw;
-    height: 100dvh;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: clip;
 }
 
 main {
-    overflow: scroll;
+    overflow-y: auto;
     width: 100%;
     height: 100%;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent-alt);
+}
+
+@supports (scrollbar-gutter: stable) {
+  html { scrollbar-gutter: stable both-edges; }
 }

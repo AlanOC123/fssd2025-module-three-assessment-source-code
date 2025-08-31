@@ -21,7 +21,10 @@ def _get_valid_planet_or_404(planet_id: str):
 def _get_page_payload(curr_planet_id: str):
     all_planets = get_planets()
     curr_planet = _get_valid_planet_or_404(curr_planet_id)
-    return { "curr_planet": curr_planet, "all_planets": all_planets }
+    alt_data = curr_planet.get('altData')
+    data_headings = [node.get('key') for node in alt_data]
+    print(data_headings)
+    return { "curr_planet": curr_planet, "all_planets": all_planets, "data_headings": data_headings }
 
 
 @bp.get('/planets', endpoint='planets_default')

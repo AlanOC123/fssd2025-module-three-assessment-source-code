@@ -19,28 +19,72 @@
         <div id="select-planet" class="page-component">
             <div id="header-container" class="page-subcomponent">
                 <h2>Select Planet</h2>
+                <button class="open-planet-list">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
             </div>
 
             <div id="planet-list-container" class="page-subcomponent">
-                <ul id="planet-list">
+                <ul class="planet-list">
                     {% from "explore/components/planet-card.html" import planet_card %}
                     {% for planet in planet_data.all_planets %}
+                    {% if planet.mainData.id != planet_data.curr_planet.mainData.id %}
                     <li class="planet-list-item">
-                        {{
-                            planet_card(
-                                sprite=planet.mainData.media.sprite,
-                                name=planet.mainData.name,
-                                tagline=planet.mainData.tagline,
-                                id=planet.mainData.id,
-                            )
-                        }}
+                            {{
+                                planet_card(
+                                    sprite=url_for('static', filename=planet.mainData.media.sprite),
+                                    name=planet.mainData.name,
+                                    tagline=planet.mainData.tagline,
+                                    href=url_for('explore.planet_selected', planet_id=planet.mainData.id),
+                                    id=planet.mainData.id
+                                )
+                            }}
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </ul>
             </div>
         </div>
 
         <div id="planet-data" class="page-component">
+            <div id="planet-cover-img"></div>
+            <div id="planet-name-container">
+                <h1
+                class="planet-name"
+                style="view-transition-name: name-{{ planet_data.curr_planet.mainData.id }}"
+                >
+                    {{ planet_data.curr_planet.mainData.name }}
+                </h1>
+                <button class="open-planet-list">
+                        {% from "app/components/icons.html" import planet_list_icon %}
+                        {{ planet_list_icon() }}
+                </button>
+            </div>
+
+            <div id="planet-data-view-select-container">
+                <h3>Data Views</h3>
+                <ul class="planet-data-view-list">
+                    {% from "explore/components/view-select-btn.html" import view_select_btn %}
+                    {% for heading in planet_data.data_headings %}
+                        <li class="planet-data-view-list-item">{{ view_select_btn(heading) }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="planet-content-container">
+                <div id="planet-img-container">
+                    <img
+                    src="{{ url_for('static', filename=planet_data.curr_planet.mainData.media.sprite) }}"
+                    style="view-transition-name: img-{{ planet_data.curr_planet.mainData.id }}"
+                    alt=""
+                    >
+                </div>
+                <div id="planet-data-container">
+                    <div class="data-window">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 {% endblock %}
