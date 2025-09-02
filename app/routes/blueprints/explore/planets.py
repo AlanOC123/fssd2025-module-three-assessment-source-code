@@ -1,6 +1,6 @@
-from flask import render_template, redirect, url_for, Response, session, request, abort
+from flask import render_template, session, abort
 from . import bp
-from app.data.interface import get_planet_by_id, get_planet_data, get_planets
+from app.data.interface import get_planet_by_id, get_planets
 
 def update_recents(planet_id: str, limit: int = 3) -> None:
     recents = list(session.get("recently_viewed", []))

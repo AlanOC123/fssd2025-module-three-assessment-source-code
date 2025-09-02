@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block page_name %}Timeline{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='timeline/views/index/style.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='timeline/views/index/script.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="explore-home" class="page-grid">
+    <div id="decade-select">
+        <div id="timeline-bar"></div>
+        <ul id="decade-list">
+            {% for node in timeline_data %}
+            {% from "timeline/components/timeline-card.html" import timeline_card %}
+                <li class="decade-list-item">
+                    {{ timeline_card(img=node.img, name=node.name, milestones=node.milestones) }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,110 @@
+{
+    "1950s": {
+        "start": 1950,
+        "end": 1959,
+        "mainImg": "timeline/assets/1950s/hero.jpg",
+        "numMilestones": 6,
+        "milestones": [
+            {
+                "eventTitle": "Sputnik 1 Launch",
+                "eventSubtitle": "The Beginning",
+                "eventDate": { "day": 4, "month": "October", "year": 1957 },
+                "dateISO": "1957-10-04",
+                "eventDescription": "First artificial Earth satellite. Transmitted simple radio beeps and was tracked worldwide before reentering after ~3 months.",
+                "actors": [ "Soviet Union" ],
+                "significance": [
+                    "Catalyzed the Space Race and rapid investment in science/engineering education and R&D",
+                    "Demonstrated long-range rocket capability with major geopolitical impact"
+                ],
+                "img": "timeline/assets/1950s/milestone-1.jpg"
+            },
+            {
+                "eventTitle": "Sputnik 2 (Laika)",
+                "eventSubtitle": "First Animal in Orbit",
+                "eventDate": { "day": 3, "month": "November", "year": 1957 },
+                "dateISO": "1957-11-03",
+                "eventDescription": "Carried the dog Laika into orbit to study life support and biomedical responses to spaceflight. No recovery system was available.",
+                "actors": [ "Soviet Union" ],
+                "significance": [
+                    "Advanced bioastronautics and life-support design for later human flights",
+                    "Raised early ethical debates about animals in space research"
+                ],
+                "img": "timeline/assets/1950s/milestone-2.jpg"
+            },
+            {
+                "eventTitle": "Explorer 1",
+                "eventSubtitle": "First U.S. Satellite",
+                "eventDate": { "day": 31, "month": "January", "year": 1958 },
+                "dateISO": "1958-01-31",
+                "eventDescription": "JPL/ABMA launch of the first American satellite. Its instruments detected charged-particle counts that revealed Earth’s radiation belts.",
+                "actors": [ "United States" ],
+                "significance": [
+                    "Discovery of the Van Allen radiation belts, foundational to space environment science",
+                    "Established a working U.S. orbital launch capability"
+                ],
+                "img": "timeline/assets/1950s/milestone-3.jpg"
+            },
+            {
+                "eventTitle": "Vanguard 1",
+                "eventSubtitle": "First Solar-Powered Satellite",
+                "eventDate": { "day": 17, "month": "March", "year": 1958 },
+                "dateISO": "1958-03-17",
+                "eventDescription": "Tiny 1.47 kg spacecraft using solar cells to power its transmitter. Provided geodetic data on Earth’s shape and atmospheric drag.",
+                "actors": [ "United States" ],
+                "significance": [
+                    "Proved solar power for spacecraft, a standard ever since",
+                    "Long orbital lifetime enabled studies of upper-atmosphere density"
+                ],
+                "img": "timeline/assets/1950s/milestone-4.jpg"
+            },
+            {
+                "eventTitle": "Luna 2",
+                "eventSubtitle": "First Impact on the Moon",
+                "eventDate": { "day": 14, "month": "September", "year": 1959 },
+                "dateISO": "1959-09-14",
+                "eventDescription": "Soviet probe performed the first successful lunar encounter, impacting near Mare Imbrium after a direct trajectory.",
+                "actors": [ "Soviet Union" ],
+                "significance": [
+                    "First human-made object to reach another celestial body",
+                    "Validated navigation and deep-space tracking techniques"
+                ],
+                "img": "timeline/assets/1950s/milestone-5.jpg"
+            },
+            {
+                "eventTitle": "Luna 3",
+                "eventSubtitle": "First Images of the Moon’s Far Side",
+                "eventDate": { "day": 7, "month": "October", "year": 1959 },
+                "dateISO": "1959-10-07",
+                "eventDescription": "Returned grainy but historic photographs of the lunar far side using onboard film development and scan-line transmission.",
+                "actors": [ "Soviet Union" ],
+                "significance": [
+                    "Revealed far-side terrain, reshaping lunar mapping and geology",
+                    "Demonstrated complex autonomous imaging and data relay in deep space"
+                ],
+                "img": "timeline/assets/1950s/milestone-6.jpg"
+            }
+        ],
+        "pseudoname": "Birth of the Space Age"
+    },
+    "1960s": {
+
+    },
+    "1970s": {
+
+    },
+    "1980s": {
+
+    },
+    "1990s": {
+
+    },
+    "2000s": {
+
+    },
+    "2010s": {
+
+    },
+    "2020s": {
+
+    }
+}

@@ -143,6 +143,7 @@
     align-items: center;
     overflow-x: auto;
     gap: var(--gap-base);
+    padding-bottom: var(--pad-base);
     scroll-timeline-name: --data-view-list;
     view-timeline-name: --data-view-list;
 }
@@ -242,6 +243,7 @@
 #planet-img-container img {
     object-fit: cover;
     object-position: center;
+    width: 90%;
 }
 
 #planet-data-container {

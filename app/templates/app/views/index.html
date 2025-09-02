@@ -8,7 +8,7 @@
 <div id="home-content">
     <section id="explore" class="section-container">
         <div class="section-bg-img">
-            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/explore.jpg') }}" alt="Hero image">
+            <img style="view-transition-name: main-bg-img-explore;" src="{{ url_for('static', filename='app/assets/backgrounds/index/explore.jpg') }}" alt="Hero image">
         </div>
 
         <div class="section-content">
@@ -20,16 +20,16 @@
         </div>
     </section>
 
-    <section id="compare" class="section-container">
+    <section id="timeline" class="section-container">
         <div class="section-bg-img">
-            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/compare.jpg') }}" alt="Hero image">
+            <img style="view-transition-name: main-bg-img-timeline;" src="{{ url_for('static', filename='app/assets/backgrounds/index/timeline.jpg') }}" alt="Hero image">
         </div>
 
         <div class="section-content">
             <h2 class="section-tagline"><span class="tagline-main">Compare</span> <span class="tagline-alt">To Understand Deeper</span></h2>
             <div class="section-btn">
                 {% from "app/components/buttons.html" import primary_btn_with_link %}
-                {{ primary_btn_with_link("Compare", href=url_for('compare.index')) }}
+                {{ primary_btn_with_link("Timeline", href=url_for('timeline.index')) }}
             </div>
         </div>
     </section>

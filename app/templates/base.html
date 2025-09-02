@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- meta, tokens, reset, etc. -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Planet.{% block page_name %}{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/root.css') }}">
@@ -35,7 +35,7 @@
                         <a href="{{ url_for('explore.index') }}" class="nav-list-link {% if pg_name == 'explore' %} active {% endif %}">Explore</a>
                     </li>
                     <li class="nav-list-item">
-                        <a href="{{ url_for('compare.index') }}" class="nav-list-link {% if pg_name == 'compare' %} active {% endif %}">Compare</a>
+                        <a href="{{ url_for('timeline.index') }}" class="nav-list-link {% if pg_name == 'timeline' %} active {% endif %}">Timeline</a>
                     </li>
                     <li class="nav-list-item">
                         <a href="{{ url_for('quiz.index') }}" class="nav-list-link {% if pg_name == 'test' %} active {% endif %}">Quiz</a>
@@ -44,7 +44,6 @@
             </nav>
             {% from "app/components/buttons.html" import options_button %}
             {{ options_button(id="open-nav", style="header-section hidden") }}
-        </div>
     </header>
 
     <main>
@@ -61,7 +60,7 @@
                     <a href="{{ url_for('sitemap') }}" class="nav-link" id="to-sitemap">SiteMap</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" id="to-t-and-c">Terms & Conditions</a>
+                    <a href="" class="nav-link" id="to-t-and-c">Terms &amp; Conditions</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link" id="to-contact">Contact Us</a>

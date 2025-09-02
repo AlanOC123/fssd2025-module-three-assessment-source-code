@@ -1,0 +1,15 @@
+{% macro timeline_card(img="", name="", milestones="") %}
+<article class="timeline-card" >
+    <a href="#" class="decade-link">
+        <div class="timeline-img">
+            {% if img != "" %}
+            <img src="{{ url_for('static', filename=img) }}" alt="">
+            {% endif %}
+        </div>
+
+        <div class="timeline-data">
+            <h4>{{ name }}</h4>
+        </div>
+    </a>
+</article>
+{% endmacro %}
