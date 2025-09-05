@@ -45,6 +45,11 @@
     --clr-accent-semi-transparent: hsl(from var(--clr-accent) h s l / var(--alpha-semi-transparent));
     --clr-accent-mostly-transparent: hsl(from var(--clr-accent) h s l / var(--alpha-mostly-transparent));
 
+    --clr-accent-alt-mostly-opaque: hsl(from var(--clr-accent-alt) h s l / var(--alpha-mostly-opaque));
+    --clr-accent-alt-semi-opaque: hsl(from var(--clr-accent-alt) h s l / var(--alpha-semi-opaque));
+    --clr-accent-alt-semi-transparent: hsl(from var(--clr-accent-alt) h s l / var(--alpha-semi-transparent));
+    --clr-accent-alt-mostly-transparent: hsl(from var(--clr-accent-alt) h s l / var(--alpha-mostly-transparent));
+
     --clr-transparent: hsl(from var(--clr-base-main) h s l / var(--alpha-transparent))
 }
 

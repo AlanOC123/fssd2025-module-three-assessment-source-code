@@ -48,5 +48,10 @@ def get_planet_data(planet_id) -> list | None:
 def get_timeline() -> list:
     return list(_load_timelines().values())
 
+def get_timeline_data(timeline_id):
+    timelines = _load_timelines();
+    timeline = timelines.get(timeline_id)
+    return dict(timeline)
+
 def get_decades() -> list:
     return list(_load_timelines().keys())

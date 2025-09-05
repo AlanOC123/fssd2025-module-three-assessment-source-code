@@ -266,7 +266,7 @@
     grid-auto-rows: max(fit-content, 100px);
     justify-content: center;
     gap: var(--gap-base);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .grid-panel {
@@ -332,11 +332,6 @@
     align-items: center;
     gap: var(--gap-sm);
     overflow-x: auto;
-}
-
-.list-wrapper::-webkit-scrollbar,
-.tuple-wrapper::-webkit-scrollbar {
-    display: none;
 }
 
 .list-element-wrapper {

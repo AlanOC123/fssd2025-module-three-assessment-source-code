@@ -1,0 +1,49 @@
+{% macro milestone_container(id, title, subtitle, date, description, actors, significance, img, next) %}
+
+<section class="milestone" id="milestone-{{ id }}">
+    <div class="milestone-hero">
+        <img src="{{ url_for('static', filename=img) }}" alt="">
+    </div>
+
+    <div class="milestone-title">
+            <h2 class="milestone-title-text">{{ title }}</h2>
+            <div class="milestone-subtitle">
+            <h3 class="milestone-subtitle-text">{{ subtitle }}</h3>
+                <p class="milestone-date">
+                    Date:
+                    <span>{{ date.day }}</span>
+                    <span>{{ date.month }}</span>
+                    <span>{{ date.year }}</span>
+                </p>
+            </div>
+    </div>
+
+    <div class="milestone-data">
+        <div class="milestone-description">
+            <h4 class="milestone-header">Description</h4>
+            <p class="milestone-description-text">
+                {{ description }}
+            </p>
+        </div>
+
+        <div class="milestone-actors">
+            <h4 class="milestone-header">Actors</h4>
+            <ul class="actor-list">
+                {% for actor in actors %}
+                    <li class="actor-list-item">{{ actor }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="milestone-significance">
+            <h4 class="milestone-header">Significance</h4>
+            <ul class="significance-list">
+                {% for item in significance %}
+                    <li class="significance-list-item">{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endmacro %}

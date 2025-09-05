@@ -14,10 +14,6 @@
     scroll-padding-bottom: var(--sp-3xl);
 }
 
-.planet-list::-webkit-scrollbar {
-    display: none;
-}
-
 ::view-transition-group(planet-list) {
     animation-duration: var(--trans-dur-lg);
     animation-timing-function: var(--trans-time-base);

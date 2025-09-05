@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="timeline">
+    <a href="{{ url_for('timeline.index') }}" id="return-to-timeline">
+        <i class="fa-solid fa-globe"></i>
+    </a>
+    <div id="timeline-scroll-progress">
+        <div id="timeline-progress-bar"></div>
+    </div>
+
+    <section id="hero" class="milestone">
+        <div class="border-wrapper">
+            <h1 class="hero-image">{{ timeline_data.id }}</h1>
+            <h2 class="hero-text">WELCOME TO THE <span>{{ timeline_data.pseudoname | upper }}</span></h2>
+        </div>
+    </section>
+
+    {% from "timeline/components/milestone-container.html" import milestone_container %}
+    {% for m in timeline_data.milestones %}
+        {{
+            milestone_container(
+                id=m.id,
+                title=m.eventTitle,
+                subtitle=m.eventSubtitle,
+                date=m.eventDate,
+                description=m.eventDescription,
+                actors=m.actors,
+                significance=m.significance,
+                img=m.img,
+                next=m.next
+            )
+        }}
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{url_for('static', filename='timeline/views/history/style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='timeline/views/history/script.js') }}"></script>
+{% endblock %}

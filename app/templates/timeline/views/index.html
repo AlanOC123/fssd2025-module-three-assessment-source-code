@@ -12,15 +12,22 @@
 {% block content %}
 <div id="explore-home" class="page-grid">
     <div id="decade-select">
-        <div id="timeline-bar"></div>
-        <ul id="decade-list">
-            {% for node in timeline_data %}
-            {% from "timeline/components/timeline-card.html" import timeline_card %}
-                <li class="decade-list-item">
-                    {{ timeline_card(img=node.img, name=node.name, milestones=node.milestones) }}
-                </li>
-            {% endfor %}
-        </ul>
+        <div id="hero-text">
+            <h1>Explore a Decade</h1>
+            <h2>Select a Node</h2>
+        </div>
+
+        <div id="timeline">
+            <div id="timeline-bar"></div>
+            <ul id="decade-list">
+                {% for node in timeline_data %}
+                {% from "timeline/components/timeline-card.html" import timeline_card %}
+                    <li class="decade-list-item">
+                        {{ timeline_card(img=node.mainImg, name=node.pseudoname, timeline_id=node.id) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock %}
