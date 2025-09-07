@@ -1,3 +1,97 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block page_name %}Quiz{% endblock %} {% block
+content %}
 
-{% block page_name %} - Quiz{% endblock %}
+<div class="page-grid">
+    <div id="quiz-container" class="content-container">
+        <h1>Build a Quiz</h1>
+        <form id="quiz-builder" action="">
+            <h2>Quiz Builder</h2>
+            <fieldset class="form-number-container">
+                <legend>Number of Questions</legend>
+                <span>1</span><input type="range" name="num_questions" min="1" max="20" value="10" /><span>20</span>
+            </fieldset>
+
+            <fieldset class="form-option-container">
+                <legend>Time Limit</legend>
+                <select name="time_limit" id="time_limit">
+                    <option value="5">Short</option>
+                    <option value="10">Medium</option>
+                    <option value="15">Long</option>
+                    <option value="999">Unlimited</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="form-checkbox-container">
+                <legend>Subject</legend>
+
+                <div class="form-checkbox-set" id="exploration">
+                    <h4>Exploration</h4>
+                    <div class="form-checkbox">
+                        <input
+                            type="checkbox"
+                            class="explore-subject"
+                            name="subject"
+                            id="earth"
+                            value="earth"
+                        />
+                        <label for="earth">Earth</label>
+                    </div>
+                    <div class="form-checkbox">
+                        <input
+                            type="checkbox"
+                            class="explore-subject"
+                            name="subject"
+                            id="mars"
+                            value="mars"
+                        />
+                        <label for="mars">Mars</label>
+                    </div>
+                </div>
+
+                <div class="form-checkbox-set" id="exploration">
+                    <h4>History</h4>
+                    <div class="form-checkbox">
+                        <input
+                            type="checkbox"
+                            name="subject"
+                            id="1950s"
+                            value="1950s"
+                        />
+                        <label for="earth">1950s</label>
+                    </div>
+                    <div class="form-checkbox">
+                        <input
+                            type="checkbox"
+                            name="subject"
+                            id="1960s"
+                            value="1960s"
+                        />
+                        <label for="1960s">1960s</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-option-container">
+                <legend>Difficulty</legend>
+                <select name="difficulty" id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="enthusiast">Enthusiast</option>
+                </select>
+            </fieldset>
+
+            <div class="form-controls">
+                <button type="submit">Start</button>
+                <button type="reset">Reset</button>                
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %} {% block styles %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='quiz/views/index/style.css') }}"
+/>
+{% endblock %}

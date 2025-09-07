@@ -21,11 +21,11 @@
             <div id="timeline-bar"></div>
             <ul id="decade-list">
                 {% for node in timeline_data %}
-                {% from "timeline/components/timeline-card.html" import timeline_card %}
+                {% from "timeline/components/timeline-card.html" import timeline_card with context %}
                     <li class="decade-list-item">
                         {{ 
                             timeline_card(
-                                img_key=node.img, 
+                                img_key=node.img_key, 
                                 name=node.pseudoname, 
                                 timeline_id=node.id
                             ) 

@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    {% from "timeline/components/milestone-container.html" import milestone_container %}
+    {% from "timeline/components/milestone-container.html" import milestone_container with context %}
     {% for m in timeline_data.milestones %}
         {{
             milestone_container(
@@ -27,8 +27,7 @@
                 description=m.eventDescription,
                 actors=m.actors,
                 significance=m.significance,
-                img=m.img,
-                next=m.next
+                img_key=m.img_key,
             )
         }}
     {% endfor %}
