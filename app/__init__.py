@@ -1,4 +1,5 @@
 from flask import Flask
+from app.data.interface import get_assets_map
 
 def create_app():
     app = Flask(__name__)
@@ -11,6 +12,9 @@ def create_app():
             SITE_NAME=app.config["SITE_NAME"],
             SITE_NAME_ACCESSIBLE=app.config["SITE_NAME_ACCESSIBLE"],
             SITE_TAGLINE=app.config["SITE_TAGLINE"],
+            ASSET_ORIGIN=app.config["ASSET_ORIGIN"],
+            ASSET_VERSION=app.config["ASSET_VERSION"],
+            ASSET_MAP=get_assets_map()
         )
 
     from .routes import routes_list

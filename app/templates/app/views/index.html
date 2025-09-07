@@ -4,11 +4,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='app/views/index/style.css') }}">
 {% endblock %}
 
+{% block scripts %}
+    <script src="{{ url_for('static', filename='app/views/index/script.js') }}" defer></script>
+{% endblock %}
+
 {% block content %}
 <div id="home-content">
     <section id="explore" class="section-container">
         <div class="section-bg-img">
-            <img style="view-transition-name: main-bg-img-explore;" src="{{ url_for('static', filename='app/assets/backgrounds/index/explore.jpg') }}" alt="Hero image">
+            <img id="explore-img" style="view-transition-name: main-bg-img-explore;" src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['explore-hero'] }}" alt="Hero image">
         </div>
 
         <div class="section-content">
@@ -22,7 +26,7 @@
 
     <section id="timeline" class="section-container">
         <div class="section-bg-img">
-            <img style="view-transition-name: main-bg-img-timeline;" src="{{ url_for('static', filename='app/assets/backgrounds/index/timeline.jpg') }}" alt="Hero image">
+            <img id="timeline-img" style="view-transition-name: main-bg-img-timeline;" src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['timeline-hero'] }}" alt="Hero image">
         </div>
 
         <div class="section-content">
@@ -36,7 +40,7 @@
 
     <section id="test" class="section-container">
         <div class="section-bg-img">
-            <img src="{{ url_for('static', filename='app/assets/backgrounds/index/quiz.jpg') }}" alt="Hero image">
+            <img id="quiz-img" src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['quiz-hero'] }}" alt="Hero image">
         </div>
 
         <div class="section-content">

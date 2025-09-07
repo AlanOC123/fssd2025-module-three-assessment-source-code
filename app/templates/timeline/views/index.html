@@ -23,7 +23,13 @@
                 {% for node in timeline_data %}
                 {% from "timeline/components/timeline-card.html" import timeline_card %}
                     <li class="decade-list-item">
-                        {{ timeline_card(img=node.mainImg, name=node.pseudoname, timeline_id=node.id) }}
+                        {{ 
+                            timeline_card(
+                                img_key=node.img, 
+                                name=node.pseudoname, 
+                                timeline_id=node.id
+                            ) 
+                        }}
                     </li>
                 {% endfor %}
             </ul>

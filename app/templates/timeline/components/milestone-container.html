@@ -1,8 +1,8 @@
-{% macro milestone_container(id, title, subtitle, date, description, actors, significance, img, next) %}
+{% macro milestone_container(id, title, subtitle, date, description, actors, significance, img_key, next) %}
 
 <section class="milestone" id="milestone-{{ id }}">
     <div class="milestone-hero">
-        <img src="{{ url_for('static', filename=img) }}" alt="">
+        <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[img_key] }}" alt="">
     </div>
 
     <div class="milestone-title">

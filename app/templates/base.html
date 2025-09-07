@@ -4,6 +4,7 @@
   <!-- meta, tokens, reset, etc. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="asset-origin" content="{{ ASSET_ORIGIN }}">
     <title>{% block title %}Planet.{% block page_name %}{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/root.css') }}">
@@ -18,7 +19,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/button.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='app/assets/icons/favicon.ico') }}" type="image/x-icon">
+    <script src="{{ url_for('static', filename='app/modules/assetManager.js') }}" defer type="module"></script>
+    <link rel="shortcut icon" href="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['favicon'] }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/d9deb4df99.js" crossorigin="anonymous"></script>
     {% block styles %}{% endblock %}
 </head>
@@ -26,7 +28,7 @@
     <a class="skip-link" href="#content" style="display: none;">Skip to content</a>
     <header>
             <div id="website-logo" class="header-section">
-                <img src="{{ url_for('static', filename='app/assets/icons/website-logo.png') }}" alt="Website Logo">
+                <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['website-logo'] }}" alt="Website Logo">
                 <a href="{{ url_for('index') }}" id="to-home"></a>
             </div>
             <nav id="main-nav" class="header-section">

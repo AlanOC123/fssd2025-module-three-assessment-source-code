@@ -10,7 +10,7 @@
 {% block content %}
 <div id="explore-home" class="page-grid">
     <div id="bg-img">
-        <img style="view-transition-name: main-bg-img-explore;" src="{{ url_for('static', filename='app/assets/backgrounds/index/explore.jpg') }}" alt="">
+        <img style="view-transition-name: main-bg-img-explore;" src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['explore-hero'] }}" alt="">
     </div>
         <div id="hero">
             <h1 class="hero-text">Explore</h1>
@@ -21,14 +21,14 @@
         <div id="recents" class="sub-wrapper">
             <h3>Recent Visits</h3>
             <ul class="planet-list" id="recent-visit-list">
-                {% from "explore/components/planet-card.html" import planet_card %}
+                {% from "explore/components/planet-card.html" import planet_card with context %}
                 {% for planet in recently_viewed %}
                     <li class="planet-list-item">
                         {{
                             planet_card(
                                 href=url_for('explore.planet_selected', planet_id=planet.id),
                                 name=planet.name,
-                                sprite=url_for('static', filename=planet.media.sprite),
+                                sprite_key=planet.sprite,
                                 tagline=planet.tagline
                             )
                         }}

@@ -26,13 +26,13 @@
 
             <div id="planet-list-container" class="page-subcomponent">
                 <ul class="planet-list">
-                    {% from "explore/components/planet-card.html" import planet_card %}
+                    {% from "explore/components/planet-card.html" import planet_card with context %}
                     {% for planet in planet_data.all_planets %}
                     {% if planet.mainData.id != planet_data.curr_planet.mainData.id %}
                     <li class="planet-list-item">
                             {{
                                 planet_card(
-                                    sprite=url_for('static', filename=planet.mainData.media.sprite),
+                                    sprite_key=planet.mainData.sprite,
                                     name=planet.mainData.name,
                                     tagline=planet.mainData.tagline,
                                     href=url_for('explore.planet_selected', planet_id=planet.mainData.id),
@@ -74,7 +74,7 @@
             <div id="planet-content-container">
                 <div id="planet-img-container">
                     <img
-                    src="{{ url_for('static', filename=planet_data.curr_planet.mainData.media.sprite) }}"
+                    src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[planet_data.curr_planet.mainData.sprite] }}"
                     style="view-transition-name: img-{{ planet_data.curr_planet.mainData.id }}"
                     alt=""
                     >

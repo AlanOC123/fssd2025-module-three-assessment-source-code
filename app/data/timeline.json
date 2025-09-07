@@ -3,7 +3,7 @@
         "id": "1950s",
         "start": 1950,
         "end": 1959,
-        "mainImg": "timeline/assets/1950s/hero.jpg",
+        "img_key": "timeline-1950s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -14,12 +14,12 @@
                 "eventDate": { "day": 4, "month": "October", "year": 1957 },
                 "dateISO": "1957-10-04",
                 "eventDescription": "First artificial Earth satellite. Transmitted simple radio beeps and was tracked worldwide before reentering after ~3 months.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Catalyzed the Space Race and rapid investment in science/engineering education and R&D",
                     "Demonstrated long-range rocket capability with major geopolitical impact"
                 ],
-                "img": "timeline/assets/1950s/milestone-1.jpg"
+                "img_key": "timeline-1950s-m1"
             },
             {
                 "id": 2,
@@ -29,12 +29,12 @@
                 "eventDate": { "day": 3, "month": "November", "year": 1957 },
                 "dateISO": "1957-11-03",
                 "eventDescription": "Carried the dog Laika into orbit to study life support and biomedical responses to spaceflight. No recovery system was available.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Advanced bioastronautics and life-support design for later human flights",
                     "Raised early ethical debates about animals in space research"
                 ],
-                "img": "timeline/assets/1950s/milestone-2.jpg"
+                "img_key": "timeline-1950s-m2"
             },
             {
                 "id": 3,
@@ -44,12 +44,12 @@
                 "eventDate": { "day": 31, "month": "January", "year": 1958 },
                 "dateISO": "1958-01-31",
                 "eventDescription": "JPL/ABMA launch of the first American satellite. Its instruments detected charged-particle counts that revealed Earth’s radiation belts.",
-                "actors": [ "United States" ],
+                "actors": ["United States"],
                 "significance": [
                     "Discovery of the Van Allen radiation belts, foundational to space environment science",
                     "Established a working U.S. orbital launch capability"
                 ],
-                "img": "timeline/assets/1950s/milestone-3.jpg"
+                "img_key": "timeline-1950s-m3"
             },
             {
                 "id": 4,
@@ -59,12 +59,12 @@
                 "eventDate": { "day": 17, "month": "March", "year": 1958 },
                 "dateISO": "1958-03-17",
                 "eventDescription": "Tiny 1.47 kg spacecraft using solar cells to power its transmitter. Provided geodetic data on Earth’s shape and atmospheric drag.",
-                "actors": [ "United States" ],
+                "actors": ["United States"],
                 "significance": [
                     "Proved solar power for spacecraft, a standard ever since",
                     "Long orbital lifetime enabled studies of upper-atmosphere density"
                 ],
-                "img": "timeline/assets/1950s/milestone-4.jpg"
+                "img_key": "timeline-1950s-m4"
             },
             {
                 "id": 5,
@@ -74,12 +74,12 @@
                 "eventDate": { "day": 14, "month": "September", "year": 1959 },
                 "dateISO": "1959-09-14",
                 "eventDescription": "Soviet probe performed the first successful lunar encounter, impacting near Mare Imbrium after a direct trajectory.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "First human-made object to reach another celestial body",
                     "Validated navigation and deep-space tracking techniques"
                 ],
-                "img": "timeline/assets/1950s/milestone-5.jpg"
+                "img_key": "timeline-1950s-m5"
             },
             {
                 "id": 6,
@@ -89,12 +89,12 @@
                 "eventDate": { "day": 7, "month": "October", "year": 1959 },
                 "dateISO": "1959-10-07",
                 "eventDescription": "Returned grainy but historic photographs of the lunar far side using onboard film development and scan-line transmission.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Revealed far-side terrain, reshaping lunar mapping and geology",
                     "Demonstrated complex autonomous imaging and data relay in deep space"
                 ],
-                "img": "timeline/assets/1950s/milestone-6.jpg"
+                "img_key": "timeline-1950s-m6"
             }
         ],
         "pseudoname": "Birth of the Space Age"
@@ -103,7 +103,7 @@
         "id": "1960s",
         "start": 1960,
         "end": 1969,
-        "mainImg": "timeline/assets/1960s/hero.jpg",
+        "img_key": "timeline-1960s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -112,12 +112,12 @@
                 "eventDate": { "day": 12, "month": "April", "year": 1961 },
                 "dateISO": "1961-04-12",
                 "eventDescription": "Yuri Gagarin completed a single orbit of Earth aboard Vostok 1, safely returning after ~108 minutes.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "First crewed spaceflight; proved human survival in orbit",
                     "Shifted the geopolitical stakes of the Space Race"
                 ],
-                "img": "timeline/assets/1960s/milestone-1.jpg"
+                "img_key": "timeline-1960s-m1"
             },
             {
                 "eventTitle": "Telstar 1",
@@ -125,12 +125,12 @@
                 "eventDate": { "day": 10, "month": "July", "year": 1962 },
                 "dateISO": "1962-07-10",
                 "eventDescription": "AT&T’s Telstar 1 relayed the first live transatlantic television signals and telephone traffic.",
-                "actors": [ "United States", "AT&T", "NASA" ],
+                "actors": ["United States", "AT&T", "NASA"],
                 "significance": [
                     "Kick-started global satellite communications",
                     "Demonstrated commercial potential of space infrastructure"
                 ],
-                "img": "timeline/assets/1960s/milestone-2.jpg"
+                "img_key": "timeline-1960s-m2"
             },
             {
                 "eventTitle": "Voskhod 2 (Leonov EVA)",
@@ -138,12 +138,12 @@
                 "eventDate": { "day": 18, "month": "March", "year": 1965 },
                 "dateISO": "1965-03-18",
                 "eventDescription": "Cosmonaut Alexei Leonov conducted the first extravehicular activity (EVA), tethered outside the spacecraft for ~12 minutes.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Proved feasibility of EVA for assembly and repair",
                     "Highlighted life-support and suit engineering challenges"
                 ],
-                "img": "timeline/assets/1960s/milestone-3.jpg"
+                "img_key": "timeline-1960s-m3"
             },
             {
                 "eventTitle": "Luna 9",
@@ -151,12 +151,12 @@
                 "eventDate": { "day": 3, "month": "February", "year": 1966 },
                 "dateISO": "1966-02-03",
                 "eventDescription": "Uncrewed probe achieved the first soft landing on the Moon and transmitted panoramic surface images.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Demonstrated landing techniques for future missions",
                     "Provided ground-truth for lunar geology and surface mechanics"
                 ],
-                "img": "timeline/assets/1960s/milestone-4.jpg"
+                "img_key": "timeline-1960s-m4"
             },
             {
                 "eventTitle": "Surveyor 1",
@@ -164,12 +164,12 @@
                 "eventDate": { "day": 2, "month": "June", "year": 1966 },
                 "dateISO": "1966-06-02",
                 "eventDescription": "Surveyor 1 performed a soft landing and returned images and soil mechanics data from the lunar surface.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Validated Apollo landing site assumptions",
                     "Advanced understanding of lunar regolith bearing strength"
                 ],
-                "img": "timeline/assets/1960s/milestone-5.jpg"
+                "img_key": "timeline-1960s-m5"
             },
             {
                 "eventTitle": "Apollo 11",
@@ -177,22 +177,21 @@
                 "eventDate": { "day": 20, "month": "July", "year": 1969 },
                 "dateISO": "1969-07-20",
                 "eventDescription": "Neil Armstrong and Buzz Aldrin landed the Lunar Module Eagle in Mare Tranquillitatis; Armstrong’s first step occurred early July 21 UTC.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Fulfilled the lunar landing objective set in 1961",
                     "Returned samples and data that transformed planetary science"
                 ],
-                "img": "timeline/assets/1960s/milestone-6.jpg"
+                "img_key": "timeline-1960s-m6"
             }
         ],
         "pseudoname": "Age of Bravery"
     },
-    "1970s":
-    {
+    "1970s": {
         "id": "1970s",
         "start": 1970,
         "end": 1979,
-        "mainImg": "timeline/assets/1970s/hero.jpg",
+        "img_key": "timeline-1970s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -201,12 +200,12 @@
                 "eventDate": { "day": 11, "month": "April", "year": 1970 },
                 "dateISO": "1970-04-11",
                 "eventDescription": "An oxygen tank explosion crippled the spacecraft en route to the Moon. The crew returned safely after improvised repairs and mission control ingenuity.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Showcased crisis management and redundancy in spacecraft systems",
                     "Became a case study in mission safety and engineering under pressure"
                 ],
-                "img": "timeline/assets/1970s/milestone-1.jpg"
+                "img_key": "timeline-1970s-m1"
             },
             {
                 "eventTitle": "Salyut 1",
@@ -214,12 +213,12 @@
                 "eventDate": { "day": 19, "month": "April", "year": 1971 },
                 "dateISO": "1971-04-19",
                 "eventDescription": "The Soviet Union launched Salyut 1, the first crewed orbital space station, initiating long-duration habitation studies.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Pioneered orbital laboratories and living quarters",
                     "Began systematic research into human adaptation to microgravity"
                 ],
-                "img": "timeline/assets/1970s/milestone-2.jpg"
+                "img_key": "timeline-1970s-m2"
             },
             {
                 "eventTitle": "Pioneer 10",
@@ -227,12 +226,12 @@
                 "eventDate": { "day": 2, "month": "March", "year": 1972 },
                 "dateISO": "1972-03-02",
                 "eventDescription": "Pioneer 10 became the first spacecraft to traverse the asteroid belt and send close-up images of Jupiter.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Proved passage through asteroid belt was feasible",
                     "Revealed Jupiter’s intense radiation and magnetosphere"
                 ],
-                "img": "timeline/assets/1970s/milestone-3.jpg"
+                "img_key": "timeline-1970s-m3"
             },
             {
                 "eventTitle": "Skylab 2",
@@ -240,12 +239,12 @@
                 "eventDate": { "day": 25, "month": "May", "year": 1973 },
                 "dateISO": "1973-05-25",
                 "eventDescription": "After Skylab’s launch damage, the first crewed mission performed in-orbit repairs and began extended scientific operations.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Demonstrated orbital repair and improvisation capabilities",
                     "Collected solar, Earth-observing, and biomedical data"
                 ],
-                "img": "timeline/assets/1970s/milestone-4.jpg"
+                "img_key": "timeline-1970s-m4"
             },
             {
                 "eventTitle": "Apollo–Soyuz Test Project",
@@ -253,12 +252,12 @@
                 "eventDate": { "day": 15, "month": "July", "year": 1975 },
                 "dateISO": "1975-07-15",
                 "eventDescription": "U.S. Apollo and Soviet Soyuz spacecraft docked in orbit, marking the first joint international spaceflight during the Cold War.",
-                "actors": [ "United States", "Soviet Union" ],
+                "actors": ["United States", "Soviet Union"],
                 "significance": [
                     "Symbolized détente and technical cooperation",
                     "Validated docking and interface standards for future partnerships"
                 ],
-                "img": "timeline/assets/1970s/milestone-5.jpg"
+                "img_key": "timeline-1970s-m5"
             },
             {
                 "eventTitle": "Voyager 1 Launch",
@@ -266,22 +265,21 @@
                 "eventDate": { "day": 5, "month": "September", "year": 1977 },
                 "dateISO": "1977-09-05",
                 "eventDescription": "Voyager 1 launched on a trajectory to explore Jupiter, Saturn, and beyond, eventually becoming the most distant human-made object.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Returned unparalleled planetary science data",
                     "Carried the Golden Record as a cultural message to the cosmos"
                 ],
-                "img": "timeline/assets/1970s/milestone-6.jpg"
+                "img_key": "timeline-1970s-m6"
             }
         ],
         "pseudoname": "Age of Discovery"
     },
-    "1980s":
-    {
+    "1980s": {
         "id": "1980s",
         "start": 1980,
         "end": 1989,
-        "mainImg": "timeline/assets/1980s/hero.jpg",
+        "img_key": "timeline-1980s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -290,12 +288,12 @@
                 "eventDate": { "day": 12, "month": "April", "year": 1981 },
                 "dateISO": "1981-04-12",
                 "eventDescription": "The first orbital flight of the Space Shuttle program launched Columbia, proving a partially reusable spacecraft concept.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Pioneered reusable space transportation",
                     "Enabled frequent crewed missions and satellite deployment"
                 ],
-                "img": "timeline/assets/1980s/milestone-1.jpg"
+                "img_key": "timeline-1980s-m1"
             },
             {
                 "eventTitle": "Challenger STS-7",
@@ -303,12 +301,12 @@
                 "eventDate": { "day": 18, "month": "June", "year": 1983 },
                 "dateISO": "1983-06-18",
                 "eventDescription": "Sally Ride flew aboard Space Shuttle Challenger, becoming the first U.S. woman astronaut in orbit.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Expanded astronaut corps diversity",
                     "Inspired a new generation of scientists and engineers"
                 ],
-                "img": "timeline/assets/1980s/milestone-2.jpg"
+                "img_key": "timeline-1980s-m2"
             },
             {
                 "eventTitle": "Challenger Disaster",
@@ -316,12 +314,12 @@
                 "eventDate": { "day": 28, "month": "January", "year": 1986 },
                 "dateISO": "1986-01-28",
                 "eventDescription": "Space Shuttle Challenger broke apart 73 seconds after liftoff due to an O-ring failure, killing all seven crew members.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Led to a 32-month grounding of the Shuttle fleet",
                     "Exposed organizational and safety culture issues in NASA"
                 ],
-                "img": "timeline/assets/1980s/milestone-3.jpg"
+                "img_key": "timeline-1980s-m3"
             },
             {
                 "eventTitle": "Mir Space Station",
@@ -329,12 +327,12 @@
                 "eventDate": { "day": 20, "month": "February", "year": 1986 },
                 "dateISO": "1986-02-20",
                 "eventDescription": "The Soviet Union launched the Mir core module, beginning construction of the first modular space station, continuously inhabited for long periods.",
-                "actors": [ "Soviet Union" ],
+                "actors": ["Soviet Union"],
                 "significance": [
                     "Pushed endurance records for human spaceflight",
                     "Tested international cooperation and modular construction"
                 ],
-                "img": "timeline/assets/1980s/milestone-4.jpg"
+                "img_key": "timeline-1980s-m4"
             },
             {
                 "eventTitle": "Voyager 2 at Uranus",
@@ -342,12 +340,12 @@
                 "eventDate": { "day": 24, "month": "January", "year": 1986 },
                 "dateISO": "1986-01-24",
                 "eventDescription": "Voyager 2 flew by Uranus, capturing detailed images of the planet, its rings, and moons.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Revealed Uranus’s tilted magnetic field and atmosphere",
                     "Expanded planetary science beyond the gas giants"
                 ],
-                "img": "timeline/assets/1980s/milestone-5.jpg"
+                "img_key": "timeline-1980s-m5"
             },
             {
                 "eventTitle": "Voyager 2 at Neptune",
@@ -355,22 +353,21 @@
                 "eventDate": { "day": 25, "month": "August", "year": 1989 },
                 "dateISO": "1989-08-25",
                 "eventDescription": "Voyager 2 conducted the only close flyby of Neptune, observing its Great Dark Spot and moon Triton.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "First and only direct observations of Neptune and Triton",
                     "Marked the completion of the Voyager planetary tour"
                 ],
-                "img": "timeline/assets/1980s/milestone-6.jpg"
+                "img_key": "timeline-1980s-m6"
             }
         ],
         "pseudoname": "Age of Reusability"
     },
-    "1990s":
-    {
+    "1990s": {
         "id": "1990s",
         "start": 1990,
         "end": 1999,
-        "mainImg": "timeline/assets/1990s/hero.jpg",
+        "img_key": "timeline-1990s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -379,12 +376,12 @@
                 "eventDate": { "day": 24, "month": "April", "year": 1990 },
                 "dateISO": "1990-04-24",
                 "eventDescription": "Deployed from Space Shuttle Discovery, Hubble began its mission to observe the universe in unprecedented detail.",
-                "actors": [ "United States", "NASA", "ESA" ],
+                "actors": ["United States", "NASA", "ESA"],
                 "significance": [
                     "Transformed astronomy with deep-field and high-resolution imaging",
                     "Required corrective servicing after launch optics issue"
                 ],
-                "img": "timeline/assets/1990s/milestone-1.jpg"
+                "img_key": "timeline-1990s-m1"
             },
             {
                 "eventTitle": "Galileo Arrives at Jupiter",
@@ -392,12 +389,12 @@
                 "eventDate": { "day": 7, "month": "December", "year": 1995 },
                 "dateISO": "1995-12-07",
                 "eventDescription": "After a six-year journey, Galileo entered orbit around Jupiter, deploying an atmospheric probe and beginning extended studies.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "First atmospheric probe entry into Jupiter",
                     "Revealed evidence of subsurface oceans on Europa"
                 ],
-                "img": "timeline/assets/1990s/milestone-2.jpg"
+                "img_key": "timeline-1990s-m2"
             },
             {
                 "eventTitle": "Mars Pathfinder",
@@ -405,12 +402,12 @@
                 "eventDate": { "day": 4, "month": "July", "year": 1997 },
                 "dateISO": "1997-07-04",
                 "eventDescription": "Mars Pathfinder landed successfully with the Sojourner rover, demonstrating low-cost exploration techniques.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "First rover to explore the Martian surface",
                     "Pioneered airbag landing system later reused on Mars"
                 ],
-                "img": "timeline/assets/1990s/milestone-3.jpg"
+                "img_key": "timeline-1990s-m3"
             },
             {
                 "eventTitle": "Cassini–Huygens Launch",
@@ -418,12 +415,12 @@
                 "eventDate": { "day": 15, "month": "October", "year": 1997 },
                 "dateISO": "1997-10-15",
                 "eventDescription": "Joint NASA/ESA/ASI mission launched to study Saturn and its moons, including the Huygens probe to Titan.",
-                "actors": [ "United States", "NASA", "ESA", "ASI" ],
+                "actors": ["United States", "NASA", "ESA", "ASI"],
                 "significance": [
                     "One of the most ambitious planetary missions ever",
                     "Set the stage for discoveries of Saturn’s rings and moons"
                 ],
-                "img": "timeline/assets/1990s/milestone-4.jpg"
+                "img_key": "timeline-1990s-m4"
             },
             {
                 "eventTitle": "International Space Station Assembly Begins",
@@ -431,12 +428,12 @@
                 "eventDate": { "day": 20, "month": "November", "year": 1998 },
                 "dateISO": "1998-11-20",
                 "eventDescription": "The Russian-built Zarya control module launched, marking the first step in constructing the International Space Station.",
-                "actors": [ "Russia", "United States", "International Partners" ],
+                "actors": ["Russia", "United States", "International Partners"],
                 "significance": [
                     "Initiated the largest international engineering project in history",
                     "Symbolized post–Cold War space collaboration"
                 ],
-                "img": "timeline/assets/1990s/milestone-5.jpg"
+                "img_key": "timeline-1990s-m5"
             },
             {
                 "eventTitle": "Loss of Mars Climate Orbiter",
@@ -444,22 +441,21 @@
                 "eventDate": { "day": 23, "month": "September", "year": 1999 },
                 "dateISO": "1999-09-23",
                 "eventDescription": "A navigation error caused by mismatched metric and imperial units led to the loss of Mars Climate Orbiter.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Highlighted the importance of rigorous systems engineering",
                     "Spurred NASA to improve project management and cross-checking"
                 ],
-                "img": "timeline/assets/1990s/milestone-6.jpg"
+                "img_key": "timeline-1990s-m6"
             }
         ],
         "pseudoname": "Age of Understanding"
     },
-    "2000s":
-    {
+    "2000s": {
         "id": "2000s",
         "start": 2000,
         "end": 2009,
-        "mainImg": "timeline/assets/2000s/hero.jpg",
+        "img_key": "timeline-2000s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -468,12 +464,12 @@
                 "eventDate": { "day": 2, "month": "November", "year": 2000 },
                 "dateISO": "2000-11-02",
                 "eventDescription": "The first long-duration crew, Expedition 1, arrived at the ISS, beginning continuous human presence in orbit.",
-                "actors": [ "United States", "Russia", "International Partners" ],
+                "actors": ["United States", "Russia", "International Partners"],
                 "significance": [
                     "Marked the start of uninterrupted habitation aboard the ISS",
                     "Enabled multinational research in microgravity for decades"
                 ],
-                "img": "timeline/assets/2000s/milestone-1.jpg"
+                "img_key": "timeline-2000s-m1"
             },
             {
                 "eventTitle": "Mars Odyssey",
@@ -481,12 +477,12 @@
                 "eventDate": { "day": 24, "month": "October", "year": 2001 },
                 "dateISO": "2001-10-24",
                 "eventDescription": "Mars Odyssey entered orbit and detected vast amounts of subsurface hydrogen, evidence for water ice.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Mapped radiation environment for future astronauts",
                     "Discovered signs of widespread Martian ice just below the surface"
                 ],
-                "img": "timeline/assets/2000s/milestone-2.jpg"
+                "img_key": "timeline-2000s-m2"
             },
             {
                 "eventTitle": "Spirit Rover Landing",
@@ -494,12 +490,12 @@
                 "eventDate": { "day": 4, "month": "January", "year": 2004 },
                 "dateISO": "2004-01-04",
                 "eventDescription": "Spirit successfully landed on Mars and began exploring Gusev Crater, operating far beyond its 90-day design life.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Found evidence of past water activity",
                     "Operated for over 6 years despite harsh Martian conditions"
                 ],
-                "img": "timeline/assets/2000s/milestone-3.jpg"
+                "img_key": "timeline-2000s-m3"
             },
             {
                 "eventTitle": "Opportunity Rover Landing",
@@ -507,12 +503,12 @@
                 "eventDate": { "day": 25, "month": "January", "year": 2004 },
                 "dateISO": "2004-01-25",
                 "eventDescription": "Twin rover Opportunity landed in Meridiani Planum, ultimately exploring Mars for nearly 15 years.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Confirmed evidence of past liquid water on Mars",
                     "Set endurance records for planetary surface exploration"
                 ],
-                "img": "timeline/assets/2000s/milestone-4.jpg"
+                "img_key": "timeline-2000s-m4"
             },
             {
                 "eventTitle": "Cassini–Huygens at Saturn",
@@ -520,12 +516,12 @@
                 "eventDate": { "day": 1, "month": "July", "year": 2004 },
                 "dateISO": "2004-07-01",
                 "eventDescription": "Cassini entered Saturn orbit; in 2005, ESA’s Huygens probe landed on Titan, the first landing in the outer Solar System.",
-                "actors": [ "United States", "NASA", "ESA", "ASI" ],
+                "actors": ["United States", "NASA", "ESA", "ASI"],
                 "significance": [
                     "Revealed Titan’s methane lakes and complex atmosphere",
                     "Revolutionized understanding of Saturn’s rings and moons"
                 ],
-                "img": "timeline/assets/2000s/milestone-5.jpg"
+                "img_key": "timeline-2000s-m5"
             },
             {
                 "eventTitle": "SpaceShipOne",
@@ -533,22 +529,21 @@
                 "eventDate": { "day": 21, "month": "June", "year": 2004 },
                 "dateISO": "2004-06-21",
                 "eventDescription": "Scaled Composites’ SpaceShipOne became the first privately funded crewed vehicle to reach space.",
-                "actors": [ "Scaled Composites", "Mojave Aerospace Ventures" ],
+                "actors": ["Scaled Composites", "Mojave Aerospace Ventures"],
                 "significance": [
                     "Opened the era of commercial human spaceflight",
                     "Won the Ansari X Prize for reusable suborbital flight"
                 ],
-                "img": "timeline/assets/2000s/milestone-6.jpg"
+                "img_key": "timeline-2000s-m6"
             }
         ],
         "pseudoname": "Age of Expansion"
     },
-    "2010s":
-    {
+    "2010s": {
         "id": "2010s",
         "start": 2010,
         "end": 2019,
-        "mainImg": "timeline/assets/2010s/hero.jpg",
+        "img_key": "timeline-2010s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -557,12 +552,12 @@
                 "eventDate": { "day": 25, "month": "May", "year": 2012 },
                 "dateISO": "2012-05-25",
                 "eventDescription": "SpaceX Dragon became the first commercial spacecraft to dock with the International Space Station and deliver cargo.",
-                "actors": [ "SpaceX", "NASA" ],
+                "actors": ["SpaceX", "NASA"],
                 "significance": [
                     "Marked commercial cargo capability to low Earth orbit",
                     "Laid groundwork for commercial crew transportation"
                 ],
-                "img": "timeline/assets/2010s/milestone-1.jpg"
+                "img_key": "timeline-2010s-m1"
             },
             {
                 "eventTitle": "Curiosity Rover Landing",
@@ -570,12 +565,12 @@
                 "eventDate": { "day": 6, "month": "August", "year": 2012 },
                 "dateISO": "2012-08-06",
                 "eventDescription": "NASA’s Curiosity rover touched down in Gale Crater using the innovative sky-crane system, beginning a mission to assess habitability.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Found evidence of ancient habitable environments",
                     "Introduced advanced robotic landing technology"
                 ],
-                "img": "timeline/assets/2010s/milestone-2.jpg"
+                "img_key": "timeline-2010s-m2"
             },
             {
                 "eventTitle": "Rosetta and Philae",
@@ -583,12 +578,12 @@
                 "eventDate": { "day": 12, "month": "November", "year": 2014 },
                 "dateISO": "2014-11-12",
                 "eventDescription": "ESA’s Rosetta spacecraft deployed the Philae lander onto comet 67P/Churyumov–Gerasimenko, the first landing on a comet nucleus.",
-                "actors": [ "ESA" ],
+                "actors": ["ESA"],
                 "significance": [
                     "Revealed comet surface chemistry and structure",
                     "Demonstrated precision operations in deep space"
                 ],
-                "img": "timeline/assets/2010s/milestone-3.jpg"
+                "img_key": "timeline-2010s-m3"
             },
             {
                 "eventTitle": "New Horizons at Pluto",
@@ -596,12 +591,12 @@
                 "eventDate": { "day": 14, "month": "July", "year": 2015 },
                 "dateISO": "2015-07-14",
                 "eventDescription": "NASA’s New Horizons spacecraft flew past Pluto, sending back the first detailed images of its surface and moons.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Revealed complex geology and atmosphere on Pluto",
                     "Extended humanity’s reach to the Kuiper Belt"
                 ],
-                "img": "timeline/assets/2010s/milestone-4.jpg"
+                "img_key": "timeline-2010s-m4"
             },
             {
                 "eventTitle": "LIGO Detects Gravitational Waves",
@@ -609,12 +604,12 @@
                 "eventDate": { "day": 14, "month": "September", "year": 2015 },
                 "dateISO": "2015-09-14",
                 "eventDescription": "LIGO made the first direct detection of gravitational waves from the merger of two black holes, confirming a prediction of Einstein’s general relativity.",
-                "actors": [ "LIGO Scientific Collaboration" ],
+                "actors": ["LIGO Scientific Collaboration"],
                 "significance": [
                     "Opened a new era of gravitational wave astronomy",
                     "Confirmed fundamental predictions of relativity"
                 ],
-                "img": "timeline/assets/2010s/milestone-5.jpg"
+                "img_key": "timeline-2010s-m5"
             },
             {
                 "eventTitle": "Falcon 9 First Stage Landing",
@@ -622,22 +617,21 @@
                 "eventDate": { "day": 21, "month": "December", "year": 2015 },
                 "dateISO": "2015-12-21",
                 "eventDescription": "SpaceX successfully landed the first stage of a Falcon 9 rocket after an orbital launch, proving vertical landing reusability.",
-                "actors": [ "SpaceX" ],
+                "actors": ["SpaceX"],
                 "significance": [
                     "Revolutionized economics of space access",
                     "Demonstrated viability of rapid rocket reflight"
                 ],
-                "img": "timeline/assets/2010s/milestone-6.jpg"
+                "img_key": "timeline-2010s-m6"
             }
         ],
         "pseudoname": "Age of Technology"
     },
-    "2020s":
-    {
+    "2020s": {
         "id": "2020s",
         "start": 2020,
         "end": 2029,
-        "mainImg": "timeline/assets/2020s/hero.jpg",
+        "img_key": "timeline-2020s-h",
         "numMilestones": 6,
         "milestones": [
             {
@@ -646,12 +640,12 @@
                 "eventDate": { "day": 30, "month": "May", "year": 2020 },
                 "dateISO": "2020-05-30",
                 "eventDescription": "SpaceX’s Crew Dragon carried NASA astronauts Doug Hurley and Bob Behnken to the ISS, the first crewed launch from the U.S. since Shuttle retirement.",
-                "actors": [ "SpaceX", "NASA" ],
+                "actors": ["SpaceX", "NASA"],
                 "significance": [
                     "Restored independent U.S. crew access to low Earth orbit",
                     "Inaugurated the era of commercial crew transportation"
                 ],
-                "img": "timeline/assets/2020s/milestone-1.jpg"
+                "img_key": "timeline-2020s-m1"
             },
             {
                 "eventTitle": "Perseverance Rover Lands on Mars",
@@ -659,12 +653,12 @@
                 "eventDate": { "day": 18, "month": "February", "year": 2021 },
                 "dateISO": "2021-02-18",
                 "eventDescription": "NASA’s Perseverance rover landed in Jezero Crater to investigate past habitability and cache samples for eventual return.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "First mission designed to collect and prepare samples for return",
                     "Deployed Ingenuity helicopter, first powered flight on another world"
                 ],
-                "img": "timeline/assets/2020s/milestone-2.jpg"
+                "img_key": "timeline-2020s-m2"
             },
             {
                 "eventTitle": "Ingenuity Helicopter First Flight",
@@ -672,12 +666,12 @@
                 "eventDate": { "day": 19, "month": "April", "year": 2021 },
                 "dateISO": "2021-04-19",
                 "eventDescription": "NASA’s Ingenuity helicopter performed the first powered, controlled flight on another planet, hovering ~3 meters above the Martian surface.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Proved aerial exploration feasible on Mars",
                     "Opened the door for future planetary rotorcraft"
                 ],
-                "img": "timeline/assets/2020s/milestone-3.jpg"
+                "img_key": "timeline-2020s-m3"
             },
             {
                 "eventTitle": "James Webb Space Telescope Deployment",
@@ -685,12 +679,12 @@
                 "eventDate": { "day": 25, "month": "December", "year": 2021 },
                 "dateISO": "2021-12-25",
                 "eventDescription": "JWST launched and successfully unfolded its mirror and sunshield, beginning operations at Sun–Earth L2 in mid-2022.",
-                "actors": [ "NASA", "ESA", "CSA" ],
+                "actors": ["NASA", "ESA", "CSA"],
                 "significance": [
                     "Captured unprecedented views of the early universe and exoplanets",
                     "Revolutionized astrophysics with infrared sensitivity"
                 ],
-                "img": "timeline/assets/2020s/milestone-4.jpg"
+                "img_key": "timeline-2020s-m4"
             },
             {
                 "eventTitle": "Artemis I",
@@ -698,12 +692,12 @@
                 "eventDate": { "day": 16, "month": "November", "year": 2022 },
                 "dateISO": "2022-11-16",
                 "eventDescription": "NASA’s uncrewed Artemis I mission sent Orion around the Moon, validating hardware for future crewed lunar missions.",
-                "actors": [ "United States", "NASA" ],
+                "actors": ["United States", "NASA"],
                 "significance": [
                     "Proved readiness for crewed Artemis lunar return",
                     "Marked the debut of the Space Launch System"
                 ],
-                "img": "timeline/assets/2020s/milestone-5.jpg"
+                "img_key": "timeline-2020s-m5"
             },
             {
                 "eventTitle": "Starship Integrated Flight Tests",
@@ -711,12 +705,12 @@
                 "eventDate": { "day": 18, "month": "November", "year": 2024 },
                 "dateISO": "2024-11-18",
                 "eventDescription": "SpaceX conducted integrated orbital flight tests of Starship and Super Heavy, advancing development of a fully reusable super-heavy launch system.",
-                "actors": [ "SpaceX" ],
+                "actors": ["SpaceX"],
                 "significance": [
                     "Pushed boundaries of rapid reusability and payload capacity",
                     "Seen as a cornerstone for Mars and lunar transport"
                 ],
-                "img": "timeline/assets/2020s/milestone-6.jpg"
+                "img_key": "timeline-2020s-m6"
             }
         ],
         "pseudoname": "Modern Age"

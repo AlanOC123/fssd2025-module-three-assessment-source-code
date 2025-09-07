@@ -4,24 +4,30 @@ from functools import lru_cache
 
 _PLANET_DATA_PATH = Path(__file__).with_name("planets.json")
 _TIMELINE_DATA_PATH = Path(__file__).with_name("timeline.json")
+_ASSETS_DATA_PATH = Path(__file__).with_name("asset-manifest.json")
+
+def _load_file(path):
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except FileNotFoundError as e:
+        raise RuntimeError(f"Missing data file: {path}") from e
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Invalid JSON in {path}") from e
 
 @lru_cache(maxsize=1)
 def _load_planets():
-    try:
-        return json.loads(_PLANET_DATA_PATH.read_text(encoding='utf-8'))
-    except FileNotFoundError as e:
-        raise RuntimeError(f"Missing data file: {_PLANET_DATA_PATH}") from e
-    except json.JSONDecodeError as e:
-        raise RuntimeError(f"Invalid JSON in {_PLANET_DATA_PATH}") from e
+    return _load_file(_PLANET_DATA_PATH)
 
 @lru_cache(maxsize=1)
 def _load_timelines():
-    try:
-        return json.loads(_TIMELINE_DATA_PATH.read_text(encoding='utf-8'))
-    except FileNotFoundError as e:
-        raise RuntimeError(f"Missing data file: {_TIMELINE_DATA_PATH}") from e
-    except json.JSONDecodeError as e:
-        raise RuntimeError(f"Invalid JSON in {_TIMELINE_DATA_PATH}") from e
+    return _load_file(_TIMELINE_DATA_PATH)
+    
+@lru_cache(maxsize=1)
+def _load_assets():
+    return _load_file(_ASSETS_DATA_PATH)
+
+def get_assets_map():
+    return _load_assets()
 
 def get_planet_main_data(planet):
     return planet.get("mainData")
