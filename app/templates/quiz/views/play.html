@@ -1,0 +1,67 @@
+{% extends 'base.html' %} {% block styles %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='quiz/views/play/style.css') }}"
+/>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='quiz/views/play/script.js') }}" type="module"></script>
+{% endblock %} {% block content %}
+<div id="quiz" class="page-grid">
+    <div class="content-container" id="session-data">
+        <h4 id="session-data">
+            Question: <span id="curr-q-count">1</span> of <span id="total-q-count">10</span>
+        </h4>
+
+        <h2 id="question-text">Whats is Earths Order From the Sun?</h2>
+
+        <div id="session-progress">
+            <div class="progress-track">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container" id="session-options">
+        <ul id="question-options">
+            <li class="question-option" id="opt-A">
+                <input type="radio" value="A" id="A" name="option">
+                <label for="A">
+                    <span class="option-id">A</span>
+                    <span class="option-value">3</span>
+                </label>
+            </li>
+            <li class="question-option" id="opt-B">
+                <input type="radio" value="B" id="B" name="option">
+                <label for="B">
+                    <span class="option-id">B</span>
+                    <span class="option-value">4</span>
+                </label>
+            </li>
+            <li class="question-option" id="opt-C">
+                <input type="radio" value="C" id="C" name="option">
+                <label for="C">
+                    <span class="option-id">C</span>
+                    <span class="option-value">5</span>
+                </label>
+            </li>
+            <li class="question-option" id="opt-D">
+                <input type="radio" value="D" id="D" name="option">
+                <label for="D">
+                    <span class="option-id">D</span>
+                    <span class="option-value">6</span>
+                </label>
+            </li>
+        </ul>
+        <button id="check-answer">Submit Answer</button>
+    </div>
+    <div id="result-modal" class="">
+        <div id="modal-content">
+            <h3 id="result-message"></h3>
+            <h2 id="result-score"></h2>
+            <p id="result-total-score"></p>
+            <h4 id="result-score-streak"></h4>
+            <p id="result-time-taken"></p>
+            <button id="next-question">Next</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

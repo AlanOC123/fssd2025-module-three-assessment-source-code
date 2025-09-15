@@ -1,0 +1,299 @@
+#quiz {
+    background: linear-gradient(
+        to bottom left,
+        var(--clr-base-alt),
+        var(--clr-base-main)
+    );
+    position: relative;
+}
+
+.content-container {
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container:first-of-type {
+    grid-column: 2 / 6;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: var(--header-height);
+    height: var(--height-with-header);
+}
+
+.content-container:nth-of-type(2) {
+    grid-column: 8 / 12;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-lg);
+    margin-top: var(--header-height);
+    height: var(--height-with-header);
+}
+
+#result-modal {
+    position: absolute;
+    backdrop-filter: var(--blur-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-base-main-mostly-transparent);
+    z-index: 1;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes open-modal-content {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    } 50% {
+        transform: scale(1.2);
+        opacity: 1;
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes open-modal-bg{
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0);
+    } to {
+        opacity: 1;
+        backdrop-filter: var(--blur-base);
+    }
+}
+
+#result-modal.active {
+    pointer-events: all;
+    animation: open-modal-bg var(--trans-dur-lg) var(--trans-time-base) forwards;
+}
+
+#result-modal.active #modal-content {
+    animation: open-modal-content var(--trans-dur-lg) var(--trans-time-base) var(--trans-dur-base) forwards;
+}
+
+#modal-content {
+    border-radius: var(--brd-rnd-lg);
+    aspect-ratio: 1;
+    border: 2px solid transparent;
+    width: min(500px, 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+    background: linear-gradient(
+        to bottom left,
+        var(--clr-base-alt),
+        var(--clr-base-main)
+    );
+    padding: var(--pad-base);
+}
+
+#result-modal.correct #modal-content {
+    box-shadow: 0 0 24px 2px var(--clr-success);
+    border-color: var(--clr-success);
+    color: var(--clr-success);
+}
+
+#result-modal.incorrect #modal-content {
+    box-shadow: 0 0 24px 2px var(--clr-failure);
+    border-color: var(--clr-failure);
+    color: var(--clr-failure);
+}
+
+#result-message {
+    font-size: var(--fs-lg);
+}
+
+#result-score {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+}
+
+@media (max-width: 1024px) {
+    .content-container {
+        padding: var(--pad-base);
+    }
+
+    .content-container:first-of-type {
+        grid-column: 1 / 5;
+    }
+
+    .content-container:nth-of-type(2) {
+        grid-column: 5 / 9;
+    }
+
+    #question-options {
+        gap: var(--gap-lg);
+    }
+}
+
+@media (max-width: 425px) {
+    .content-container:first-of-type {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+    }
+
+    .content-container:nth-of-type(2) {
+        margin-top: 0;
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        height: 100%;
+    }
+}
+
+#session-progress {
+    flex: 0 0 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-track {
+    flex: 1;
+    background-color: var(--clr-base-alt-semi-transparent);
+    height: 16px;
+    border-radius: var(--brd-rnd-full);
+    padding: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    will-change: width;
+    background-color: var(--clr-accent);
+    border-radius: inherit;
+    transition: width var(--trans-dur-base) var(--trans-time-base);
+}
+
+#question-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xl);
+}
+
+.question-option {
+    flex: 1 1 fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-option input {
+    appearance: none;
+}
+
+.question-option label {
+    outline: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    background-color: var(--clr-base-alt-semi-opaque);
+    padding: var(--pad-base);
+    border-radius: var(--brd-rnd-base);
+    box-shadow: 0px 4px 4px 2px var(--clr-base-main-semi-transparent);
+    transition: transform var(--trans-dur-base) var(--trans-time-base);
+    cursor: pointer;
+}
+
+.question-option:hover label {
+    transform: translateY(-2px);
+}
+
+.question-option label span {
+    display: inline-flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.option-id {
+    flex:  0 0 fit-content;
+    aspect-ratio: 1;
+    border-radius: var(--brd-rnd-base);
+    transition: background-color var(--trans-dur-base) var(--trans-time-base);
+    color: var(--clr-text-main);
+}
+
+.option-value {
+    flex: 9;
+    font-size: var(--fs-md);
+}
+
+.question-option:first-child .option-id {
+    background-color: #5E0B15;
+}
+
+.question-option:nth-child(2) .option-id {
+    background-color: #0D5C63;
+}
+
+.question-option:nth-child(3) .option-id {
+    background-color: #123524;
+}
+
+.question-option:last-child .option-id {
+    background-color: #B2945B;
+}
+
+.question-option:hover .option-id {
+    color: var(--clr-accent-alt);
+}
+
+.question-option:first-child:hover .option-id {
+    background-color: #ED254E;
+}
+
+.question-option:nth-child(2):hover .option-id {
+    background-color: #6C8EAD;
+}
+
+.question-option:nth-child(3):hover .option-id {
+    background-color: #87A330;
+}
+
+.question-option:last-child:hover .option-id {
+    background-color: #FFF275;
+}
+
+#check-answer,
+#next-question {
+    background-color: var(--clr-accent);
+    border-radius: var(--brd-rnd-base);
+    color: var(--clr-text-main);
+    border: 0;
+    width: 100%;
+    padding: var(--pad-base);
+    box-shadow: 0px 4px 4px 2px var(--clr-base-main-semi-transparent);
+    transition: 
+        transform var(--trans-dur-base) var(--trans-time-base),
+        background-color var(--trans-dur-base) var(--trans-time-base)
+    ;
+}
+
+#check-answer:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+    background-color: hsl(from var(--clr-accent) h s calc(l - 30));
+}
+
+#check-answer:active {
+    transform: translateY(2px);
+}
+
+.question-option input:checked + label {
+    outline: 4px solid var(--clr-accent);
+    color: var(--clr-accent);
+}

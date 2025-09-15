@@ -1,0 +1,12 @@
+{% macro question_card(qind, question) %}
+<div class="question-card" id="q{{ qind }}{{ question.correctOptionIds | length }}" data-qind="{{ qind }}" data-is-answered="false">
+    <div class="question-text">{{ question.question }}</div>
+    <div class="options">
+        {% from 'quiz/components/question-option.html' import question_option %}
+
+        {% for option in question.options %}
+            {{ question_option(qind, option, question.type) }}
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}

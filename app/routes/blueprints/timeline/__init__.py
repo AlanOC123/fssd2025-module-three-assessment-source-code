@@ -3,7 +3,6 @@ from app.routes.schema import get_blueprint_schema
 
 bp = Blueprint(name='timeline', import_name=__name__, url_prefix='/timeline')
 
-from . import index
-from . import history_timeline
+from . import index, history_timeline
 
-compare_bp_route = get_blueprint_schema(bp)
+compare_bp_route = get_blueprint_schema(blueprint=bp)

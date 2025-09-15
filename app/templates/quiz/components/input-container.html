@@ -1,0 +1,24 @@
+{% macro radio_container(text, name, value, id, checked=False) %}
+<div class="input-container">
+    <input
+        type="radio"
+        name="{{ name }}"
+        value="{{ value }}"
+        id="{{ id }}"
+        class="radio-input"
+        {% if checked %}checked{% endif %}
+    />
+    <label for="{{ id }}">{{ text }}</label>
+</div>
+{% endmacro %} {% macro checkbox_container(text, name, value, id, ref_class) %}
+<div class="input-container">
+    <input
+        type="checkbox"
+        name="{{ name }}"
+        value="{{ value }}"
+        id="{{ id }}"
+        class="checkbox-{{ ref_class }}"
+    />
+    <label for="{{ id }}">{{ text }}</label>
+</div>
+{% endmacro %}

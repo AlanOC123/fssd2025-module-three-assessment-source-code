@@ -1,14 +1,1568 @@
 {
-    "all": [
+    "version": 1,
+    "questions": [
         {
-            "question": "What is Earths Order from the Sun?",
-            "answer": 6,
-            "options": [ 3, 4, 5, 6 ],
-            "metadata": {
-                "subject": "earth",
-                "difficulty": "easy",
-                "id": "earth-1"
-            }
+            "id": "earth-order",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["earth", "orbit"],
+            "question": "What is Earth's order from the Sun?",
+            "options": [
+                { "id": "A", "label": "3" },
+                { "id": "B", "label": "2" },
+                { "id": "C", "label": "4" },
+                { "id": "D", "label": "5" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mercury-daylength",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mercury", "rotation"],
+            "question": "Which planet has a solar day of about 4222.6 hours?",
+            "options": [
+                { "id": "A", "label": "Mercury" },
+                { "id": "B", "label": "Venus" },
+                { "id": "C", "label": "Jupiter" },
+                { "id": "D", "label": "Mars" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "venus-pressure",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["venus", "atmosphere"],
+            "question": "Which world has a surface pressure of ~92 bar?",
+            "options": [
+                { "id": "A", "label": "Mars" },
+                { "id": "B", "label": "Venus" },
+                { "id": "C", "label": "Earth" },
+                { "id": "D", "label": "Mercury" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "venus-retrograde-tilt",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["venus", "rotation"],
+            "question": "Which planet’s axial tilt (~177°) indicates retrograde rotation?",
+            "options": [
+                { "id": "A", "label": "Venus" },
+                { "id": "B", "label": "Earth" },
+                { "id": "C", "label": "Saturn" },
+                { "id": "D", "label": "Mars" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mars-atmos-dominant-gas",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "atmosphere"],
+            "question": "Which gas dominates Mars’s atmosphere?",
+            "options": [
+                { "id": "A", "label": "Oxygen (O₂)" },
+                { "id": "B", "label": "Nitrogen (N₂)" },
+                { "id": "C", "label": "Carbon dioxide (CO₂)" },
+                { "id": "D", "label": "Argon (Ar)" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "strongest-magnetic-field",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["magnetosphere"],
+            "question": "Which planet listed has the strongest global magnetic field?",
+            "options": [
+                { "id": "A", "label": "Earth (~31 μT)" },
+                { "id": "B", "label": "Saturn (~21 μT)" },
+                { "id": "C", "label": "Jupiter (~428 μT)" },
+                { "id": "D", "label": "Mercury (~0.3 μT)" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "rings-which-of-these",
+            "type": "multiple-choice",
+            "difficulty": "easy",
+            "tags": ["rings"],
+            "question": "Which of these planets have ring systems?",
+            "options": [
+                { "id": "A", "label": "Jupiter" },
+                { "id": "B", "label": "Saturn" },
+                { "id": "C", "label": "Earth" },
+                { "id": "D", "label": "Uranus" }
+            ],
+            "correctOptionIds": ["A", "B", "D"]
+        },
+        {
+            "id": "mars-moons-count",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "moons"],
+            "question": "How many moons does Mars have?",
+            "options": [
+                { "id": "A", "label": "1" },
+                { "id": "B", "label": "2" },
+                { "id": "C", "label": "4" },
+                { "id": "D", "label": "14" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "earth-air-major-gas",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["earth", "atmosphere"],
+            "question": "Which gas makes up about 78% of Earth’s atmosphere?",
+            "options": [
+                { "id": "A", "label": "Nitrogen (N₂)" },
+                { "id": "B", "label": "Oxygen (O₂)" },
+                { "id": "C", "label": "Argon (Ar)" },
+                { "id": "D", "label": "Carbon dioxide (CO₂)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "uranus-tilt",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["uranus", "rotation"],
+            "question": "Which planet is tilted by ~98°, effectively rotating on its side?",
+            "options": [
+                { "id": "A", "label": "Uranus" },
+                { "id": "B", "label": "Neptune" },
+                { "id": "C", "label": "Saturn" },
+                { "id": "D", "label": "Earth" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "neptune-order",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["neptune", "orbit"],
+            "question": "What is Neptune’s order from the Sun?",
+            "options": [
+                { "id": "A", "label": "7" },
+                { "id": "B", "label": "8" },
+                { "id": "C", "label": "6" },
+                { "id": "D", "label": "9" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "global-magnetospheres",
+            "type": "multiple-choice",
+            "difficulty": "medium",
+            "tags": ["magnetosphere"],
+            "question": "Which of these bodies have a global intrinsic magnetosphere?",
+            "options": [
+                { "id": "A", "label": "Mercury" },
+                { "id": "B", "label": "Venus" },
+                { "id": "C", "label": "Earth" },
+                { "id": "D", "label": "Jupiter" }
+            ],
+            "correctOptionIds": ["A", "C", "D"]
+        },
+        {
+            "id": "highest-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "enthusiast",
+            "tags": ["photometry"],
+            "question": "Which object in this set has the highest Bond albedo?",
+            "options": [
+                { "id": "A", "label": "Jupiter (~50%)" },
+                { "id": "B", "label": "Saturn (~34%)" },
+                { "id": "C", "label": "Earth (~30.6%)" },
+                { "id": "D", "label": "Pluto (~72%)" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "first-artificial-satellite",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1950s"],
+            "question": "Which mission was the first artificial Earth satellite?",
+            "options": [
+                { "id": "A", "label": "Sputnik 1 (1957)" },
+                { "id": "B", "label": "Explorer 1 (1958)" },
+                { "id": "C", "label": "Vanguard 1 (1958)" },
+                { "id": "D", "label": "Luna 2 (1959)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "van-allen-discovery",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1950s"],
+            "question": "Which mission’s instruments revealed Earth’s Van Allen radiation belts?",
+            "options": [
+                { "id": "A", "label": "Explorer 1 (1958)" },
+                { "id": "B", "label": "Sputnik 2 (1957)" },
+                { "id": "C", "label": "Vostok 1 (1961)" },
+                { "id": "D", "label": "Telstar 1 (1962)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "first-soft-landing-moon",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1960s", "moon"],
+            "question": "What was the first soft landing on the Moon?",
+            "options": [
+                { "id": "A", "label": "Luna 9 (1966)" },
+                { "id": "B", "label": "Luna 2 (1959)" },
+                { "id": "C", "label": "Surveyor 1 (1966)" },
+                { "id": "D", "label": "Apollo 11 (1969)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "far-side-images",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1950s", "moon"],
+            "question": "Which mission returned the first images of the Moon’s far side?",
+            "options": [
+                { "id": "A", "label": "Luna 3 (1959)" },
+                { "id": "B", "label": "Ranger 7 (1964)" },
+                { "id": "C", "label": "Apollo 8 (1968)" },
+                { "id": "D", "label": "Surveyor 1 (1966)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "first-comet-landing",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["timeline", "2010s"],
+            "question": "Which mission achieved the first landing on a comet nucleus?",
+            "options": [
+                { "id": "A", "label": "Rosetta and Philae (2014)" },
+                { "id": "B", "label": "New Horizons (2015)" },
+                { "id": "C", "label": "Curiosity (2012)" },
+                { "id": "D", "label": "Voyager 2 (1989)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "first-powered-flight-other-world",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "2020s", "mars"],
+            "question": "Which mission performed the first powered, controlled flight on another world?",
+            "options": [
+                { "id": "A", "label": "Ingenuity helicopter (2021)" },
+                { "id": "B", "label": "Perseverance rover (2021)" },
+                { "id": "C", "label": "Spirit rover (2004)" },
+                { "id": "D", "label": "Opportunity rover (2004)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "which-in-1950s",
+            "type": "multiple-choice",
+            "difficulty": "hard",
+            "tags": ["timeline", "1950s"],
+            "question": "Which of these milestones occurred in the 1950s?",
+            "options": [
+                { "id": "A", "label": "Sputnik 1 launch" },
+                { "id": "B", "label": "Explorer 1 (first U.S. satellite)" },
+                { "id": "C", "label": "Luna 2 impacts the Moon" },
+                { "id": "D", "label": "Apollo 11 Moon landing" }
+            ],
+            "correctOptionIds": ["A", "B", "C"]
+        },
+        {
+            "id": "mars-order-from-sun",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "orbit"],
+            "question": "What is Mars’ order from the Sun?",
+            "options": [
+                { "id": "A", "label": "3" },
+                { "id": "B", "label": "4" },
+                { "id": "C", "label": "5" },
+                { "id": "D", "label": "6" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mars-semi-major-axis",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "orbit"],
+            "question": "What is the semi-major axis of Mars’ orbit?",
+            "options": [
+                { "id": "A", "label": "1.000 AU" },
+                { "id": "B", "label": "1.524 AU" },
+                { "id": "C", "label": "5.204 AU" },
+                { "id": "D", "label": "9.58 AU" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mars-solar-day",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "rotation"],
+            "question": "What is the length of a Martian solar day?",
+            "options": [
+                { "id": "A", "label": "24.66 hours" },
+                { "id": "B", "label": "24.00 hours" },
+                { "id": "C", "label": "9.93 hours" },
+                { "id": "D", "label": "10.66 hours" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "neptune-moons-count",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["neptune", "moons"],
+            "question": "How many moons does Neptune have?",
+            "options": [
+                { "id": "A", "label": "2" },
+                { "id": "B", "label": "8" },
+                { "id": "C", "label": "14" },
+                { "id": "D", "label": "27" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "neptune-naked-eye",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["neptune", "observation"],
+            "question": "Is Neptune visible to the naked eye?",
+            "options": [
+                { "id": "A", "label": "Yes" },
+                { "id": "B", "label": "No" },
+                { "id": "C", "label": "Only during opposition" },
+                { "id": "D", "label": "Only from the Southern Hemisphere" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "jupiter-atmos-major-gas",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["jupiter", "atmosphere"],
+            "question": "Which gas is most abundant in Jupiter’s atmosphere?",
+            "options": [
+                { "id": "A", "label": "Hydrogen (H₂)" },
+                { "id": "B", "label": "Helium (He)" },
+                { "id": "C", "label": "Methane (CH₄)" },
+                { "id": "D", "label": "Ammonia (NH₃)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "jupiter-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["jupiter", "photometry"],
+            "question": "Which value is closest to Jupiter’s Bond albedo?",
+            "options": [
+                { "id": "A", "label": "30%" },
+                { "id": "B", "label": "34%" },
+                { "id": "C", "label": "50%" },
+                { "id": "D", "label": "72%" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "saturn-semi-major-axis",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["saturn", "orbit"],
+            "question": "Which planet has a semi-major axis of about 9.58 AU?",
+            "options": [
+                { "id": "A", "label": "Mercury" },
+                { "id": "B", "label": "Mars" },
+                { "id": "C", "label": "Saturn" },
+                { "id": "D", "label": "Jupiter" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "jupiter-mission-juno",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["jupiter", "missions"],
+            "question": "Which mission arrived to study Jupiter in 2016?",
+            "options": [
+                { "id": "A", "label": "Pioneer 10" },
+                { "id": "B", "label": "Voyager 1" },
+                { "id": "C", "label": "Juno" },
+                { "id": "D", "label": "Mariner 4" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "earth-observing-sats",
+            "type": "multiple-choice",
+            "difficulty": "medium",
+            "tags": ["earth", "missions"],
+            "question": "Which of these are Earth-observing satellites?",
+            "options": [
+                { "id": "A", "label": "Landsat 1 (1972)" },
+                { "id": "B", "label": "Terra (EOS AM-1) (1999)" },
+                { "id": "C", "label": "Pioneer 10" },
+                { "id": "D", "label": "Juno" }
+            ],
+            "correctOptionIds": ["A", "B"]
+        },
+        {
+            "id": "vostok1-first-human",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1960s"],
+            "question": "Which mission carried the first human into space?",
+            "options": [
+                { "id": "A", "label": "Vostok 1 (1961)" },
+                { "id": "B", "label": "Apollo 11 (1969)" },
+                { "id": "C", "label": "Voskhod 2 (1965)" },
+                { "id": "D", "label": "Mercury-Atlas 6 (1962)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "telstar1-comsat",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1960s"],
+            "question": "Which mission is recognized as the first active communications satellite?",
+            "options": [
+                { "id": "A", "label": "Telstar 1 (1962)" },
+                { "id": "B", "label": "Explorer 1 (1958)" },
+                { "id": "C", "label": "Vanguard 1 (1958)" },
+                { "id": "D", "label": "Sputnik 1 (1957)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "salyut1-first-station",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1970s"],
+            "question": "What was the first crewed space station placed in orbit?",
+            "options": [
+                { "id": "A", "label": "Skylab" },
+                { "id": "B", "label": "Salyut 1 (1971)" },
+                { "id": "C", "label": "Mir" },
+                { "id": "D", "label": "ISS" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "pioneer10-first-jupiter-flyby",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1970s", "jupiter"],
+            "question": "Which mission achieved the first Jupiter flyby?",
+            "options": [
+                { "id": "A", "label": "Pioneer 10 (1972)" },
+                { "id": "B", "label": "Voyager 2 (1979)" },
+                { "id": "C", "label": "Galileo (1995)" },
+                { "id": "D", "label": "Cassini–Huygens (1997)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "iss-assembly-begins",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1990s", "iss"],
+            "question": "Which module’s launch in 1998 began assembly of the International Space Station?",
+            "options": [
+                { "id": "A", "label": "Zarya (Functional Cargo Block)" },
+                { "id": "B", "label": "Destiny Laboratory" },
+                { "id": "C", "label": "Columbus Laboratory" },
+                { "id": "D", "label": "Kibo (JEM)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "iss-permanent-habitation",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "2000s", "iss"],
+            "question": "Permanent human habitation aboard the ISS began in which year?",
+            "options": [
+                { "id": "A", "label": "1998" },
+                { "id": "B", "label": "2000" },
+                { "id": "C", "label": "2004" },
+                { "id": "D", "label": "2011" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mars-odyssey-hydrogen",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "2000s", "mars"],
+            "question": "Which orbiter detected large amounts of subsurface hydrogen on Mars in 2001?",
+            "options": [
+                { "id": "A", "label": "Mars Odyssey" },
+                { "id": "B", "label": "Mars Reconnaissance Orbiter" },
+                { "id": "C", "label": "Mars Express" },
+                { "id": "D", "label": "MAVEN" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "spirit-landing-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "2000s", "mars"],
+            "question": "In which year did the Spirit rover land on Mars?",
+            "options": [
+                { "id": "A", "label": "2003" },
+                { "id": "B", "label": "2004" },
+                { "id": "C", "label": "2008" },
+                { "id": "D", "label": "2012" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mco-metric-mixup",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1990s", "mars"],
+            "question": "Which mission was lost due to a metric–imperial unit mismatch?",
+            "options": [
+                { "id": "A", "label": "Mars Climate Orbiter (1999)" },
+                { "id": "B", "label": "Mars Polar Lander (1999)" },
+                { "id": "C", "label": "Beagle 2 (2003)" },
+                { "id": "D", "label": "Phobos-Grunt (2011)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "apollo13-successful-failure",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1970s", "apollo"],
+            "question": "Which Apollo mission is often called the “successful failure” (1970)?",
+            "options": [
+                { "id": "A", "label": "Apollo 10" },
+                { "id": "B", "label": "Apollo 11" },
+                { "id": "C", "label": "Apollo 13" },
+                { "id": "D", "label": "Apollo 17" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "venus-moons",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["venus", "moons"],
+            "question": "How many natural moons does Venus have?",
+            "options": [
+                { "id": "A", "label": "0" },
+                { "id": "B", "label": "1" },
+                { "id": "C", "label": "2" },
+                { "id": "D", "label": "14" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "venus-magnetosphere",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["venus", "magnetosphere"],
+            "question": "Does Venus possess a global intrinsic dipole magnetosphere?",
+            "options": [
+                {
+                    "id": "A",
+                    "label": "Yes; similar in strength to Earth’s"
+                },
+                {
+                    "id": "B",
+                    "label": "No; only an induced magnetotail from the solar wind"
+                },
+                { "id": "C", "label": "Yes; stronger than Jupiter’s" },
+                { "id": "D", "label": "Only during solar maximum" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mars-viking-1976",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "missions"],
+            "question": "Which mission landed on Mars in 1976?",
+            "options": [
+                { "id": "A", "label": "Mariner 4" },
+                { "id": "B", "label": "Viking 1" },
+                { "id": "C", "label": "Perseverance (Mars 2020)" },
+                { "id": "D", "label": "Spirit" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mercury-eccentricity",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mercury", "orbit"],
+            "question": "What is Mercury’s orbital eccentricity?",
+            "options": [
+                { "id": "A", "label": "0.0167" },
+                { "id": "B", "label": "0.2056" },
+                { "id": "C", "label": "0.0489" },
+                { "id": "D", "label": "0.0068" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mercury-axial-tilt",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mercury", "rotation"],
+            "question": "Which planet has an axial tilt near 0° (≈0.03°)?",
+            "options": [
+                { "id": "A", "label": "Mercury" },
+                { "id": "B", "label": "Earth" },
+                { "id": "C", "label": "Uranus" },
+                { "id": "D", "label": "Venus" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mercury-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mercury", "photometry"],
+            "question": "Which value is closest to Mercury’s Bond albedo?",
+            "options": [
+                { "id": "A", "label": "11.9%" },
+                { "id": "B", "label": "25%" },
+                { "id": "C", "label": "34%" },
+                { "id": "D", "label": "77%" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "venus-dominant-gas",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["venus", "atmosphere"],
+            "question": "Which gas dominates Venus’s atmosphere by percentage?",
+            "options": [
+                { "id": "A", "label": "CO₂ (~96.5%)" },
+                { "id": "B", "label": "N₂ (~78%)" },
+                { "id": "C", "label": "O₂ (~21%)" },
+                { "id": "D", "label": "Ar (~1.6%)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "venus-mean-temperature",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["venus", "temperature"],
+            "question": "What is Venus’s approximate mean surface temperature?",
+            "options": [
+                { "id": "A", "label": "15 °C" },
+                { "id": "B", "label": "−63 °C" },
+                { "id": "C", "label": "35 °C" },
+                { "id": "D", "label": "464 °C" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "venus-rotation-direction",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["venus", "rotation"],
+            "question": "Which statement best describes Venus’s rotation?",
+            "options": [
+                { "id": "A", "label": "Fast prograde rotation" },
+                { "id": "B", "label": "Slow prograde rotation" },
+                { "id": "C", "label": "Slow retrograde rotation" },
+                { "id": "D", "label": "Tidal lock to the Sun" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mars-mean-temperature",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "temperature"],
+            "question": "What is the mean surface temperature on Mars?",
+            "options": [
+                { "id": "A", "label": "−63 °C" },
+                { "id": "B", "label": "0 °C" },
+                { "id": "C", "label": "15 °C" },
+                { "id": "D", "label": "440 °C" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mars-surface-pressure",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mars", "atmosphere"],
+            "question": "Approximate near-surface atmospheric pressure on Mars is…",
+            "options": [
+                { "id": "A", "label": "1.0 bar" },
+                { "id": "B", "label": "0.6 bar" },
+                { "id": "C", "label": "0.006 bar" },
+                { "id": "D", "label": "92 bar" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "jupiter-order",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["jupiter", "orbit"],
+            "question": "What is Jupiter’s order from the Sun?",
+            "options": [
+                { "id": "A", "label": "4" },
+                { "id": "B", "label": "5" },
+                { "id": "C", "label": "6" },
+                { "id": "D", "label": "7" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "jupiter-distance-from-sun",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["jupiter", "orbit"],
+            "question": "What is Jupiter’s average distance from the Sun (approx., in megameters)?",
+            "options": [
+                { "id": "A", "label": "58 Mm" },
+                { "id": "B", "label": "4495 Mm" },
+                { "id": "C", "label": "778 Mm" },
+                { "id": "D", "label": "2875 Mm" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "titan-landing-mission",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["saturn", "missions", "titan"],
+            "question": "Which mission delivered the probe that landed on Titan in 2005?",
+            "options": [
+                { "id": "A", "label": "Voyager 1" },
+                {
+                    "id": "B",
+                    "label": "Cassini–Huygens (Huygens lander)"
+                },
+                { "id": "C", "label": "Pioneer 11" },
+                { "id": "D", "label": "New Horizons" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "uranus-discovery",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["uranus", "exploration"],
+            "question": "Who discovered Uranus in 1781?",
+            "options": [
+                { "id": "A", "label": "Galileo Galilei" },
+                { "id": "B", "label": "William Herschel" },
+                { "id": "C", "label": "Clyde Tombaugh" },
+                { "id": "D", "label": "Johann Galle" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "uranus-order",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["uranus", "orbit"],
+            "question": "What is Uranus’s order from the Sun?",
+            "options": [
+                { "id": "A", "label": "6" },
+                { "id": "B", "label": "7" },
+                { "id": "C", "label": "8" },
+                { "id": "D", "label": "9" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "neptune-semi-major-axis",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["neptune", "orbit"],
+            "question": "What is Neptune’s semi-major axis?",
+            "options": [
+                { "id": "A", "label": "19.22 AU" },
+                { "id": "B", "label": "30.07 AU" },
+                { "id": "C", "label": "5.204 AU" },
+                { "id": "D", "label": "0.723 AU" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "neptune-daylength",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["neptune", "rotation"],
+            "question": "What is Neptune’s sidereal day length?",
+            "options": [
+                { "id": "A", "label": "9.93 hours" },
+                { "id": "B", "label": "16.11 hours" },
+                { "id": "C", "label": "17.24 hours" },
+                { "id": "D", "label": "24.00 hours" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "faint-rings-which",
+            "type": "multiple-choice",
+            "difficulty": "medium",
+            "tags": ["rings"],
+            "question": "Which of these planets have faint ring systems?",
+            "options": [
+                { "id": "A", "label": "Jupiter" },
+                { "id": "B", "label": "Neptune" },
+                { "id": "C", "label": "Earth" },
+                { "id": "D", "label": "Mars" }
+            ],
+            "correctOptionIds": ["A", "B"]
+        },
+        {
+            "id": "hubble-launch-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1990s", "hubble"],
+            "question": "In what year was the Hubble Space Telescope launched?",
+            "options": [
+                { "id": "A", "label": "1989" },
+                { "id": "B", "label": "1990" },
+                { "id": "C", "label": "1995" },
+                { "id": "D", "label": "1998" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "galileo-arrival-jupiter",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1990s", "jupiter"],
+            "question": "When did Galileo enter orbit around Jupiter?",
+            "options": [
+                { "id": "A", "label": "1990" },
+                { "id": "B", "label": "1992" },
+                { "id": "C", "label": "1995" },
+                { "id": "D", "label": "1997" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mars-pathfinder-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1990s", "mars"],
+            "question": "In which year did Mars Pathfinder (with Sojourner) land on Mars?",
+            "options": [
+                { "id": "A", "label": "1996" },
+                { "id": "B", "label": "1997" },
+                { "id": "C", "label": "1999" },
+                { "id": "D", "label": "2001" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "falcon9-first-landing",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "2010s", "spacex"],
+            "question": "In which year did Falcon 9 first successfully land its first stage after an orbital launch?",
+            "options": [
+                { "id": "A", "label": "2012" },
+                { "id": "B", "label": "2014" },
+                { "id": "C", "label": "2015" },
+                { "id": "D", "label": "2017" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mercury-sma",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mercury", "orbit"],
+            "question": "What is Mercury’s semi-major axis?",
+            "options": [
+                { "id": "A", "label": "0.387 AU" },
+                { "id": "B", "label": "0.723 AU" },
+                { "id": "C", "label": "1.524 AU" },
+                { "id": "D", "label": "5.204 AU" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "earth-eccentricity",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["earth", "orbit"],
+            "question": "What is Earth’s orbital eccentricity?",
+            "options": [
+                { "id": "A", "label": "0.0167" },
+                { "id": "B", "label": "0.0489" },
+                { "id": "C", "label": "0.0934" },
+                { "id": "D", "label": "0.2056" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "earth-axial-tilt",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["earth", "rotation"],
+            "question": "What is Earth’s axial tilt?",
+            "options": [
+                { "id": "A", "label": "0.03°" },
+                { "id": "B", "label": "3.13°" },
+                { "id": "C", "label": "23.44°" },
+                { "id": "D", "label": "97.77°" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mars-eccentricity",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "orbit"],
+            "question": "What is Mars’s orbital eccentricity?",
+            "options": [
+                { "id": "A", "label": "0.0934" },
+                { "id": "B", "label": "0.0167" },
+                { "id": "C", "label": "0.0068" },
+                { "id": "D", "label": "0.0086" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "jupiter-axial-tilt",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["jupiter", "rotation"],
+            "question": "What is Jupiter’s axial tilt?",
+            "options": [
+                { "id": "A", "label": "3.13°" },
+                { "id": "B", "label": "23.44°" },
+                { "id": "C", "label": "25.19°" },
+                { "id": "D", "label": "97.77°" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "uranus-axial-tilt",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["uranus", "rotation"],
+            "question": "Uranus’s axial tilt is closest to which value?",
+            "options": [
+                { "id": "A", "label": "0.77°" },
+                { "id": "B", "label": "3.13°" },
+                { "id": "C", "label": "23.44°" },
+                { "id": "D", "label": "97.77°" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "neptune-eccentricity",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["neptune", "orbit"],
+            "question": "What is Neptune’s orbital eccentricity?",
+            "options": [
+                { "id": "A", "label": "0.0167" },
+                { "id": "B", "label": "0.0086" },
+                { "id": "C", "label": "0.0489" },
+                { "id": "D", "label": "0.0934" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "saturn-angular-size",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["saturn", "observation"],
+            "question": "Which angular size range best matches Saturn (disk; arcseconds)?",
+            "options": [
+                { "id": "A", "label": "2.2–2.4" },
+                { "id": "B", "label": "14.5–20.1" },
+                { "id": "C", "label": "30–60" },
+                { "id": "D", "label": "0.5–1.0" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "uranus-distance-mm",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["uranus", "orbit"],
+            "question": "What is Uranus’s average distance from the Sun?",
+            "options": [
+                { "id": "A", "label": "150 Mm" },
+                { "id": "B", "label": "778 Mm" },
+                { "id": "C", "label": "2875 Mm" },
+                { "id": "D", "label": "4495 Mm" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "neptune-discovery",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["neptune", "exploration"],
+            "question": "Who is credited with the telescopic discovery of Neptune (guided by Le Verrier’s prediction)?",
+            "options": [
+                { "id": "A", "label": "William Herschel" },
+                { "id": "B", "label": "Johann Galle & Heinrich d’Arrest" },
+                { "id": "C", "label": "Clyde Tombaugh" },
+                { "id": "D", "label": "Galileo Galilei" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "uranus-voyager2-year",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["uranus", "missions"],
+            "question": "In which year did Voyager 2 fly by Uranus?",
+            "options": [
+                { "id": "A", "label": "1979" },
+                { "id": "B", "label": "1980" },
+                { "id": "C", "label": "1986" },
+                { "id": "D", "label": "1989" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "saturn-cassini-arrival-year",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["saturn", "missions"],
+            "question": "Cassini–Huygens arrived at Saturn in which year?",
+            "options": [
+                { "id": "A", "label": "1997" },
+                { "id": "B", "label": "2004" },
+                { "id": "C", "label": "2005" },
+                { "id": "D", "label": "2011" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mercury-bepicolombo-2018",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mercury", "missions"],
+            "question": "Which mission launched in 2018 and is en route to Mercury?",
+            "options": [
+                { "id": "A", "label": "MESSENGER" },
+                { "id": "B", "label": "BepiColombo" },
+                { "id": "C", "label": "Mariner 10" },
+                { "id": "D", "label": "Akatsuki" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "mars-perseverance-2020",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "missions"],
+            "question": "Which mission to Mars launched in 2020?",
+            "options": [
+                { "id": "A", "label": "Curiosity (MSL)" },
+                { "id": "B", "label": "Mars Odyssey" },
+                { "id": "C", "label": "Perseverance (Mars 2020)" },
+                { "id": "D", "label": "Viking 1" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "not-naked-eye-planet",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["observation"],
+            "question": "Which of these planets is NOT visible to the naked eye?",
+            "options": [
+                { "id": "A", "label": "Jupiter" },
+                { "id": "B", "label": "Mars" },
+                { "id": "C", "label": "Saturn" },
+                { "id": "D", "label": "Neptune" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "sma-greater-10au",
+            "type": "multiple-choice",
+            "difficulty": "hard",
+            "tags": ["orbit", "comparative"],
+            "question": "Which planets have semi-major axes greater than 10 AU?",
+            "options": [
+                { "id": "A", "label": "Jupiter (5.204 AU)" },
+                { "id": "B", "label": "Saturn (9.58 AU)" },
+                { "id": "C", "label": "Uranus (19.22 AU)" },
+                { "id": "D", "label": "Neptune (30.07 AU)" }
+            ],
+            "correctOptionIds": ["C", "D"]
+        },
+        {
+            "id": "jupiter-eccentricity",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["jupiter", "orbit"],
+            "question": "What is Jupiter’s orbital eccentricity?",
+            "options": [
+                { "id": "A", "label": "0.0489" },
+                { "id": "B", "label": "0.0167" },
+                { "id": "C", "label": "0.0086" },
+                { "id": "D", "label": "0.0934" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "neptune-distance-mm",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["neptune", "orbit"],
+            "question": "What is Neptune’s average distance from the Sun?",
+            "options": [
+                { "id": "A", "label": "150 Mm" },
+                { "id": "B", "label": "778 Mm" },
+                { "id": "C", "label": "2875 Mm" },
+                { "id": "D", "label": "4495 Mm" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "mars-sidereal-day",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "rotation"],
+            "question": "What is Mars’s sidereal day length?",
+            "options": [
+                { "id": "A", "label": "24.62 hours" },
+                { "id": "B", "label": "24.66 hours" },
+                { "id": "C", "label": "23.934 hours" },
+                { "id": "D", "label": "9.93 hours" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "crew-dragon-demo2-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "2020s", "iss", "spacex"],
+            "question": "In which year did Crew Dragon Demo-2 mark the return of human launches from U.S. soil?",
+            "options": [
+                { "id": "A", "label": "2015" },
+                { "id": "B", "label": "2018" },
+                { "id": "C", "label": "2020" },
+                { "id": "D", "label": "2022" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mercury-spin-orbit-resonance",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mercury", "rotation"],
+            "question": "Which planet is locked in a 3:2 spin–orbit resonance with the Sun?",
+            "options": [
+                { "id": "A", "label": "Mercury" },
+                { "id": "B", "label": "Venus" },
+                { "id": "C", "label": "Earth" },
+                { "id": "D", "label": "Mars" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mercury-sidereal-day-hours",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mercury", "rotation"],
+            "question": "What is Mercury’s sidereal day length (hours)?",
+            "options": [
+                { "id": "A", "label": "23.934" },
+                { "id": "B", "label": "24.62" },
+                { "id": "C", "label": "1407.5" },
+                { "id": "D", "label": "5832.5" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mercury-distance-from-sun",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mercury", "orbit"],
+            "question": "What is Mercury’s average distance from the Sun?",
+            "options": [
+                { "id": "A", "label": "58 Mm" },
+                { "id": "B", "label": "108 Mm" },
+                { "id": "C", "label": "150 Mm" },
+                { "id": "D", "label": "228 Mm" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "venus-surface-pressure",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["venus", "atmosphere"],
+            "question": "Approximate surface pressure on Venus is…",
+            "options": [
+                { "id": "A", "label": "0.006 bar" },
+                { "id": "B", "label": "1.0 bar" },
+                { "id": "C", "label": "92 bar" },
+                { "id": "D", "label": "0.1 bar" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "venus-axial-tilt-value",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["venus", "rotation"],
+            "question": "What is Venus’s axial tilt (retrograde)?",
+            "options": [
+                { "id": "A", "label": "0.03°" },
+                { "id": "B", "label": "23.44°" },
+                { "id": "C", "label": "97.77°" },
+                { "id": "D", "label": "177.4°" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "venus-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["venus", "photometry"],
+            "question": "Which value is closest to Venus’s Bond albedo?",
+            "options": [
+                { "id": "A", "label": "11.9%" },
+                { "id": "B", "label": "25%" },
+                { "id": "C", "label": "34%" },
+                { "id": "D", "label": "77%" }
+            ],
+            "correctOptionIds": ["D"]
+        },
+        {
+            "id": "earth-major-gases",
+            "type": "multiple-choice",
+            "difficulty": "easy",
+            "tags": ["earth", "atmosphere"],
+            "question": "Which of these are major constituents of Earth’s atmosphere?",
+            "options": [
+                { "id": "A", "label": "N₂ (~78%)" },
+                { "id": "B", "label": "O₂ (~21%)" },
+                { "id": "C", "label": "Ar (~0.93%)" },
+                { "id": "D", "label": "CO₂ (~0.041%)" }
+            ],
+            "correctOptionIds": ["A", "B", "C"]
+        },
+        {
+            "id": "earth-surface-pressure",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["earth", "atmosphere"],
+            "question": "What is Earth’s mean sea-level surface pressure?",
+            "options": [
+                { "id": "A", "label": "0.006 bar" },
+                { "id": "B", "label": "0.1013 bar" },
+                { "id": "C", "label": "1.013 bar" },
+                { "id": "D", "label": "92 bar" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mars-distance-from-sun",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["mars", "orbit"],
+            "question": "What is Mars’s average distance from the Sun?",
+            "options": [
+                { "id": "A", "label": "108 Mm" },
+                { "id": "B", "label": "150 Mm" },
+                { "id": "C", "label": "228 Mm" },
+                { "id": "D", "label": "778 Mm" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "mars-dominant-gas",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["mars", "atmosphere"],
+            "question": "Which gas dominates Mars’s atmosphere by percentage?",
+            "options": [
+                { "id": "A", "label": "CO₂ (~95%)" },
+                { "id": "B", "label": "N₂ (~78%)" },
+                { "id": "C", "label": "O₂ (~21%)" },
+                { "id": "D", "label": "Ar (~1.6%)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "mars-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["mars", "photometry"],
+            "question": "Which value is closest to Mars’s Bond albedo?",
+            "options": [
+                { "id": "A", "label": "11.9%" },
+                { "id": "B", "label": "25%" },
+                { "id": "C", "label": "34%" },
+                { "id": "D", "label": "77%" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "jupiter-major-gases",
+            "type": "multiple-choice",
+            "difficulty": "medium",
+            "tags": ["jupiter", "atmosphere"],
+            "question": "Which are major constituents of Jupiter’s atmosphere?",
+            "options": [
+                { "id": "A", "label": "H₂ (~96.3%)" },
+                { "id": "B", "label": "He (~3.25%)" },
+                { "id": "C", "label": "CH₄ (~0.45%)" },
+                { "id": "D", "label": "NH₃ (~0.01%)" }
+            ],
+            "correctOptionIds": ["A", "B"]
+        },
+        {
+            "id": "jupiter-sidereal-day",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["jupiter", "rotation"],
+            "question": "What is Jupiter’s sidereal day length?",
+            "options": [
+                { "id": "A", "label": "9.93 hours" },
+                { "id": "B", "label": "16.11 hours" },
+                { "id": "C", "label": "24.66 hours" },
+                { "id": "D", "label": "5832.5 hours" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "saturn-bond-albedo",
+            "type": "single-choice",
+            "difficulty": "hard",
+            "tags": ["saturn", "photometry"],
+            "question": "Which value is closest to Saturn’s Bond albedo?",
+            "options": [
+                { "id": "A", "label": "29%" },
+                { "id": "B", "label": "34%" },
+                { "id": "C", "label": "50%" },
+                { "id": "D", "label": "77%" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "saturn-naked-eye",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["saturn", "observation"],
+            "question": "Is Saturn visible to the naked eye?",
+            "options": [
+                { "id": "A", "label": "Yes" },
+                { "id": "B", "label": "No" },
+                { "id": "C", "label": "Only during ring-plane crossings" },
+                { "id": "D", "label": "Only from the Southern Hemisphere" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "uranus-semi-major-axis",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["uranus", "orbit"],
+            "question": "What is Uranus’s semi-major axis?",
+            "options": [
+                { "id": "A", "label": "9.58 AU" },
+                { "id": "B", "label": "19.22 AU" },
+                { "id": "C", "label": "30.07 AU" },
+                { "id": "D", "label": "1.524 AU" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "uranus-methane-color",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["uranus", "atmosphere"],
+            "question": "Which gas primarily causes Uranus’s blue-green color?",
+            "options": [
+                { "id": "A", "label": "Hydrogen (H₂)" },
+                { "id": "B", "label": "Helium (He)" },
+                { "id": "C", "label": "Methane (CH₄)" },
+                { "id": "D", "label": "Ammonia (NH₃)" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "neptune-tagline",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["neptune", "overview"],
+            "question": "In this dataset, which planet carries the tagline “The Windy Ice Giant”?",
+            "options": [
+                { "id": "A", "label": "Uranus" },
+                { "id": "B", "label": "Neptune" },
+                { "id": "C", "label": "Saturn" },
+                { "id": "D", "label": "Jupiter" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "sputnik1-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1950s"],
+            "question": "In what year was Sputnik 1 launched?",
+            "options": [
+                { "id": "A", "label": "1957" },
+                { "id": "B", "label": "1958" },
+                { "id": "C", "label": "1961" },
+                { "id": "D", "label": "1969" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "sputnik2-first-animal",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1950s"],
+            "question": "Which mission carried the first animal into orbit?",
+            "options": [
+                { "id": "A", "label": "Explorer 1" },
+                { "id": "B", "label": "Vostok 1" },
+                { "id": "C", "label": "Sputnik 2 (Laika)" },
+                { "id": "D", "label": "Luna 2" }
+            ],
+            "correctOptionIds": ["C"]
+        },
+        {
+            "id": "explorer1-discovery",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1950s"],
+            "question": "Explorer 1’s instruments led to the discovery of what key Earth feature?",
+            "options": [
+                { "id": "A", "label": "The ozone hole" },
+                { "id": "B", "label": "Van Allen radiation belts" },
+                { "id": "C", "label": "The ionosphere" },
+                { "id": "D", "label": "The plasmasphere" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "vanguard1-first-solar-powered",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1950s"],
+            "question": "Which satellite is recognized here as the first solar-powered satellite?",
+            "options": [
+                { "id": "A", "label": "Vanguard 1 (1958)" },
+                { "id": "B", "label": "Telstar 1 (1962)" },
+                { "id": "C", "label": "Skylab (1973)" },
+                { "id": "D", "label": "Hubble (1990)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "luna2-first-impact",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "1950s", "moon"],
+            "question": "Which mission performed the first successful impact on the Moon?",
+            "options": [
+                { "id": "A", "label": "Luna 2 (1959)" },
+                { "id": "B", "label": "Luna 3 (1959)" },
+                { "id": "C", "label": "Surveyor 1 (1966)" },
+                { "id": "D", "label": "Apollo 11 (1969)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "luna3-far-side-images",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1950s", "moon"],
+            "question": "Which mission returned the first images of the Moon’s far side?",
+            "options": [
+                { "id": "A", "label": "Luna 3 (1959)" },
+                { "id": "B", "label": "Ranger 7 (1964)" },
+                { "id": "C", "label": "Lunar Orbiter 1 (1966)" },
+                { "id": "D", "label": "Apollo 8 (1968)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "voskhod2-first-spacewalk",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1960s"],
+            "question": "Which mission featured the first spacewalk (EVA)?",
+            "options": [
+                { "id": "A", "label": "Vostok 1 (1961)" },
+                { "id": "B", "label": "Voskhod 2 (1965)" },
+                { "id": "C", "label": "Apollo 9 (1969)" },
+                { "id": "D", "label": "Gemini 4 (1965)" }
+            ],
+            "correctOptionIds": ["B"]
+        },
+        {
+            "id": "luna9-first-soft-landing",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1960s", "moon"],
+            "question": "What was the first mission to achieve a soft landing on the Moon?",
+            "options": [
+                { "id": "A", "label": "Luna 9 (1966)" },
+                { "id": "B", "label": "Surveyor 1 (1966)" },
+                { "id": "C", "label": "Luna 2 (1959)" },
+                { "id": "D", "label": "Apollo 11 (1969)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "surveyor1-first-us-soft-landing",
+            "type": "single-choice",
+            "difficulty": "medium",
+            "tags": ["timeline", "1960s", "moon"],
+            "question": "Which mission made the first U.S. soft landing on the Moon?",
+            "options": [
+                { "id": "A", "label": "Surveyor 1 (1966)" },
+                { "id": "B", "label": "Ranger 7 (1964)" },
+                { "id": "C", "label": "Apollo 12 (1969)" },
+                { "id": "D", "label": "Lunar Orbiter 1 (1966)" }
+            ],
+            "correctOptionIds": ["A"]
+        },
+        {
+            "id": "new-horizons-pluto-year",
+            "type": "single-choice",
+            "difficulty": "easy",
+            "tags": ["timeline", "2010s", "pluto"],
+            "question": "In which year did New Horizons fly past Pluto?",
+            "options": [
+                { "id": "A", "label": "2012" },
+                { "id": "B", "label": "2014" },
+                { "id": "C", "label": "2015" },
+                { "id": "D", "label": "2016" }
+            ],
+            "correctOptionIds": ["C"]
         }
     ]
 }

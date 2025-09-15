@@ -2,88 +2,85 @@
 content %}
 
 <div class="page-grid">
-    <div id="quiz-container" class="content-container">
-        <h1>Build a Quiz</h1>
-        <form id="quiz-builder" action="">
-            <h2>Quiz Builder</h2>
-            <fieldset class="form-number-container">
-                <legend>Number of Questions</legend>
-                <span>1</span><input type="range" name="num_questions" min="1" max="20" value="10" /><span>20</span>
-            </fieldset>
-
-            <fieldset class="form-option-container">
-                <legend>Time Limit</legend>
-                <select name="time_limit" id="time_limit">
-                    <option value="5">Short</option>
-                    <option value="10">Medium</option>
-                    <option value="15">Long</option>
-                    <option value="999">Unlimited</option>
-                </select>
-            </fieldset>
-
-            <fieldset class="form-checkbox-container">
-                <legend>Subject</legend>
-
-                <div class="form-checkbox-set" id="exploration">
-                    <h4>Exploration</h4>
-                    <div class="form-checkbox">
-                        <input
-                            type="checkbox"
-                            class="explore-subject"
-                            name="subject"
-                            id="earth"
-                            value="earth"
-                        />
-                        <label for="earth">Earth</label>
-                    </div>
-                    <div class="form-checkbox">
-                        <input
-                            type="checkbox"
-                            class="explore-subject"
-                            name="subject"
-                            id="mars"
-                            value="mars"
-                        />
-                        <label for="mars">Mars</label>
-                    </div>
+    {% if is_session_started == True %}
+        <div id="continue-session-modal">
+            <div class="modal-content">
+                <p class="modal-message">Resume Current Quiz?</p>
+                <form class="modal-controls" action="" method="get">
+                    <button type="submit">Yes</button>
+                    <button type="submit">No</button>
+                </form>
                 </div>
-
-                <div class="form-checkbox-set" id="exploration">
-                    <h4>History</h4>
-                    <div class="form-checkbox">
-                        <input
-                            type="checkbox"
-                            name="subject"
-                            id="1950s"
-                            value="1950s"
-                        />
-                        <label for="earth">1950s</label>
-                    </div>
-                    <div class="form-checkbox">
-                        <input
-                            type="checkbox"
-                            name="subject"
-                            id="1960s"
-                            value="1960s"
-                        />
-                        <label for="1960s">1960s</label>
-                    </div>
+        </div>
+    {% endif %}
+    <div id="quiz-builder-container" class="content-container">
+        <form id="quiz-builder" action="{{ url_for('quiz.build') }}" method="POST">
+            <div id="form-header">
+                <h2>Quiz Builder</h2>
+                <div class="form-controls">
+                    <button type="submit">Start</button>
+                    <button type="reset">Reset</button>
+                    <button>Randomise</button>
                 </div>
-            </fieldset>
-
-            <fieldset class="form-option-container">
-                <legend>Difficulty</legend>
-                <select name="difficulty" id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="hard">Hard</option>
-                    <option value="enthusiast">Enthusiast</option>
-                </select>
-            </fieldset>
-
-            <div class="form-controls">
-                <button type="submit">Start</button>
-                <button type="reset">Reset</button>                
+            </div>
+            <div id="input-fields">
+                {% from "quiz/components/input-container.html" import
+                radio_container, checkbox_container %} 
+                {% for data_set in quiz_data %}
+                    <fieldset id="{{ data_set.id }}">
+                        <legend>{{ data_set.legend }}</legend>
+                        {% if data_set.type == "radio" %} 
+                            {% for val in data_set["values"] %} 
+                            {{ 
+                                radio_container(
+                                    name=data_set.name,
+                                    text=val.text, 
+                                    value=val.value, 
+                                    id=val.id,
+                                    checked=val.is_default
+                                ) 
+                            }} 
+                            {% endfor %} 
+                        {% else %}
+                            {% for option in data_set["values"] %}
+                                <div class="subject-container" id="{{ option.id }}">
+                                    <div class="subject-button">
+                                        <span class="selected-count">0</span>
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                    <div class="subject-icon">
+                                        <i class="{{ option.icon_class }}"></i>
+                                        <p>{{ option.text }}</p>
+                                    </div>
+                                    <div class="options-list-container">
+                                        <div class="subject-button">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </div>
+                                        <div class="subject-icon">
+                                            <i class="{{ option.icon_class }}"></i>
+                                            <p>{{ option.text }}</p>
+                                        </div>
+                                        <ul class="subject-options-list">
+                                            {% for val in option["options"] %}
+                                                <li class="subject-options-list-item">
+                                                    {{
+                                                        checkbox_container(
+                                                            name=data_set.name,
+                                                            text=val.text, 
+                                                            value=val.value, 
+                                                            id=val.id,
+                                                            ref_class=option.id
+                                                        ) 
+                                                    }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %} 
+                    </fieldset>
+                {% endfor %}
             </div>
         </form>
     </div>
@@ -94,4 +91,8 @@ content %}
     rel="stylesheet"
     href="{{ url_for('static', filename='quiz/views/index/style.css') }}"
 />
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='quiz/views/index/script.js') }}"></script>
 {% endblock %}

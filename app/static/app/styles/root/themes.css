@@ -50,7 +50,9 @@
     --clr-accent-alt-semi-transparent: hsl(from var(--clr-accent-alt) h s l / var(--alpha-semi-transparent));
     --clr-accent-alt-mostly-transparent: hsl(from var(--clr-accent-alt) h s l / var(--alpha-mostly-transparent));
 
-    --clr-transparent: hsl(from var(--clr-base-main) h s l / var(--alpha-transparent))
+    --clr-transparent: hsl(from var(--clr-base-main) h s l / var(--alpha-transparent));
+    --clr-success: #6AB547;
+    --clr-failure: #FF6978;
 }
 
 h1,

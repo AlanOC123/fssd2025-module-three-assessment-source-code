@@ -4,6 +4,7 @@ from functools import lru_cache
 
 _PLANET_DATA_PATH = Path(__file__).with_name("planets.json")
 _TIMELINE_DATA_PATH = Path(__file__).with_name("timeline.json")
+_QUESTIONS_DATA_PATH = Path(__file__).with_name("questions.json")
 _ASSETS_DATA_PATH = Path(__file__).with_name("asset-manifest.json")
 
 def _load_file(path):
@@ -25,6 +26,10 @@ def _load_timelines():
 @lru_cache(maxsize=1)
 def _load_assets():
     return _load_file(_ASSETS_DATA_PATH)
+
+@lru_cache(maxsize=1)
+def _load_questions():
+    return _load_file(_QUESTIONS_DATA_PATH)
 
 def get_assets_map():
     return _load_assets()
@@ -61,3 +66,14 @@ def get_timeline_data(timeline_id):
 
 def get_decades() -> list:
     return list(_load_timelines().keys())
+
+def get_questions() -> list:
+    return list(_load_questions().get("questions"))
+
+def get_subjects() -> list:
+    return list({tag for q in get_questions() for tag in q.get("tags", [])})
+
+def get_question(id) -> list:
+    all_questions = get_questions()
+    item = next((q for q in all_questions if q["id"] == id), None)
+    return item

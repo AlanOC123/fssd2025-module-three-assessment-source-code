@@ -1,0 +1,15 @@
+{% macro question_option(qind, option, type)
+%}
+<div class="option option-{% if type == 'single-choice' %}single{% else %}multiple{% endif %}">
+    <input
+        type="{% if type == 'single-choice' %}radio{% else %}checkbox{% endif %}"
+        value="{{ option.label }}"
+        name="q{{ qind }}"
+        id="q{{ qind }}{{ option.id }}"
+    />
+    <label for="q{{ qind }}{{ option.id }}"
+        ><span class="option-num">{{ option.id }}.</span>
+        <span class="option-val">{{ option.label }}</span>
+    </label>
+</div>
+{% endmacro %}
