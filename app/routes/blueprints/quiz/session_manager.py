@@ -18,9 +18,11 @@ def init_quiz(question_ids, time_limit_key):
         "streak": 0,
         "attempts": [],
         "time_limit_s": time_limit_s,
+        "time_limit_key": time_limit_key,
         "in_progress": False,
         "is_finished": False,
         "is_last_q": False,
+        "longest_streak": 0
     }
 
 def get_question_ids() -> list:
@@ -48,6 +50,9 @@ def get_streak() -> int:
 def get_is_last_q() -> bool:
     return session["quiz"]["is_last_q"]
 
+def get_longest_streak() -> int:
+    return session["quiz"]["longest_streak"]
+
 def advance(delta=1) -> None:
     curr = session["quiz"]
     total = len(get_question_ids())
@@ -74,6 +79,8 @@ def record_attempt(attempt: dict) -> None:
     session["quiz"] = curr
 
 def clear_session() -> None:
+    _last_saved_config = get_state()
+
     session["quiz"] = {
         "is_init": False,
         "in_progress": False,
@@ -81,7 +88,10 @@ def clear_session() -> None:
     }
 
 def get_state() -> dict:
-    return session["quiz"]
+    return session.get("quiz", None)
+
+def get_attempts() -> list:
+    return session["quiz"]["attempts"]
 
 def set_in_progress(state: bool) -> None:
     curr = session["quiz"]
@@ -92,3 +102,25 @@ def set_is_last_q(state: bool) -> None:
     curr = session["quiz"]
     curr["is_last_q"] = state
     session["quiz"] = curr
+
+def set_is_finished(state: bool) -> None:
+    curr = session["quiz"]
+    curr["is_finished"] = state
+    session["quiz"] = curr
+
+def set_longest_streak(new_streak) -> None:
+    curr = session["quiz"]
+    curr_longest = curr["longest_streak"]
+    curr["longest_streak"] = max(new_streak, curr_longest)
+    session["quiz"] = curr
+
+def restart():
+    qids = session["quiz"]["question_ids"]
+    time_limit_key = session["quiz"]["time_limit_key"]
+
+    print(time_limit_key)
+    
+    if not qids or not time_limit_key:
+        raise ValueError("Missing config settings")
+
+    init_quiz(qids, time_limit_key)

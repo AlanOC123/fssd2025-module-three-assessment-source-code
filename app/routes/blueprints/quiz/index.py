@@ -1,9 +1,19 @@
-from flask import Response, render_template, session
+from flask import Response, render_template, session, request
 from . import bp
+from .session_manager import get_quiz_in_progress, clear_session, init_quiz
 
 @bp.get('/', endpoint='index')
 def index() -> Response | str:
-    is_session_started = session.get('is_session_running')
+    if request.args.get("reset", default=False) in { "true" "yes", "True", "1" }:
+        clear_session()
+
+    has_session_data = session.get("quiz", False)
+    quiz_in_progress = False
+
+    if has_session_data:
+        quiz_in_progress = get_quiz_in_progress()
+    else:
+        init_quiz()
 
     quiz_builder_data = [
         {
@@ -87,5 +97,5 @@ def index() -> Response | str:
     return render_template(
         'quiz/views/index.html', 
         quiz_data=quiz_builder_data, 
-        is_session_started=is_session_started
+        quiz_in_progress=quiz_in_progress
     )

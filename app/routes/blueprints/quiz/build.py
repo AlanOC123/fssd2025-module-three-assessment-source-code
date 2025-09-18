@@ -50,7 +50,6 @@ def build_questions(options) -> list:
 
     return [q["id"] for q in selected_questions]
 
-
 @bp.post('/build', endpoint="build")
 def build():
     clear_session()

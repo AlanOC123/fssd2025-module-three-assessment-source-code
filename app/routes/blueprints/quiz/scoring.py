@@ -4,7 +4,7 @@ SCORING = {
         "easy": 0.8,
         "medium": 1.0,
         "hard": 1.6,
-        "enthusiast": 2
+        "enthusiast": 2.0
     },
     "streak": {
         "mode": "compound",
@@ -24,6 +24,9 @@ SCORING = {
     },
     "rounding": 1
 }
+
+def get_all_correct_bonus() -> int:
+    return SCORING["multiple_choice_options"]["all_correct_bonus"]
 
 def get_speed_mul(time_s):
     ceil = SCORING["speed"]["ceil"]

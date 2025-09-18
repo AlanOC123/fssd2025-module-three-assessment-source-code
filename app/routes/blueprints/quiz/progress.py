@@ -13,7 +13,10 @@ from .session_manager import (
     get_curr_ind,
     set_is_last_q,
     get_is_last_q,
-    advance
+    advance,
+    set_longest_streak,
+    set_is_finished,
+    set_in_progress
 )
 from .scoring import calc_score, calc_total_score
 
@@ -70,8 +73,43 @@ def get_next_index(curr_ind, max_count):
 def is_correct(q_opts, u_opts):
     intersect = q_opts.intersection(u_opts)
 
+def get_result_data(attempt):
+    result_data = []
+
+    all_options = {"A", "B", "C", "D"}
+    response_data = [{
+            "key": option,
+            "is_correct": False, 
+            "is_missed": False, 
+            "is_incorrect": False 
+        } for option in all_options
+    ]
+    correct = attempt.get("correct", [])
+    selected = attempt.get("selected", [])
+
+    for response in response_data:
+        key = response.get("key")
+
+        if key in selected and key in correct:
+            response["is_correct"] = True
+        elif key in selected and key not in correct:
+            response["is_incorrect"] = True
+        elif key in correct and key not in selected:
+            response["is_missed"] = True
+    
+        result_data.append(response)
+
+    return result_data
+
 @bp.get("/next", endpoint="next")
 def get_next_question():
+    finish_quiz = request.args.get("finish", default=False) in { "True", "true", "1", "y" }
+
+    if finish_quiz:
+        set_is_finished(True)
+        set_in_progress(False)
+        return { "redirect": url_for('quiz.result') }, 200
+
     progress = request.args.get("progress", default="true").lower() in {"1", "true", "yes", "y"}
 
     delta = request.args.get("delta", default=1, type=int)
@@ -113,30 +151,30 @@ def submit_answer():
     correct = set(q["correctOptionIds"])
     difficulty = q["difficulty"]
     curr_streak = get_streak()
+    curr_ind = get_curr_ind()
 
     awarded, all_correct = calc_score(correct, selected, curr_streak, difficulty, time_s)
-
     new_score = calc_total_score(get_total_score(), awarded)
-
     new_streak = curr_streak + 1 if all_correct else 0
+    set_longest_streak(new_streak)
 
     new_attempt = {
+        "question_number": curr_ind + 1,
         "qid": qid,
         "selected": list(selected),
         "correct": list(correct),
         "all_correct": all_correct,
         "points": awarded,
         "time_s": time_s,
+        "difficulty": difficulty,
+        "is_multi": len(correct) > 1
     }
+
+    new_attempt["result_details"] = get_result_data(new_attempt)
 
     record_attempt(new_attempt)
     set_streak(new_streak)
     set_total_score(new_score)
-
-    is_last_q = get_is_last_q()
-
-    if is_last_q:
-        return { "redirect": url_for('quiz.result') }, 200
 
     # response for the popup UI
     return {

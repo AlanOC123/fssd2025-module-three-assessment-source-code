@@ -14,6 +14,7 @@ export default () => {
         resultTotalScore: document.getElementById("result-total-score"),
         resultTimeTaken: document.getElementById("result-time-taken"),
         nextQBtn: document.getElementById("next-question"),
+        typeIndicator: document.getElementById('type-indicator')
     };
 
     let currSubmitFn = null;
@@ -41,6 +42,11 @@ export default () => {
     const updateCurrCount = (newCount) => {
         const { currQCount } = cache;
         currQCount.textContent = newCount
+    }
+
+    const updateTypeIndicator = (isSingle) => {
+        const { typeIndicator } = cache;
+        typeIndicator.textContent = isSingle ? 'Single Answer' : 'Multiple Answers'
     }
 
     const updateProgressBar = (newCount, maxCount) => {
@@ -148,9 +154,23 @@ export default () => {
         inputOptions.forEach(optEl => optEl.type = newType);
     }
 
+    const toggleTypeError = (isError = false) => {
+        const { typeIndicator } = cache;
+
+        if (isError) {
+            typeIndicator.textContent = "Select an Answer";
+            typeIndicator.classList.add("invalid");
+            return;
+        }
+
+        typeIndicator.classList.remove("invalid");
+    };
+
     const refreshOptions = (newValues, isSingle) => {
         updateInputValues(newValues);
         changeOptionType(isSingle)
+        toggleTypeError()
+        updateTypeIndicator(isSingle)
         resetOptions()
     }
 
@@ -158,6 +178,36 @@ export default () => {
         const { totalQCount } = cache;
         totalQCount.textContent = totalQs;
     }
+
+    const updateNextQButton = (text, callbackFn) => {
+        const { nextQBtn } = cache;
+        nextQBtn.textContent = text;
+        if (currNextFn) {
+            bindNextQEvent(callbackFn)
+        }
+    }
+
+    const checkOptionErrors = (totalSelected) => {
+        const { optionContainers } = cache;
+
+        optionContainers.forEach(el => el.classList.remove('invalid'))
+
+        if (totalSelected) return false;
+
+        optionContainers.forEach((el) => el.classList.add("invalid"));
+
+        toggleTypeError(true);
+
+        return true;
+    }
+
+    const removeInvalidContainer = (e) => {
+        let target = e.target;
+        target = target.closest(".question-option");
+        target.classList.remove('invalid')
+    }
+
+    cache.optionContainers.forEach(el => el.addEventListener('click', removeInvalidContainer))
 
     return {
         bindSubmitEvent,
@@ -172,6 +222,8 @@ export default () => {
         updateModal,
         removeModal,
         refreshOptions,
-        updateTotalQCount
+        updateTotalQCount,
+        updateNextQButton,
+        checkOptionErrors
     };
 };

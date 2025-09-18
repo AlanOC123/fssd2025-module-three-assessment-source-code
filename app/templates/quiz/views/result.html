@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block scripts %}
+<script
+    src="{{ url_for('static', filename='quiz/views/result/script.js') }}"
+    type="module"
+></script>
+{% endblock %} {% block styles %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='quiz/views/result/style.css') }}"
+/>
+{% endblock %} {% block content %}
+<div id="result" class="page-grid">
+    <div class="content-container">
+        <h2>Details</h2>
+        <div id="detailed-results">
+            <ul id="question-results">
+                {% from 'quiz/components/result-card.html' import result_card %}
+                {% for attempt in config.attempts %}
+                <li class="result-list-item">{{ result_card(attempt) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="content-container">
+        <div id="result-controls">
+            <h2>Overview</h2>
+            <div id="control-btns">
+                <a href="{{ url_for('quiz.index', reset=true) }}" id="to-new">New Quiz</a>
+                <a href="{{ url_for('quiz.play', retry=true) }}" id="to-retry">Retry</a>
+            </div>
+        </div>
+
+        <div id="grade">
+            <div id="grade-img-container">
+                <img id="grade-img" src="{{ ASSET_ORIGIN }}/{{ config.grade.img }}" alt="">
+            </div>
+            <div id="grade-text">{{ config.grade.text | upper }}</div>
+        </div>
+        <div id="stats">
+            <div id="longest_streak" class="stats-card">
+                <h4 class="card-heading">Longest Streak</h4>
+                <p class="card-text">{{ config.longest_streak }}</p>
+            </div>
+
+            <div id="total-score" class="stats-card">
+                <h4 class="card-heading">Score</h4>
+                <p class="card-text">{{ config.score }}</p>
+            </div>
+
+            <div id="fastest-answer" class="stats-card">
+                <h4 class="card-heading">Quickest Answer</h4>
+                <p class="card-text">{{ config.quickest_ans }}s</p>
+            </div>
+        </div>
+    </div>
+    <a href="{{ url_for('quiz.index', reset=True) }}" id="to-index"></a>
+</div>
+{% endblock %}

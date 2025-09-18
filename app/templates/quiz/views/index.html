@@ -2,15 +2,15 @@
 content %}
 
 <div class="page-grid">
-    {% if is_session_started == True %}
+    {% if quiz_in_progress == True %}
         <div id="continue-session-modal">
-            <div class="modal-content">
-                <p class="modal-message">Resume Current Quiz?</p>
-                <form class="modal-controls" action="" method="get">
-                    <button type="submit">Yes</button>
-                    <button type="submit">No</button>
-                </form>
+            <div id="continue-modal-content">
+                <h3 id="modal-message">Resume Current Quiz?</h3>
+                <div id="modal-controls">
+                    <a id="resume-quiz" href="{{ url_for('quiz.play') }}" type="button">Yes</a>
+                    <a id="new-quiz" href="{{ url_for('quiz.index', reset=True) }}" type="button">No</a>
                 </div>
+            </div>
         </div>
     {% endif %}
     <div id="quiz-builder-container" class="content-container">

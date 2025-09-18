@@ -35,7 +35,7 @@
     animation: modal-pop-up var(--trans-dur-base) var(--trans-time-base) var(--trans-dur-lg) forwards;
 }
 
-.modal-content {
+#continue-modal-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,10 +50,29 @@
     padding: var(--pad-base);
 }
 
-.modal-controls {
+#modal-controls {
     width: 100%;
     display: flex;
     gap: var(--gap-base);
+}
+
+#modal-controls a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: var(--brd-rnd-base);
+    background: none;
+    border: none;
+    color: var(--clr-text-main);
+}
+
+#modal-controls #resume-quiz {
+    background-color: var(--clr-accent);
+}
+
+#modal-controls #new-quiz {
+    border: var(--brd-accent-alt);
 }
 
 #quiz-builder-container {

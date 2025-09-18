@@ -10,7 +10,9 @@ const intervalCntrl = intervalController();
 const submitAnswer = async () => {
     const { selectedCount, selectedValues } = domCntrl.getSelectedInputs();
 
-    if (selectedCount === 0) {
+    console.log(selectedCount)
+
+    if (domCntrl.checkOptionErrors(selectedCount)) {
         return;
     }
 
@@ -33,8 +35,6 @@ const submitAnswer = async () => {
         redirect = null,
     } = res;
 
-    console.log(redirect)
-
     if (redirect) {
         console.log(redirect);
         window.location.assign(redirect);
@@ -53,10 +53,22 @@ const submitAnswer = async () => {
     )
 }
 
+const finishQuiz = async () => {
+    const res = await fetchAPIJSON.getResponse('next?finish=true');
+
+    const { redirect } = res;
+    
+    window.location.assign(redirect)
+}
+
 const nextQuestion = async () => {
     const res = await fetchAPIJSON.getResponse('next');
 
     const { currInd, maxCount, qText, qType, qOptions, isLast } = res;
+
+    if (isLast) {
+
+    }
 
     domCntrl.updateProgressBar(currInd, maxCount);
 
@@ -64,6 +76,10 @@ const nextQuestion = async () => {
     domCntrl.updateQText(qText)
     domCntrl.refreshOptions(qOptions, (qType === 'single-choice'))
     domCntrl.removeModal();
+
+    if (isLast) {
+        domCntrl.updateNextQButton('Finish', finishQuiz)
+    }
 
     intervalCntrl.startLocalInterval();
 }
