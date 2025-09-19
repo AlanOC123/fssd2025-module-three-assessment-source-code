@@ -27,34 +27,34 @@ def get_grade(count, attempts):
         "Cadet": {
             "score": base_score * 0.6 * count,
             "text": "Cadet",
-            "img": 'quiz/badge_cadet.png'
+            "img": 'quiz/assets/badge_cadet.webp'
         },
         "Technician": {
             "score": base_score * 0.8 * count,
             "text": "Technician",
-            "img": 'quiz/badge_technician.png'
+            "img": 'quiz/assets/badge_technician.webp'
         },
         "Navigator": {
             "score": base_score * 1.0 * count,
             "text": "Navigator",
-            "img": 'quiz/badge_navigator.png'
+            "img": 'quiz/assets/badge_navigator.webp'
         },
         "Mission Controller": {
             "score": base_score * 1.2 * count,
             "text": "Mission Controller",
-            "img": 'quiz/badge_mission_controller.png'
+            "img": 'quiz/assets/badge_mission_controller.webp'
         },
         "Captain": {
             "score": base_score * 1.4 * count,
             "text": "Captain",
-            "img": 'quiz/badge_captain.png'
+            "img": 'quiz/assets/badge_captain.webp'
         },
     }
 
     if weighted_score <= 0:
         return { 
             "grade": "Retry",
-            "img": "quiz/badge_retry.png"
+            "img": "quiz/assets/badge_retry.webp"
         }
 
     for k in grade_weights.keys():
@@ -66,7 +66,7 @@ def get_grade(count, attempts):
         
     return { 
         "grade": "Pioneer",
-        "img": "quiz/badge_pioneer.png"
+        "img": "quiz/assets/badge_pioneer.webp"
     }
 
 @bp.get("/result", endpoint="result")
@@ -87,7 +87,5 @@ def result():
         "quickest_ans": quickest_ans,
         "attempts": attempts
     }
-
-    print(config)
 
     return render_template('quiz/views/result.html', config=config)

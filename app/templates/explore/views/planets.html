@@ -32,7 +32,7 @@
                     <li class="planet-list-item">
                             {{
                                 planet_card(
-                                    sprite_key=planet.mainData.sprite,
+                                    sprite_path=planet.mainData.sprite,
                                     name=planet.mainData.name,
                                     tagline=planet.mainData.tagline,
                                     href=url_for('explore.planet_selected', planet_id=planet.mainData.id),
@@ -56,8 +56,7 @@
                     {{ planet_data.curr_planet.mainData.name }}
                 </h1>
                 <button class="open-planet-list">
-                        {% from "app/components/icons.html" import planet_list_icon %}
-                        {{ planet_list_icon() }}
+                        <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
 
@@ -74,9 +73,9 @@
             <div id="planet-content-container">
                 <div id="planet-img-container">
                     <img
-                    src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[planet_data.curr_planet.mainData.sprite] }}"
+                    src="{{ url_for('static', filename=planet_data.curr_planet.mainData.sprite) }}"
                     style="view-transition-name: img-{{ planet_data.curr_planet.mainData.id }}"
-                    alt=""
+                    alt="A big of {{ id }}"
                     >
                 </div>
                 <div id="planet-data-container">

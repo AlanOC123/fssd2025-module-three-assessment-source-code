@@ -1,8 +1,8 @@
-{% macro planet_card(sprite_key="sun-sprite", name="See All", tagline="", href=url_for('explore.planets_default'), id="") %}
+{% macro planet_card(sprite_path="explore/assets/sun.webp", name="See All", tagline="", href=url_for('explore.planets_default'), id="") %}
 <article class="planet-card">
     <div class="planet-img">
         <img
-        src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[sprite_key] }}" alt="A high res image of {{ name }}"
+        src="{{ url_for('static', filename=sprite_path) }}" alt="A high res image of {{ name }}"
         {% if id %}style="view-transition-name: img-{{ id }}"{% endif %}
         >
     </div>

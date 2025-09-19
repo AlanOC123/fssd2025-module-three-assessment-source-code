@@ -12,7 +12,7 @@
                 "value": 24.0,
                 "unit": "hour"
             },
-            "sprite": "earth-sprite"
+            "sprite": "explore/assets/earth.webp"
         },
         "altData": [{
             "kind": "section",
@@ -424,7 +424,7 @@
                 "value": 24.6,
                 "unit": "hour"
             },
-            "sprite": "mars-sprite"
+            "sprite": "explore/assets/mars.webp"
         },
         "altData": [{
             "kind": "section",
@@ -834,7 +834,7 @@
                 "value": 9.93,
                 "unit": "hour"
             },
-            "sprite": "jupiter-sprite"
+            "sprite": "explore/assets/jupiter.webp"
         },
         "altData": [{
             "kind": "section",
@@ -1236,7 +1236,7 @@
                 "value": 10.66,
                 "unit": "hour"
             },
-            "sprite": "saturn-sprite"
+            "sprite": "explore/assets/saturn.webp"
         },
         "altData": [{
             "kind": "section",
@@ -1648,7 +1648,7 @@
                 "value": 17.24,
                 "unit": "hour"
             },
-            "sprite": "uranus-sprite"
+            "sprite": "explore/assets/uranus.webp"
         },
         "altData": [{
             "kind": "section",
@@ -2040,7 +2040,7 @@
                 "value": 16.11,
                 "unit": "hour"
             },
-            "sprite": "neptune-sprite"
+            "sprite": "explore/assets/neptune.webp"
         },
         "altData": [{
             "kind": "section",
@@ -2432,7 +2432,7 @@
                 "value": 4222.6,
                 "unit": "hour"
             },
-            "sprite": "mercury-sprite"
+            "sprite": "explore/assets/mercury.webp"
         },
         "altData": [{
             "kind": "section",
@@ -2851,7 +2851,7 @@
                 "value": 2802.0,
                 "unit": "hour"
             },
-            "sprite": "venus-sprite"
+            "sprite": "explore/assets/venus.webp"
         },
         "altData": [{
             "kind": "section",
@@ -3263,7 +3263,7 @@
                 "value": 153.3,
                 "unit": "hour"
             },
-            "sprite": "pluto-sprite"
+            "sprite": "explore/assets/pluto.webp"
         },
         "altData": [{
             "kind": "section",

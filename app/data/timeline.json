@@ -3,7 +3,7 @@
         "id": "1950s",
         "start": 1950,
         "end": 1959,
-        "img_key": "timeline-1950s-h",
+        "img_path": "timeline/assets/1950s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -103,7 +103,7 @@
         "id": "1960s",
         "start": 1960,
         "end": 1969,
-        "img_key": "timeline-1960s-h",
+        "img_path": "timeline/assets/1960s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -191,7 +191,7 @@
         "id": "1970s",
         "start": 1970,
         "end": 1979,
-        "img_key": "timeline-1970s-h",
+        "img_path": "timeline/assets/1970s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -279,7 +279,7 @@
         "id": "1980s",
         "start": 1980,
         "end": 1989,
-        "img_key": "timeline-1980s-h",
+        "img_path": "timeline/assets/1980s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -367,7 +367,7 @@
         "id": "1990s",
         "start": 1990,
         "end": 1999,
-        "img_key": "timeline-1990s-h",
+        "img_path": "timeline/assets/1990s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -455,7 +455,7 @@
         "id": "2000s",
         "start": 2000,
         "end": 2009,
-        "img_key": "timeline-2000s-h",
+        "img_path": "timeline/assets/2000s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -543,7 +543,7 @@
         "id": "2010s",
         "start": 2010,
         "end": 2019,
-        "img_key": "timeline-2010s-h",
+        "img_path": "timeline/assets/2010s.webp",
         "numMilestones": 6,
         "milestones": [
             {
@@ -631,7 +631,7 @@
         "id": "2020s",
         "start": 2020,
         "end": 2029,
-        "img_key": "timeline-2020s-h",
+        "img_path": "timeline/assets/2020s.webp",
         "numMilestones": 6,
         "milestones": [
             {

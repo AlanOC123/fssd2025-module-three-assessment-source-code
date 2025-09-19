@@ -1,8 +1,8 @@
-{% macro timeline_card(img_key="", name="", timeline_id="") %}
+{% macro timeline_card(img_path="", name="", timeline_id="") %}
 <article class="timeline-card" >
     <div class="timeline-img">
         {% if img != "" %}
-            <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[img_key] }}" alt="">
+            <img src="{{ url_for('static', filename=img_path) }}" alt="">
         {% endif %}
     </div>
 
