@@ -1,5 +1,8 @@
+import domController from "../play/helper/domController.js";
+
 const subjectWindowBtns = [...document.querySelectorAll(".subject-button")];
 const checkboxs = {};
+
 
 ['exploration', 'history']
 .forEach(
