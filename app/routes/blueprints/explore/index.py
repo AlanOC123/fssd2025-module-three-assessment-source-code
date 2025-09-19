@@ -12,6 +12,4 @@ def index() -> Response | str:
 
     core_data = [get_planet_main_data(p) for p in planets_viewed]
 
-    print(core_data)
-
     return render_template('explore/views/index.html', recently_viewed=core_data)

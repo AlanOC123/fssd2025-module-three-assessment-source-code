@@ -1,7 +1,7 @@
 {
-    "explore-hero": "app/background/explore.webp",
-    "timeline-hero": "app/background/timeline.webp",
-    "quiz-hero": "app/background/quiz.webp",
+    "explore-hero": "app/backgrounds/explore.webp",
+    "timeline-hero": "app/backgrounds/timeline.webp",
+    "quiz-hero": "app/backgrounds/quiz.webp",
     "favicon": "app/icons/favicon.ico",
     "website-logo": "app/icons/website-logo.png",
     "planets-hero": "explore/hero.webp",
