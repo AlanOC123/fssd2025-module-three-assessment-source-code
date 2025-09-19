@@ -75,12 +75,10 @@ def result():
     qids = get_question_ids()
     score = get_total_score()
     longest_streak = get_longest_streak()
-    quickest_ans = min([a.get("time_s") for a in attempts]) 
+    quickest_ans = 0 if not attempts or len(attempts) is 0 else min([a.get("time_s") for a in attempts])
     count = len(qids)
 
     grade = get_grade(count=count, attempts=attempts)
-
-    print(attempts)
 
     config = {
         "grade": grade,

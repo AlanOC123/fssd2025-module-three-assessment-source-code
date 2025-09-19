@@ -17,6 +17,8 @@
                 {% from 'quiz/components/result-card.html' import result_card %}
                 {% for attempt in config.attempts %}
                 <li class="result-list-item">{{ result_card(attempt) }}</li>
+                {% else %}
+                <p>No Attempts Made</p>
                 {% endfor %}
             </ul>
         </div>

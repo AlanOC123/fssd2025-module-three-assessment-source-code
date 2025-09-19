@@ -13,6 +13,7 @@ def index() -> Response | str:
     if has_session_data:
         quiz_in_progress = get_quiz_in_progress()
     else:
+        print(f"Session: {session}")
         init_quiz()
 
     quiz_builder_data = [

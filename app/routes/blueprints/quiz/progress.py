@@ -16,7 +16,11 @@ from .session_manager import (
     advance,
     set_longest_streak,
     set_is_finished,
-    set_in_progress
+    set_in_progress,
+    get_time_limit,
+    get_time_left,
+    set_time_left,
+    save_state
 )
 from .scoring import calc_score, calc_total_score
 
@@ -101,11 +105,29 @@ def get_result_data(attempt):
 
     return result_data
 
+@bp.post('/unload', endpoint="unload")
+def unload():
+    payload = request.get_json(force=True)
+    time_left = payload.get("timeS", None)
+
+    if time_left and time_left > 0:
+        set_time_left(time_left)
+
+    save_state()
+    
+    return "", 204
+
 @bp.get("/next", endpoint="next")
 def get_next_question():
     finish_quiz = request.args.get("finish", default=False) in { "True", "true", "1", "y" }
+    expired = request.args.get("expired", default=False) in { "True", "true", "1", "y" }
 
-    if finish_quiz:
+    if finish_quiz and expired:
+        set_is_finished(True)
+        set_in_progress(False)
+        return { "redirect": url_for('quiz.result', expired=True) }, 200
+
+    elif finish_quiz:
         set_is_finished(True)
         set_in_progress(False)
         return { "redirect": url_for('quiz.result') }, 200
@@ -122,6 +144,8 @@ def get_next_question():
     curr_q_id = question_ids[curr_ind]
     max_count = len(question_ids)
     curr_q = get_question(curr_q_id)
+    time_limit =  get_time_limit()
+    time_left = get_time_left()
 
     question_text = curr_q["question"]
     question_options = curr_q["options"]
@@ -136,7 +160,8 @@ def get_next_question():
         "qText": question_text,
         "qOptions": question_options,
         "qType": question_type,
-        "isLast": is_last_q
+        "isLast": is_last_q,
+        "totalTime": time_left if time_left is not 0 else time_limit
     }, 200
 
 @bp.post("/submit", endpoint="submit")

@@ -14,7 +14,10 @@ export default () => {
         resultTotalScore: document.getElementById("result-total-score"),
         resultTimeTaken: document.getElementById("result-time-taken"),
         nextQBtn: document.getElementById("next-question"),
-        typeIndicator: document.getElementById('type-indicator')
+        typeIndicator: document.getElementById('type-indicator'),
+        minuteIndicator: document.getElementById('minute'),
+        secondIndicator: document.getElementById('second'),
+        timeLeftContainer:document.getElementById('time-left'),
     };
 
     let currSubmitFn = null;
@@ -122,6 +125,21 @@ export default () => {
         resultTimeTaken.textContent = `Time Taken: ${timeS}s`
     }
 
+    const updateTimer = (timeS) => {
+        const { minuteIndicator, secondIndicator, timeLeftContainer } = cache;
+        if (!timeS) timeLeftContainer.style.display = 'none';
+
+        const m = Math.floor(timeS / 60);
+        const s = (timeS % 60).toString().padStart(2, '0');
+
+        if (!m && s <= 10) timeLeftContainer.classList.add('warning');
+
+        minuteIndicator.textContent = m
+            .toString()
+            .padStart(2, "0");
+        secondIndicator.textContent = (s).toString().padStart(2, "0");;
+    }
+
     const updateModal = (text, isCorrect, score, totalScore, timeS, streak) => {
         updateModalMessage(text);
         updateModalScore(score);
@@ -224,6 +242,7 @@ export default () => {
         refreshOptions,
         updateTotalQCount,
         updateNextQButton,
-        checkOptionErrors
+        checkOptionErrors, 
+        updateTimer
     };
 };

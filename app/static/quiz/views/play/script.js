@@ -55,6 +55,8 @@ const submitAnswer = async () => {
 
 const finishQuiz = async () => {
     const res = await fetchAPIJSON.getResponse('next?finish=true');
+    intervalCntrl.stopLocalInterval();
+    intervalCntrl.stopGlobalInterval(true);
 
     const { redirect } = res;
     
@@ -87,18 +89,29 @@ const nextQuestion = async () => {
 const init = async () => {
     const res = await fetchAPIJSON.getResponse('next?progress=false');
 
-    const { maxCount, currInd, qText, qOptions, qType } = res;
+    const { maxCount, currInd, qText, qOptions, qType, totalTime } = res;
 
     domCntrl.updateCurrCount(currInd + 1)
     domCntrl.updateTotalQCount(maxCount)
     domCntrl.updateQText(qText)
     domCntrl.refreshOptions(qOptions, (qType === 'single-choice'));
-    domCntrl.updateProgressBar(currInd, maxCount)
+    domCntrl.updateProgressBar(currInd, maxCount);
 
+    const intervalSettings = { timeLimit:totalTime, callbackFn: domCntrl.updateTimer }
     intervalCntrl.startLocalInterval();
+    intervalCntrl.startGlobalInterval(intervalSettings)
+}
+
+const unloadData = async () => {
+    intervalCntrl.stopGlobalInterval();
+    intervalCntrl.stopLocalInterval();
+    const payload = { timeS: intervalCntrl.getTimeLeft() }
+    fetchAPIJSON.postResponse(payload, '/unload')
 }
 
 init()
+
+window.addEventListener('beforeunload', unloadData)
 
 domCntrl.bindSubmitEvent(submitAnswer);
 domCntrl.bindNextQEvent(nextQuestion);

@@ -1,12 +1,13 @@
 import fetchAPIJSON from "./fetchAPIJSON.js";
 
 export default () => {
-    let TIME_LIMIT = Infinity;
+    let time_limit = null;
     
-    let timeLeft = TIME_LIMIT;
+    let timeLeft = null;
     let localTimeCount = 0;
 
     let globalInterval = null;
+    let globalCallback = null;
     let localInterval = null;
 
     const setLocalInterval = () => {
@@ -15,14 +16,13 @@ export default () => {
 
     const stopGlobalInterval = (hardReset = false) => {
         if (globalInterval) {
-            clearInterval(interval)
+            clearInterval(globalInterval)
         }
 
         if (hardReset) {
-            timeLeft = TIME_LIMIT;
+            globalInterval = null;
+            timeLeft = null;
         }
-
-        globalInterval = null;
     }
 
     const stopLocalInterval = () => {
@@ -37,29 +37,45 @@ export default () => {
         return lastStoppedAt
     }
 
-    const setGlobalInterval = () => {
+    const setGlobalInterval = async () => {
         timeLeft--;
 
-        if (!timeLeft) {
-            stopGlobalInterval()
+        globalCallback(timeLeft);
+
+        if (timeLeft <= 0) {
+            stopGlobalInterval(true)
             stopLocalInterval()
-            fetchAPIJSON.postResponse({}, 'result')
+            const res = await fetchAPIJSON.getResponse('next?finish=true&expired=true');
+            const { redirect } = res;
+            window.location.assign(redirect);
         }
     };
 
-    const startGlobalInterval = () => {
-        if (TIME_LIMIT === Infinity || !TIME_LIMIT) return;
-        globalInterval = setInterval(setGlobalInterval, 1000);
-    }
+    const startGlobalInterval = ({ timeLimit = null, callbackFn = null }) => {
+        if (!timeLimit) return;
+
+        if (timeLeft && globalCallback) {
+            globalInterval = setInterval(setGlobalInterval, 1000);
+            return;
+        }
+
+        stopGlobalInterval(true);
+        globalCallback = callbackFn;
+        timeLeft = time_limit = timeLimit;
+        globalInterval = setInterval(setGlobalInterval, 1000)
+    };
 
     const startLocalInterval = () => {
         localInterval = setInterval(setLocalInterval, 1000)
     };
 
+    const getTimeLeft = () => timeLeft;
+
     return {
         startGlobalInterval,
         startLocalInterval,
         stopGlobalInterval,
-        stopLocalInterval
+        stopLocalInterval,
+        getTimeLeft,
     }
 }
