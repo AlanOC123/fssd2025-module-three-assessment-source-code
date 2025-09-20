@@ -1,43 +1,49 @@
 {% macro milestone_container(id, title, subtitle, date, description, actors, significance, img_key) %}
 
-<section class="milestone" id="milestone-{{ id }}">
+<section class="milestone" id="milestone-{{ id }}"
+         aria-labelledby="milestone-title-{{ id }}"
+         aria-describedby="milestone-subtitle-{{ id }} milestone-date-{{ id }}">
     <div class="milestone-hero">
-        <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[img_key] }}" alt="">
+        <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP[img_key] }}"
+             alt="{{ title }} — {{ subtitle }}"
+             loading="lazy"
+             decoding="async">
     </div>
 
     <div class="milestone-title">
-            <h2 class="milestone-title-text">{{ title }}</h2>
-            <div class="milestone-subtitle">
-            <h3 class="milestone-subtitle-text">{{ subtitle }}</h3>
-                <p class="milestone-date">
-                    Date:
-                    <span>{{ date.day }}</span>
-                    <span>{{ date.month }}</span>
-                    <span>{{ date.year }}</span>
-                </p>
-            </div>
+        <h2 class="milestone-title-text" id="milestone-title-{{ id }}">{{ title }}</h2>
+        <div class="milestone-subtitle">
+            <h3 class="milestone-subtitle-text" id="milestone-subtitle-{{ id }}">{{ subtitle }}</h3>
+            <p class="milestone-date" id="milestone-date-{{ id }}"
+               aria-label="Date: {{ date.day }} {{ date.month }} {{ date.year }}">
+                Date:
+                <span>{{ date.day }}</span>
+                <span>{{ date.month }}</span>
+                <span>{{ date.year }}</span>
+            </p>
+        </div>
     </div>
 
     <div class="milestone-data">
-        <div class="milestone-description">
-            <h4 class="milestone-header">Description</h4>
+        <div class="milestone-description" role="group" aria-labelledby="milestone-desc-header-{{ id }}">
+            <h4 class="milestone-header" id="milestone-desc-header-{{ id }}">Description</h4>
             <p class="milestone-description-text">
                 {{ description }}
             </p>
         </div>
 
-        <div class="milestone-actors">
-            <h4 class="milestone-header">Actors</h4>
-            <ul class="actor-list">
+        <div class="milestone-actors" role="group" aria-labelledby="milestone-actors-header-{{ id }}">
+            <h4 class="milestone-header" id="milestone-actors-header-{{ id }}">Actors</h4>
+            <ul class="actor-list" aria-labelledby="milestone-actors-header-{{ id }}">
                 {% for actor in actors %}
                     <li class="actor-list-item">{{ actor }}</li>
                 {% endfor %}
             </ul>
         </div>
 
-        <div class="milestone-significance">
-            <h4 class="milestone-header">Significance</h4>
-            <ul class="significance-list">
+        <div class="milestone-significance" role="group" aria-labelledby="milestone-significance-header-{{ id }}">
+            <h4 class="milestone-header" id="milestone-significance-header-{{ id }}">Significance</h4>
+            <ul class="significance-list" aria-labelledby="milestone-significance-header-{{ id }}">
                 {% for item in significance %}
                     <li class="significance-list-item">{{ item }}</li>
                 {% endfor %}
@@ -47,3 +53,4 @@
 </section>
 
 {% endmacro %}
+

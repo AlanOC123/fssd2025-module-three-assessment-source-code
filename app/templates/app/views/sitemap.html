@@ -1,2 +1,39 @@
-{% extends 'base.html' %}
-{% block page_name %} - Sitemap{% endblock %}
+{% extends 'base.html' %} {% block page_name %}SiteMap{% endblock %} {% block
+content %}
+<div id="sitemap" class="page-grid">
+    <section class="content-container" aria-labelledby="sitemap-heading">
+        <h1 id="sitemap-heading">Sitemap</h1>
+        <p aria-describedby="sitemap-core">
+            Quick links to everything on Planet Stop.
+        </p>
+    </section>
+
+    <nav class="content-container" aria-labelledby="core-pages-heading">
+        <h2 id="core-pages-heading">Core Pages</h2>
+        <ul id="sitemap-core">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('explore.index') }}">Explore</a></li>
+            <li><a href="{{ url_for('timeline.index') }}">Timeline</a></li>
+            <li><a href="{{ url_for('quiz.index') }}">Quiz</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li>
+                <a href="{{ url_for('sitemap') }}" aria-current="page"
+                    >Sitemap</a
+                >
+            </li>
+            <li>
+                <a href="#" aria-disabled="true" tabindex="-1"
+                    >Terms &amp; Conditions</a
+                >
+            </li>
+            <li>
+                <a href="#" aria-disabled="true" tabindex="-1">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='app/views/sitemap/style.css') }}">
+{% endblock %}

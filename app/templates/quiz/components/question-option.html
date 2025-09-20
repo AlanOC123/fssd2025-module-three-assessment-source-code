@@ -1,14 +1,21 @@
-{% macro question_option(qind, option, type)
-%}
-<div class="option option-{% if type == 'single-choice' %}single{% else %}multiple{% endif %}">
+{% macro question_option(qind, option, type) %}
+<div
+    class="option option-{% if type == 'single-choice' %}single{% else %}multiple{% endif %}"
+    role="none"
+>
     <input
         type="{% if type == 'single-choice' %}radio{% else %}checkbox{% endif %}"
         value="{{ option.label }}"
         name="q{{ qind }}"
         id="q{{ qind }}{{ option.id }}"
+        aria-labelledby="q{{ qind }}{{ option.id }}-label"
+        aria-describedby="q{{ qind }}-text"
     />
-    <label for="q{{ qind }}{{ option.id }}"
-        ><span class="option-num">{{ option.id }}.</span>
+    <label
+        for="q{{ qind }}{{ option.id }}"
+        id="q{{ qind }}{{ option.id }}-label"
+    >
+        <span class="option-num">{{ option.id }}.</span>
         <span class="option-val">{{ option.label }}</span>
     </label>
 </div>

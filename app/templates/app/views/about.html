@@ -1,2 +1,90 @@
-{% extends 'base.html' %}
-{% block page_name %} - About{% endblock %}
+{% extends 'base.html' %} {% block page_name %}About{% endblock %} {% block
+content %}
+<div id="about-page" class="reading-flow">
+    <section
+        class="content-container"
+        id="about-hero"
+        aria-labelledby="about-heading"
+        aria-describedby="about-tagline"
+    >
+        <h1 id="about-heading">Welcome to Planet Stop</h1>
+        <p id="about-tagline">
+            Planet Stop is a simple, fast way to learn about our Solar System.
+            Browse the planets, follow a short history of spaceflight, and check
+            what you remember with a quick quiz.
+        </p>
+    </section>
+
+    <section
+        class="content-container"
+        id="about-do"
+        aria-labelledby="about-do-heading"
+    >
+        <h2 id="about-do-heading">What you can do</h2>
+        <p>
+            <strong>Explore:</strong> clear, bite-size facts and images for each
+            planet.
+        </p>
+        <p>
+            <strong>Timeline:</strong> key moments that shaped space
+            exploration.
+        </p>
+        <p>
+            <strong>Quiz:</strong> build a short quiz and get instant feedback.
+        </p>
+    </section>
+
+    <section
+        class="content-container"
+        id="about-feel"
+        aria-labelledby="about-feel-heading"
+    >
+        <h2 id="about-feel-heading">How it feels</h2>
+        <p>
+            <strong>Simple:</strong> clean pages, clear headings, easy to
+            navigate.
+        </p>
+        <p>
+            <strong>Fast:</strong> lightweight images, quick loading on mobile
+            and desktop.
+        </p>
+        <p>
+            <strong>Accessible:</strong> readable text, high contrast, and
+            keyboard-friendly controls.
+        </p>
+    </section>
+
+    <section
+        class="content-container"
+        id="about-privacy"
+        aria-labelledby="about-privacy-heading"
+    >
+        <h2 id="about-privacy-heading">Privacy at a glance</h2>
+        <p>
+            No sign-up and no downloads. Your quiz progress can be kept during
+            your visit, but nothing personal is stored.
+        </p>
+    </section>
+
+    <section
+        class="content-container"
+        id="about-cta"
+        aria-labelledby="about-cta-heading"
+    >
+        <h2 id="about-cta-heading">Start exploring</h2>
+        <div class="cta-row" aria-label="Quick actions">
+            {% from "app/components/buttons.html" import primary_btn_with_link,
+            secondary_btn_with_link %} {{ primary_btn_with_link("Explore
+            Planets", href=url_for('explore.index')) }} {{
+            secondary_btn_with_link("View Timeline",
+            href=url_for('timeline.index')) }} {{ secondary_btn_with_link("Take
+            a Quiz", href=url_for('quiz.index')) }}
+        </div>
+    </section>
+</div>
+{% endblock %} {% block styles %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='app/views/about/style.css') }}"
+/>
+{% endblock %}

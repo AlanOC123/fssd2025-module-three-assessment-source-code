@@ -1,19 +1,32 @@
 {% macro result_option(option) %}
-    <li 
+<li
     class="question-option {% if option.is_correct %}correct{% elif option.is_incorrect %}incorrect{% elif option.is_missed %}missed{% endif %}"
-    >{{ option.key }}</li>
-{% endmacro %}
-
-{% macro result_card(attempt) %}
-<div class="result-card">
+    aria-label="Answer {{ option.key }} — {% if option.is_correct %}correct{% elif option.is_incorrect %}incorrect{% elif option.is_missed %}missed{% else %}not selected{% endif %}"
+>
+    {{ option.key }}
+</li>
+{% endmacro %} {% macro result_card(attempt) %}
+<article
+    class="result-card"
+    role="region"
+    aria-labelledby="question-num-{{ attempt.question_number }}"
+    aria-describedby="question-type-{{ attempt.question_number }}"
+>
     <div class="question-data">
-        <p class="question-num">Question {{ attempt.question_number }}</p>
-        <p class="question-type">{% if attempt.is_multi %}Multiple Choice{% else %}Single Choice{% endif %}</p>
+        <p class="question-num" id="question-num-{{ attempt.question_number }}">
+            Question {{ attempt.question_number }}
+        </p>
+        <p
+            class="question-type"
+            id="question-type-{{ attempt.question_number }}"
+        >
+            {% if attempt.is_multi %}Multiple Choice{% else %}Single Choice{%
+            endif %}
+        </p>
     </div>
-    <ul class="answer-indicator-list">
-        {% for response in attempt.result_details %}
-        {{ result_option(response) }}
-        {% endfor %}
+    <ul class="answer-indicator-list" aria-label="Answer indicators">
+        {% for response in attempt.result_details %} {{ result_option(response)
+        }} {% endfor %}
     </ul>
-</div>
+</article>
 {% endmacro %}

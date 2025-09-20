@@ -1,0 +1,24 @@
+footer {
+    display: flex;
+    padding: var(--pad-base);
+}
+
+footer #footer-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer #nav-list {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: var(--gap-base);
+}
+
+footer #nav-item {
+    flex: 1 1 125px;
+}

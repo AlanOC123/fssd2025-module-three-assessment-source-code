@@ -1,20 +1,30 @@
 {% macro timeline_card(img_path="", name="", timeline_id="") %}
-<article class="timeline-card" >
+<article class="timeline-card"
+         aria-labelledby="timeline-title-{{ timeline_id }}"
+         aria-describedby="timeline-year-{{ timeline_id }}">
     <div class="timeline-img">
         {% if img != "" %}
-            <img src="{{ url_for('static', filename=img_path) }}" alt="">
+            <img src="{{ url_for('static', filename=img_path) }}"
+                 alt="Timeline image for {{ name }}"
+                 loading="lazy"
+                 decoding="async">
         {% endif %}
     </div>
 
     <div class="timeline-data">
         <div class="timeline-data-info">
-            <h3>{{ year }}</h3>
-            <h4>{{ name }}</h4>
+            <h3 id="timeline-year-{{ timeline_id }}">{{ year }}</h3>
+            <h4 id="timeline-title-{{ timeline_id }}">{{ name }}</h4>
         </div>
 
         <div class="timeline-data-btn">
-            <a href="{{ url_for('timeline.history', timeline_id=timeline_id) }}"><span>Learn More</span><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="{{ url_for('timeline.history', timeline_id=timeline_id) }}"
+               aria-label="Learn more about {{ name }}">
+                <span>Learn More</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </article>
 {% endmacro %}
+

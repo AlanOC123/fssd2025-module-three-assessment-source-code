@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="timeline">
-    <a href="{{ url_for('timeline.index') }}" id="return-to-timeline">
-        <i class="fa-solid fa-globe"></i>
+<div id="timeline" role="region" aria-labelledby="timeline-hero-heading" aria-describedby="timeline-hero-year">
+    <a href="{{ url_for('timeline.index') }}" id="return-to-timeline" aria-label="Return to timeline index">
+        <i class="fa-solid fa-globe" aria-hidden="true"></i>
     </a>
-    <div id="timeline-scroll-progress">
-        <div id="timeline-progress-bar"></div>
+    <div id="timeline-scroll-progress" aria-hidden="true">
+        <div id="timeline-progress-bar" role="presentation"></div>
     </div>
 
-    <section id="hero" class="milestone">
+    <section id="hero" class="milestone" aria-labelledby="timeline-hero-heading" aria-describedby="timeline-hero-year">
         <div class="border-wrapper">
-            <h1 class="hero-image">{{ timeline_data.id }}</h1>
-            <h2 class="hero-text">WELCOME TO THE <span>{{ timeline_data.pseudoname | upper }}</span></h2>
+            <h1 class="hero-image" id="timeline-hero-year">{{ timeline_data.id }}</h1>
+            <h2 class="hero-text" id="timeline-hero-heading">WELCOME TO THE <span>{{ timeline_data.pseudoname | upper }}</span></h2>
         </div>
     </section>
 
@@ -32,8 +32,6 @@
         }}
     {% endfor %}
 </div>
-
-
 {% endblock %}
 
 {% block styles %}
@@ -41,5 +39,6 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='timeline/views/history/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='timeline/views/history/script.js') }}" defer></script>
 {% endblock %}
+

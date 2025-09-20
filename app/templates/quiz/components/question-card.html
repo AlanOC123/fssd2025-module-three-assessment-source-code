@@ -1,12 +1,20 @@
 {% macro question_card(qind, question) %}
-<div class="question-card" id="q{{ qind }}{{ question.correctOptionIds | length }}" data-qind="{{ qind }}" data-is-answered="false">
-    <div class="question-text">{{ question.question }}</div>
-    <div class="options">
-        {% from 'quiz/components/question-option.html' import question_option %}
-
-        {% for option in question.options %}
-            {{ question_option(qind, option, question.type) }}
-        {% endfor %}
+<article
+    class="question-card"
+    id="q{{ qind }}{{ question.correctOptionIds | length }}"
+    data-qind="{{ qind }}"
+    data-is-answered="false"
+    role="region"
+    aria-roledescription="Question"
+    aria-labelledby="q{{ qind }}-text"
+>
+    <div class="question-text" id="q{{ qind }}-text">
+        {{ question.question }}
     </div>
-</div>
+    <div class="options" role="group" aria-labelledby="q{{ qind }}-text">
+        {% from 'quiz/components/question-option.html' import question_option %}
+        {% for option in question.options %} {{ question_option(qind, option,
+        question.type) }} {% endfor %}
+    </div>
+</article>
 {% endmacro %}

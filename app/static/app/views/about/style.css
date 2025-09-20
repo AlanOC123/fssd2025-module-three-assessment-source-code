@@ -1,0 +1,68 @@
+/* app/views/about/style.css
+   One-column reading layout using your token system with safe fallbacks. */
+
+#about-page.reading-flow {
+    display: grid;
+    grid-template-columns: 1fr; /* always one column */
+    gap: var(--gap-base, 1rem);
+    padding-block: var(--page-base, 2rem);
+    padding-inline: var(--pad-lg, 1.5rem);
+    max-width: 70ch; /* readable measure */
+    margin-inline: auto;
+    margin-top: var(--header-height);
+}
+
+/* Card/section styling */
+#about-page .content-container {
+    background: var(--clr-base-alt-mostly-opaque, rgba(8, 13, 20, 0.6));
+    border: var(--brd-alt, 1px solid rgba(255, 255, 255, 0.08));
+    border-radius: var(--brd-rnd-xl, 16px);
+    padding: var(--pad-lg, 1.5rem);
+    color: var(--clr-text-main, #e6eef7);
+}
+
+/* Headings rhythm */
+#about-page h1 {
+    margin: 0 0 var(--gap-sm, 0.75rem);
+    color: var(--clr-text-strong, #ffffff);
+    font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+    line-height: 1.15;
+}
+#about-page h2 {
+    margin: 0 0 var(--gap-xs, 0.5rem);
+    color: var(--clr-text-alt, #cfe0f5);
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.6rem);
+    line-height: 1.2;
+}
+
+/* Paragraph spacing */
+#about-page p {
+    margin: 0 0 var(--gap-sm, 0.75rem);
+}
+
+/* CTA row */
+#about-cta .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-base, 1rem);
+    margin-top: var(--gap-base, 1rem);
+}
+#about-cta .btn {
+    transition: transform var(--trans-dur-sm, 160ms)
+        var(--trans-time-base, ease);
+}
+#about-cta .btn:hover {
+    transform: var(--float-up, translateY(-2px));
+}
+#about-cta .btn:focus-visible {
+    outline: 3px solid var(--clr-accent, #62b6cb);
+    outline-offset: 3px;
+    border-radius: var(--brd-rnd-lg, 12px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #about-cta .btn {
+        transition: none;
+    }
+}

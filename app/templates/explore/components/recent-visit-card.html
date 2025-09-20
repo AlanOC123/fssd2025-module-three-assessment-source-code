@@ -1,6 +1,7 @@
 {% macro recent_visit_card(label, id, img_src) %}
     <article
     class="recent-visit-card"
+    aria-label="Recent visit: {{ label }}"
     {% if attrs %}
         {% for key, val in attrs.items() %}
             {{ key }} = "{{ val }}"
@@ -8,7 +9,7 @@
     {% endif %}
     >
         <div class="img-container">
-            <img src="{{ url_for('static', filename=img_src) }}" alt="">
+            <img src="{{ url_for('static', filename=img_src) }}" alt="" role="presentation" loading="lazy" decoding="async">
         </div>
 
         <div class="content-container">
@@ -17,7 +18,7 @@
                     See {{ label }}
                 </a>
                 <div class="to-planet-icon-container">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
@@ -25,9 +26,9 @@
 {% endmacro %}
 
 {% macro visit_all_card() %}
-    <article class="recent-visit-card">
+    <article class="recent-visit-card" aria-label="See all planets">
         <div class="img-container">
-            <img src="{{ url_for('static', filename='app/assets/planets/sprites/sun.png') }}" alt="">
+            <img src="{{ url_for('static', filename='app/assets/planets/sprites/sun.png') }}" alt="" role="presentation" loading="lazy" decoding="async">
         </div>
 
         <div class="content-container">
@@ -36,9 +37,10 @@
                     See All
                 </a>
                 <div class="to-planet-icon-container">
-                    <i class="fa-solid fa-arrow-right"></i>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
     </article>
 {% endmacro %}
+

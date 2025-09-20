@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="asset-origin" content="{{ ASSET_ORIGIN }}">
+    <meta name="description" content="Planet Stop — Explore the Solar System, browse a timeline of space history, and test your knowledge with interactive quizzes.">
+    <meta name="theme-color" content="#000000">
     <title>{% block title %}Planet.{% block page_name %}{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/root.css') }}">
@@ -16,6 +18,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/borders.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/root/transforms.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='app/styles/components/button.css') }}">
@@ -25,35 +28,36 @@
     {% block styles %}{% endblock %}
 </head>
 <body>
-    <a class="skip-link" href="#content" style="display: none;">Skip to content</a>
+    <a class="skip-link" href="#content" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
+
     <header>
             <div id="website-logo" class="header-section">
-                <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['website-logo'] }}" alt="Website Logo">
-                <a href="{{ url_for('index') }}" id="to-home"></a>
+                <img src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['website-logo'] }}" alt="" role="presentation" decoding="async">
+                <a href="{{ url_for('index') }}" id="to-home" aria-label="Planet Stop — Home"></a>
             </div>
-            <nav id="main-nav" class="header-section">
+            <nav id="main-nav" class="header-section" aria-label="Primary">
                 <ul id="main-nav-list">
                     <li class="nav-list-item">
-                        <a href="{{ url_for('explore.index') }}" class="nav-list-link {% if pg_name == 'explore' %} active {% endif %}">Explore</a>
+                        <a href="{{ url_for('explore.index') }}" class="nav-list-link {% if pg_name == 'explore' %} active {% endif %}" {% if pg_name == 'explore' %}aria-current="page"{% endif %}>Explore</a>
                     </li>
                     <li class="nav-list-item">
-                        <a href="{{ url_for('timeline.index') }}" class="nav-list-link {% if pg_name == 'timeline' %} active {% endif %}">Timeline</a>
+                        <a href="{{ url_for('timeline.index') }}" class="nav-list-link {% if pg_name == 'timeline' %} active {% endif %}" {% if pg_name == 'timeline' %}aria-current="page"{% endif %}>Timeline</a>
                     </li>
                     <li class="nav-list-item">
-                        <a href="{{ url_for('quiz.index') }}" class="nav-list-link {% if pg_name == 'test' %} active {% endif %}">Quiz</a>
+                        <a href="{{ url_for('quiz.index') }}" class="nav-list-link {% if pg_name == 'test' %} active {% endif %}" {% if pg_name == 'test' %}aria-current="page"{% endif %}>Quiz</a>
                     </li>
                 </ul>
             </nav>
             {% from "app/components/buttons.html" import options_button %}
-            {{ options_button(id="open-nav", style="header-section hidden") }}
+            {{ options_button(id="open-nav", style="header-section hidden", attrs={'aria-label':'Open menu','aria-controls':'main-nav','aria-expanded':'false','aria-haspopup':'menu'}) }}
     </header>
 
-    <main>
+    <main id="content" tabindex="-1">
         {% block content %}{% endblock %}
     </main>
 
     <footer>
-        <nav id="footer-nav">
+        <nav id="footer-nav" aria-label="Footer">
             <ul id="nav-list">
                 <li class="nav-item">
                     <a href="{{ url_for('about') }}" class="nav-link" id="to-about">About</a>
@@ -62,10 +66,13 @@
                     <a href="{{ url_for('sitemap') }}" class="nav-link" id="to-sitemap">SiteMap</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" id="to-t-and-c">Terms &amp; Conditions</a>
+                    <a href="" class="nav-link" id="to-t-and-c" aria-disabled="true" tabindex="-1">Terms &amp; Conditions</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" id="to-contact">Contact Us</a>
+                    <a href="" class="nav-link" id="to-contact" aria-disabled="true" tabindex="-1">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link" id="to-contact" aria-disabled="true" tabindex="-1">&copy; Copright 2025</a>
                 </li>
                 {% block add_footer_nav_links %}{% endblock %}
             </ul>
@@ -74,3 +81,4 @@
     {% block scripts %}{% endblock %}
 </body>
 </html>
+

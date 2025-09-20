@@ -1,6 +1,7 @@
 {% macro quick_search_link(label, filter_key) %}
 <a
 class="quick-search-btn"
-href="{{ url_for('explore.planet_list', filter_key=filter_key) }}">
+href="{{ url_for('explore.planet_list', filter_key=filter_key) }}"
+aria-label="{{ label }} filter">
 {{ label }}</a>
 {% endmacro %}

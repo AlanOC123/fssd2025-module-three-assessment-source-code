@@ -9,34 +9,49 @@
 
 {% block content %}
 <div id="explore-home" class="page-grid">
-    <div id="bg-img">
-        <img style="view-transition-name: main-bg-img-explore;" src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['explore-hero'] }}" alt="">
-    </div>
-        <div id="hero">
-            <h1 class="hero-text">Explore</h1>
-            <h2 class="hero-text">The Solar System</h2>
-        </div>
+    <section id="bg-img" aria-hidden="true">
+        <img
+            style="view-transition-name: main-bg-img-explore;"
+            src="{{ ASSET_ORIGIN }}/{{ ASSET_MAP['explore-hero'] }}"
+            alt=""
+            role="presentation"
+            decoding="async"
+            fetchpriority="high"
+        >
+    </section>
 
-        {% if recently_viewed %}
-        <div id="recents" class="sub-wrapper">
-            <h3>Recent Visits</h3>
-            <ul class="planet-list" id="recent-visit-list">
-                {% from "explore/components/planet-card.html" import planet_card with context %}
-                {% for planet in recently_viewed %}
-                    <li class="planet-list-item">
-                        {{
-                            planet_card(
-                                href=url_for('explore.planet_selected', planet_id=planet.id),
-                                name=planet.name,
-                                sprite_path=planet.sprite,
-                                tagline=planet.tagline
-                            )
-                        }}
-                    </li>
-                {% endfor %}
-                <li class="planet-list-item">{{ planet_card() }}</li>
-            </ul>
-        </div>
-        {% endif %}
+    <section id="hero" role="region" aria-labelledby="hero-heading" aria-describedby="hero-subheading">
+        <h1 id="hero-heading" class="hero-text">Explore</h1>
+        <h2 id="hero-subheading" class="hero-text">The Solar System</h2>
+    </section>
+
+    {% if recently_viewed %}
+    <section id="recents" class="sub-wrapper" role="region" aria-labelledby="recent-heading">
+        <h3 id="recent-heading">Recent Visits</h3>
+        <ul
+            class="planet-list"
+            id="recent-visit-list"
+            aria-labelledby="recent-heading"
+            aria-live="polite"
+            aria-busy="false"
+        >
+            {% from "explore/components/planet-card.html" import planet_card with context %}
+            {% for planet in recently_viewed %}
+                <li class="planet-list-item">
+                    {{
+                        planet_card(
+                            href=url_for('explore.planet_selected', planet_id=planet.id),
+                            name=planet.name,
+                            sprite_path=planet.sprite,
+                            tagline=planet.tagline
+                        )
+                    }}
+                </li>
+            {% endfor %}
+            <li class="planet-list-item">{{ planet_card() }}</li>
+        </ul>
+    </section>
+    {% endif %}
 </div>
 {% endblock %}
+

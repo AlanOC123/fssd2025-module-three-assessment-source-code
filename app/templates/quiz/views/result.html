@@ -9,52 +9,111 @@
     href="{{ url_for('static', filename='quiz/views/result/style.css') }}"
 />
 {% endblock %} {% block content %}
-<div id="result" class="page-grid">
-    <div class="content-container">
-        <h2>Details</h2>
+<div
+    id="result"
+    class="page-grid"
+    role="region"
+    aria-labelledby="details-heading overview-heading"
+>
+    <section
+        class="content-container"
+        role="region"
+        aria-labelledby="details-heading"
+    >
+        <h2 id="details-heading">Details</h2>
         <div id="detailed-results">
-            <ul id="question-results">
+            <ul
+                id="question-results"
+                aria-label="Question results"
+                aria-live="polite"
+                aria-busy="false"
+            >
                 {% from 'quiz/components/result-card.html' import result_card %}
                 {% for attempt in config.attempts %}
                 <li class="result-list-item">{{ result_card(attempt) }}</li>
                 {% else %}
-                <p>No Attempts Made</p>
+                <p role="note">No Attempts Made</p>
                 {% endfor %}
             </ul>
         </div>
-    </div>
-    <div class="content-container">
+    </section>
+    <section
+        class="content-container"
+        role="region"
+        aria-labelledby="overview-heading"
+    >
         <div id="result-controls">
-            <h2>Overview</h2>
-            <div id="control-btns">
-                <a href="{{ url_for('quiz.index', reset=true) }}" id="to-new">New Quiz</a>
-                <a href="{{ url_for('quiz.play', retry=true) }}" id="to-retry">Retry</a>
+            <h2 id="overview-heading">Overview</h2>
+            <div id="control-btns" aria-label="Result actions">
+                <a
+                    href="{{ url_for('quiz.index', reset=true) }}"
+                    id="to-new"
+                    aria-label="Start a new quiz"
+                    >New Quiz</a
+                >
+                <a
+                    href="{{ url_for('quiz.play', retry=true) }}"
+                    id="to-retry"
+                    aria-label="Retry quiz"
+                    >Retry</a
+                >
             </div>
         </div>
 
-        <div id="grade">
+        <div id="grade" role="group" aria-labelledby="grade-text">
             <div id="grade-img-container">
-                <img id="grade-img" src="{{ ASSET_ORIGIN }}/{{ config.grade.img }}" alt="">
+                <img
+                    id="grade-img"
+                    src="{{ ASSET_ORIGIN }}/{{ config.grade.img }}"
+                    alt="{{ config.grade.text }} grade badge"
+                    decoding="async"
+                    loading="lazy"
+                />
             </div>
-            <div id="grade-text">{{ config.grade.text | upper }}</div>
+            <div id="grade-text" aria-live="polite" aria-atomic="true">
+                {{ config.grade.text | upper }}
+            </div>
         </div>
-        <div id="stats">
-            <div id="longest_streak" class="stats-card">
-                <h4 class="card-heading">Longest Streak</h4>
+        <div id="stats" role="group" aria-label="Statistics">
+            <article
+                id="longest_streak"
+                class="stats-card"
+                role="group"
+                aria-labelledby="longest_streak_heading"
+            >
+                <h4 class="card-heading" id="longest_streak_heading">
+                    Longest Streak
+                </h4>
                 <p class="card-text">{{ config.longest_streak }}</p>
-            </div>
+            </article>
 
-            <div id="total-score" class="stats-card">
-                <h4 class="card-heading">Score</h4>
+            <article
+                id="total-score"
+                class="stats-card"
+                role="group"
+                aria-labelledby="total_score_heading"
+            >
+                <h4 class="card-heading" id="total_score_heading">Score</h4>
                 <p class="card-text">{{ config.score }}</p>
-            </div>
+            </article>
 
-            <div id="fastest-answer" class="stats-card">
-                <h4 class="card-heading">Quickest Answer</h4>
+            <article
+                id="fastest-answer"
+                class="stats-card"
+                role="group"
+                aria-labelledby="fastest_answer_heading"
+            >
+                <h4 class="card-heading" id="fastest_answer_heading">
+                    Quickest Answer
+                </h4>
                 <p class="card-text">{{ config.quickest_ans }}s</p>
-            </div>
+            </article>
         </div>
-    </div>
-    <a href="{{ url_for('quiz.index', reset=True) }}" id="to-index"></a>
+    </section>
+    <a
+        href="{{ url_for('quiz.index', reset=True) }}"
+        id="to-index"
+        aria-label="Back to quiz home"
+    ></a>
 </div>
 {% endblock %}

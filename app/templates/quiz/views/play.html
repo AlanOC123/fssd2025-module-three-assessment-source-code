@@ -4,68 +4,105 @@
     href="{{ url_for('static', filename='quiz/views/play/style.css') }}"
 />
 {% endblock %} {% block scripts %}
-<script src="{{ url_for('static', filename='quiz/views/play/script.js') }}" type="module"></script>
+<script
+    src="{{ url_for('static', filename='quiz/views/play/script.js') }}"
+    type="module"
+></script>
 {% endblock %} {% block content %}
-<div id="quiz" class="page-grid">
-    <div class="content-container" id="session-data">
-        <p id="time-left">
+<div id="quiz" class="page-grid" role="region" aria-labelledby="question-text">
+    <section class="content-container" id="session-data">
+        <p
+            id="time-left"
+            role="timer"
+            aria-live="off"
+            aria-atomic="true"
+            aria-label="Time remaining"
+        >
             <span id="minute">00</span>:<span id="second">00</span>
         </p>
         <h4 id="session-data">
-            Question: <span id="curr-q-count">1</span> of <span id="total-q-count">10</span>
+            Question: <span id="curr-q-count">1</span> of
+            <span id="total-q-count">10</span>
         </h4>
 
         <h2 id="question-text">Whats is Earths Order From the Sun?</h2>
 
-        <div id="session-progress">
+        <div id="session-progress" aria-label="Question progress">
             <div class="progress-track">
-                <div class="progress-bar"></div>
+                <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-label="Progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                ></div>
             </div>
         </div>
-    </div>
-    <div class="content-container" id="session-options">
-        <p id="type-indicator"></p>
-        <ul id="question-options">
+    </section>
+    <section class="content-container" id="session-options">
+        <p id="type-indicator" aria-live="polite" aria-atomic="true"></p>
+        <ul
+            id="question-options"
+            role="radiogroup"
+            aria-labelledby="question-text"
+            aria-describedby="type-indicator"
+        >
             <li class="question-option" id="opt-A">
-                <input type="radio" value="A" id="A" name="option">
+                <input type="radio" value="A" id="A" name="option" />
                 <label for="A">
                     <span class="option-id">A</span>
                     <span class="option-value">3</span>
                 </label>
             </li>
             <li class="question-option" id="opt-B">
-                <input type="radio" value="B" id="B" name="option">
+                <input type="radio" value="B" id="B" name="option" />
                 <label for="B">
                     <span class="option-id">B</span>
                     <span class="option-value">4</span>
                 </label>
             </li>
             <li class="question-option" id="opt-C">
-                <input type="radio" value="C" id="C" name="option">
+                <input type="radio" value="C" id="C" name="option" />
                 <label for="C">
                     <span class="option-id">C</span>
                     <span class="option-value">5</span>
                 </label>
             </li>
             <li class="question-option" id="opt-D">
-                <input type="radio" value="D" id="D" name="option">
+                <input type="radio" value="D" id="D" name="option" />
                 <label for="D">
                     <span class="option-id">D</span>
                     <span class="option-value">6</span>
                 </label>
             </li>
         </ul>
-        <button id="check-answer">Submit Answer</button>
-    </div>
-    <div id="result-modal" class="">
+        <button id="check-answer" aria-controls="result-modal">
+            Submit Answer
+        </button>
+    </section>
+    <article
+        id="result-modal"
+        class=""
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="result-message"
+        aria-describedby="result-total-score result-time-taken"
+        tabindex="-1"
+        aria-hidden="true"
+    >
         <div id="modal-content">
-            <h3 id="result-message"></h3>
+            <h3
+                id="result-message"
+                aria-live="assertive"
+                aria-atomic="true"
+            ></h3>
             <h2 id="result-score"></h2>
             <p id="result-total-score"></p>
             <h4 id="result-score-streak"></h4>
             <p id="result-time-taken"></p>
-            <button id="next-question">Next</button>
+            <button id="next-question" aria-label="Next question">Next</button>
         </div>
-    </div>
+    </article>
 </div>
 {% endblock %}

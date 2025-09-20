@@ -6,20 +6,20 @@
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{ url_for('static', filename='timeline/views/index/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='timeline/views/index/script.js') }}" defer></script>
 {% endblock %}
 
 {% block content %}
 <div id="explore-home" class="page-grid">
-    <div id="decade-select">
-        <div id="hero-text">
-            <h1>Explore a Decade</h1>
-            <h2>Select a Node</h2>
+    <section id="decade-select">
+        <div id="hero-text" role="region" aria-labelledby="timeline-heading" aria-describedby="timeline-subheading">
+            <h1 id="timeline-heading">Explore a Decade</h1>
+            <h2 id="timeline-subheading">Select a Node</h2>
         </div>
 
-        <div id="timeline">
-            <div id="timeline-bar"></div>
-            <ul id="decade-list">
+        <div id="timeline" role="region" aria-labelledby="timeline-subheading">
+            <div id="timeline-bar" aria-hidden="true" role="presentation"></div>
+            <ul id="decade-list" aria-labelledby="timeline-subheading" aria-live="polite" aria-busy="false">
                 {% for node in timeline_data %}
                 {% from "timeline/components/timeline-card.html" import timeline_card with context %}
                     <li class="decade-list-item">
@@ -34,6 +34,7 @@
                 {% endfor %}
             </ul>
         </div>
-    </div>
+    </section>
 </div>
 {% endblock %}
+

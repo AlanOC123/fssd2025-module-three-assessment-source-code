@@ -1,30 +1,70 @@
-{% macro planet_card(sprite_path="explore/assets/sun.webp", name="See All", tagline="", href=url_for('explore.planets_default'), id="") %}
-<article class="planet-card">
+{% macro planet_card(sprite_path="explore/assets/sun.webp", name="See All",
+tagline="", href=url_for('explore.planets_default'), id="") %}
+<article
+    class="planet-card"
+    aria-labelledby="planet-name-{{ name|replace(' ', '-')|lower }}"
+    aria-describedby="planet-tagline-{{ name|replace(' ', '-')|lower }}"
+>
     <div class="planet-img">
         <img
-        src="{{ url_for('static', filename=sprite_path) }}" alt="A high res image of {{ name }}"
-        {% if id %}style="view-transition-name: img-{{ id }}"{% endif %}
-        >
+            src="{{ url_for('static', filename=sprite_path) }}"
+            alt="An image of {{ name }}"
+            role="presentation"
+            loading="lazy"
+            decoding="async"
+            {%
+            if
+            id
+            %}style="view-transition-name: img-{{ id }}"
+            {%
+            endif
+            %}
+        />
     </div>
 
     <div class="planet-content">
         <div class="planet-data">
             <h3
-            class="planet-name"
-            {% if id %}style="view-transition-name: name-{{ id }}"{% endif %}
-            >{{ name }}</h3>
-            <h4
-            class="planet-tagline"
-            {% if id %}style="view-transition-name: tagline-{{ id }}"{% endif %}
+                class="planet-name"
+                id="planet-name-{{ name|replace(' ', '-')|lower }}"
+                {%
+                if
+                id
+                %}style="view-transition-name: name-{{ id }}"
+                {%
+                endif
+                %}
             >
-            {{ tagline }}
-        </h4>
+                {{ name }}
+            </h3>
+            <h4
+                class="planet-tagline"
+                id="planet-tagline-{{ name|replace(' ', '-')|lower }}"
+                {%
+                if
+                id
+                %}style="view-transition-name: tagline-{{ id }}"
+                {%
+                endif
+                %}
+            >
+                {{ tagline }}
+            </h4>
         </div>
-        <a href="{{ href }}"></a>
+        <a
+            href="{{ href }}"
+            aria-labelledby="planet-name-{{ name|replace(' ', '-')|lower }}"
+            aria-describedby="planet-tagline-{{ name|replace(' ', '-')|lower }}"
+        >
+        </a>
 
         <div class="card-icon">
-            <a href="{{ href }}" class="icon-container">
-                <i class="fa-solid fa-arrow-right"></i>
+            <a
+                href="{{ href }}"
+                class="icon-container"
+                aria-label="View {{ name }}"
+            >
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
         </div>
     </div>
