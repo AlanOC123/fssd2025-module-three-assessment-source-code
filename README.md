@@ -165,7 +165,6 @@ Assets: [GitHub Assets Repo](https://github.com/AlanOC123/assessment-3-assets-re
 ---
 
 ## 📸 Screenshots
-Place the following images in a `screenshots/` folder at repo root so they render on GitHub. Filenames below match your uploads.
 
 ![Homepage Triptych](screenshots/Screenshot%202025-09-20%20at%2014.49.40.png)
 ![Homepage – Compare/CTA](screenshots/Screenshot%202025-09-20%20at%2014.50.11.png)
@@ -177,8 +176,6 @@ Place the following images in a `screenshots/` folder at repo root so they rende
 ![Quiz – Builder](screenshots/Screenshot%202025-09-20%20at%2014.50.46.png)
 ![Quiz – Play](screenshots/Screenshot%202025-09-20%20at%2014.51.12.png)
 ![Quiz – Results](screenshots/Screenshot%202025-09-20%20at%2014.51.28.png)
-
-**Tip:** keep screenshot widths ≤ 1600px for a lighter README and consistent rendering.
 
 ---
 
@@ -205,8 +202,6 @@ Place the following images in a `screenshots/` folder at repo root so they rende
 - **CSS & JS** → fluid responsive design, scroll animations, fetch APIs.
 - **Clean code** → modular folder structure, Jinja macros, reusable assets.
 - **Hosting** → deployed on Render with working config.
-
-This meets *Distinction* criteria: clear Flask application, strong Python usage, modern design, clean structure, and a fully hosted functional app.
 
 ---
 
