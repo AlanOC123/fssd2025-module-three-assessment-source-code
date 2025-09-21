@@ -3,7 +3,11 @@
     src="{{ url_for('static', filename='quiz/views/result/script.js') }}"
     type="module"
 ></script>
-{% endblock %} {% block styles %}
+{% endblock %} 
+
+{% block page_name %}Quiz.Result{% endblock %}
+
+{% block styles %}
 <link
     rel="stylesheet"
     href="{{ url_for('static', filename='quiz/views/result/style.css') }}"
@@ -64,7 +68,7 @@
             <div id="grade-img-container">
                 <img
                     id="grade-img"
-                    src="{{ ASSET_ORIGIN }}/{{ config.grade.img }}"
+                    src="{{ url_for('static', filename=config.grade.img)}}"
                     alt="{{ config.grade.text }} grade badge"
                     decoding="async"
                     loading="lazy"

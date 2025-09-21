@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block page_name %}Timeline.{{ timeline_data.id }}{% endblock %}
+
 {% block content %}
 <div id="timeline" role="region" aria-labelledby="timeline-hero-heading" aria-describedby="timeline-hero-year">
     <a href="{{ url_for('timeline.index') }}" id="return-to-timeline" aria-label="Return to timeline index">

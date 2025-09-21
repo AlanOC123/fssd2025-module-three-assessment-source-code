@@ -1,7 +1,7 @@
 from flask import session
 
 _TIME_LIMIT_MAP = {
-    "short": 15,
+    "short": 300,
     "medium": 600,
     "long": 900,
     "unlimited": None,

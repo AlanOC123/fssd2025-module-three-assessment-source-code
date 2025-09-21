@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% block page_name %}Quiz{% endblock %} {% block
+{% extends 'base.html' %} {% block page_name %}Quiz{% endblock %}
+
+{% block page_name %}Quiz.Build{% endblock %}
+
+{% block
 content %}
 
 <div class="page-grid">
@@ -32,6 +36,13 @@ content %}
         </div>
     </div>
     {% endif %}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="error-msg">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <section
         id="quiz-builder-container"
         class="content-container"
@@ -143,6 +154,6 @@ content %}
 {% endblock %} {% block scripts %}
 <script
     src="{{ url_for('static', filename='quiz/views/index/script.js') }}"
-    defer
+    defer type="module"
 ></script>
 {% endblock %}

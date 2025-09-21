@@ -11,6 +11,13 @@
 
 {% block content %}
 <div id="explore-home" class="page-grid">
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="error-msg">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <section id="decade-select">
         <div id="hero-text" role="region" aria-labelledby="timeline-heading" aria-describedby="timeline-subheading">
             <h1 id="timeline-heading">Explore a Decade</h1>

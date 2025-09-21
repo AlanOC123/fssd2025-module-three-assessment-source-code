@@ -1,4 +1,4 @@
-from flask import request, session, redirect, url_for
+from flask import request, session, redirect, url_for, flash
 from . import bp
 from app.data.interface import get_questions, get_subjects
 from random import choice
@@ -69,6 +69,10 @@ def build():
     }
 
     questions = build_questions(options)
+
+    if len(questions) < count:
+        flash('Widen Scope, too few questions')
+        return redirect(url_for('quiz.index'))
     
     init_quiz(questions, time_limit)
 

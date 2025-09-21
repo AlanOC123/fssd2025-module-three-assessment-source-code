@@ -1,4 +1,4 @@
-from flask import render_template, session, abort
+from flask import render_template, session, abort, redirect, flash, url_for
 from . import bp
 from app.data.interface import get_planet_by_id, get_planets
 
@@ -47,6 +47,10 @@ def planet_selected(planet_id: str):
 
     # update the session recents for the index page if a new planet was viewed for a quick select
     update_recents(planet_id=planet_id)
+
+    if not planet_data:
+        flash('Planet not found')
+        return redirect(url_for('explore.index'))
 
     # render the page with the planet data
     return render_template('explore/views/planets.html', planet_data=planet_data)

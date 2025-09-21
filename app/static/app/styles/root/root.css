@@ -17,7 +17,10 @@
     --bp-lg: 1600px;
 }
 
-html, body { overflow-x: clip; }
+html,
+body {
+    overflow-x: clip;
+}
 
 /* Clamp every snapshot layer */
 ::view-transition,
@@ -25,10 +28,10 @@ html, body { overflow-x: clip; }
 ::view-transition-image-pair(root),
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  overflow: hidden;
-  inset: 0;
-  max-width: 100%;
-  max-height: 100%;
+    overflow: hidden;
+    inset: 0;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 html,
@@ -52,9 +55,43 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--clr-transparent), var(--clr-accent-alt), var(--clr-transparent));
+    background: linear-gradient(
+        to bottom,
+        var(--clr-transparent),
+        var(--clr-accent-alt),
+        var(--clr-transparent)
+    );
 }
 
 @view-transition {
     navigation: auto;
+}
+
+@keyframes error-msg {
+    from {
+        transform: translateX(-50%) translateY(-8px) scale(0);
+        opacity: 0;
+    } to {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.error-msg {
+    position: absolute;
+    top: calc(var(--header-height) + var(--pad-base));
+    width: 50dvw;
+    padding: var(--pad-base);
+    background-color: var(--clr-base-main-mostly-opaque);
+    outline: 3px solid var(--clr-failure);
+    border-radius: var(--brd-rnd-lg);
+    transform: translateX(-50%) translateY(-8px) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    animation: error-msg var(--trans-dur-lg) var(--trans-time-base) var(--trans-dur-lg) forwards;
+    z-index: 5;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

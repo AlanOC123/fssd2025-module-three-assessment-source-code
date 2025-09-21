@@ -13,8 +13,22 @@ content %}
         <ul id="sitemap-core">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('explore.index') }}">Explore</a></li>
+            <li>
+                <ul class="sub-list">
+                    <li>
+                        <a href="{{ url_for('explore.planet_selected', planet_id='earth') }}">Explore a Planet</a>
+                    </li>
+                </ul>
+            </li>
             <li><a href="{{ url_for('timeline.index') }}">Timeline</a></li>
-            <li><a href="{{ url_for('quiz.index') }}">Quiz</a></li>
+                <li>
+                    <ul class="sub-list">
+                        <li>
+                            <a href="{{ url_for('timeline.history', timeline_id='1950s') }}">Explore a Point in Time</a>
+                        </li>
+                    </ul>
+                </li>
+            <li><a href="{{ url_for('quiz.index') }}">Build a Quiz</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li>
                 <a href="{{ url_for('sitemap') }}" aria-current="page"
@@ -22,12 +36,7 @@ content %}
                 >
             </li>
             <li>
-                <a href="#" aria-disabled="true" tabindex="-1"
-                    >Terms &amp; Conditions</a
-                >
-            </li>
-            <li>
-                <a href="#" aria-disabled="true" tabindex="-1">Contact Us</a>
+                <a href="mailto:alan.oc1995@gmail.com"tabindex="-1">Contact Us</a>
             </li>
         </ul>
     </nav>

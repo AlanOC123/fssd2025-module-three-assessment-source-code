@@ -3,7 +3,11 @@
     rel="stylesheet"
     href="{{ url_for('static', filename='quiz/views/play/style.css') }}"
 />
-{% endblock %} {% block scripts %}
+{% endblock %}
+
+{% block page_name %}Quiz.Play{% endblock %}
+
+{% block scripts %}
 <script
     src="{{ url_for('static', filename='quiz/views/play/script.js') }}"
     type="module"
